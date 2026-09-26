@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=9">
+<link rel="stylesheet" href="css/style.css?v=10">
 </head>
 <body>
 
@@ -274,39 +274,60 @@
     <h2 class="section-title">Quem responde pela sua entrega</h2>
     <p class="section-sub">Um sócio para cada frente: quem garante que é seguro, quem vende e quem constrói.</p>
     <div class="team-grid">
-      <div class="team-card">
-        <img class="avatar" src="img/avatar-jefferson.jpg" alt="Jefferson Pereira">
-        <div class="tags"><span class="role-tag">Engenharia e segurança</span><span class="ai-tag">Especialista em IA</span></div>
-        <h3>Jefferson Pereira</h3>
-        <p class="headline">20 anos transformando caos técnico em operações escaláveis, com automação fiscal, IA e .NET.</p>
-        <ul class="credentials">
-          <li>Pós-graduação em Segurança da Informação e Cibersegurança com IA, XP Educação</li>
-          <li>Ciência de Dados, Descomplica</li>
-          <li>Análise e Desenvolvimento de Sistemas, UNOPAR</li>
-        </ul>
-      </div>
-      <div class="team-card">
-        <img class="avatar" src="img/avatar-soraya.png" alt="Soraya Sá">
-        <div class="tags"><span class="role-tag">Comercial</span><span class="ai-tag">Especialista em IA</span></div>
-        <h3>Soraya Sá</h3>
-        <p class="headline">Diretora Comercial, especialista em gestão comercial, marketing estratégico e negociações de alto impacto.</p>
-        <ul class="credentials">
-          <li>MBA Executivo em Inteligência Artificial, Gestão e Negócios, Gran Faculdade</li>
-          <li>Selling Skills and Sales Operations, IE University</li>
-          <li>Gestão Comercial, Estácio</li>
-        </ul>
-      </div>
-      <div class="team-card">
-        <img class="avatar" src="img/avatar-gileard.png" alt="Gileard Teixeira">
-        <div class="tags"><span class="role-tag">Produto e entrega</span><span class="ai-tag">Especialista em IA</span></div>
-        <h3>Gileard Teixeira</h3>
-        <p class="headline">Head de Produto e Inovação, com portfólio multiproduto em SaaS, educação corporativa e consultoria de alta complexidade regulatória.</p>
-        <ul class="credentials">
-          <li>MBA Executivo em Gestão Estratégica de Negócios e Inteligência Artificial, FIAP</li>
-          <li>Formação em Gestão de Produtos Digitais, PM3</li>
-          <li>Bacharelado em Administração, Estácio</li>
-        </ul>
-      </div>
+      <article class="team-card">
+        <div class="team-photo">
+          <img src="img/team-jefferson.jpg" alt="Jefferson Pereira" loading="lazy">
+        </div>
+        <div class="team-caption">
+          <span class="role-tag">Engenharia e segurança</span>
+          <h3>Jefferson Pereira</h3>
+        </div>
+        <div class="team-body">
+          <span class="ai-tag">Especialista em IA</span>
+          <p class="headline">20 anos transformando caos técnico em operações escaláveis, com automação fiscal, IA e .NET.</p>
+          <ul class="credentials">
+            <li>Pós-graduação em Segurança da Informação e Cibersegurança com IA, XP Educação</li>
+            <li>Ciência de Dados, Descomplica</li>
+            <li>Análise e Desenvolvimento de Sistemas, UNOPAR</li>
+          </ul>
+        </div>
+      </article>
+      <article class="team-card">
+        <div class="team-photo">
+          <img src="img/team-soraya.jpg" alt="Soraya Sá" loading="lazy">
+        </div>
+        <div class="team-caption">
+          <span class="role-tag">Comercial</span>
+          <h3>Soraya Sá</h3>
+        </div>
+        <div class="team-body">
+          <span class="ai-tag">Especialista em IA</span>
+          <p class="headline">Diretora Comercial, especialista em gestão comercial, marketing estratégico e negociações de alto impacto.</p>
+          <ul class="credentials">
+            <li>MBA Executivo em Inteligência Artificial, Gestão e Negócios, Gran Faculdade</li>
+            <li>Selling Skills and Sales Operations, IE University</li>
+            <li>Gestão Comercial, Estácio</li>
+          </ul>
+        </div>
+      </article>
+      <article class="team-card">
+        <div class="team-photo">
+          <img src="img/team-gileard.jpg" alt="Gileard Teixeira" loading="lazy">
+        </div>
+        <div class="team-caption">
+          <span class="role-tag">Produto e entrega</span>
+          <h3>Gileard Teixeira</h3>
+        </div>
+        <div class="team-body">
+          <span class="ai-tag">Especialista em IA</span>
+          <p class="headline">Head de Produto e Inovação, com portfólio multiproduto em SaaS, educação corporativa e consultoria de alta complexidade regulatória.</p>
+          <ul class="credentials">
+            <li>MBA Executivo em Gestão Estratégica de Negócios e Inteligência Artificial, FIAP</li>
+            <li>Formação em Gestão de Produtos Digitais, PM3</li>
+            <li>Bacharelado em Administração, Estácio</li>
+          </ul>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -366,6 +387,6 @@
 
 <div class="sticky-cta"><a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SOLUTEC." target="_blank" rel="noopener" class="btn gold">Falar no WhatsApp</a></div>
 
-<script src="js/main.js?v=9"></script>
+<script src="js/main.js?v=10"></script>
 </body>
 </html>
