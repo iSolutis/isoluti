@@ -86,11 +86,12 @@
   .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
   .hero .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--gold-bright); margin-bottom: 22px; border: 1px solid rgba(201,169,97,0.35); padding: 6px 12px; border-radius: 3px; }
   .hero .tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); }
-  .hero h1 { font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 600; line-height: 1.08; margin: 0 0 22px; max-width: 15ch; letter-spacing: -0.02em; }
-  .hero h1 .cursor { display: inline-block; width: 0.09em; height: 0.8em; background: var(--gold-bright); margin-left: 0.08em; vertical-align: -0.05em; animation: blink 1s steps(1) infinite; }
+  .hero h1 { font-size: clamp(1.9rem, 3.2vw, 2.45rem); font-weight: 600; line-height: 1.1; margin: 0 0 20px; max-width: 22ch; letter-spacing: -0.02em; text-wrap: balance; }
+  .hero h1 .h1-line { display: block; color: #9fb1c6; }
+  .hero .cursor { display: inline-block; width: 0.09em; height: 0.8em; background: var(--gold-bright); margin-left: 0.08em; vertical-align: -0.05em; animation: blink 1s steps(1) infinite; }
   @keyframes blink { 50% { opacity: 0; } }
-  @media (prefers-reduced-motion: reduce) { .hero h1 .cursor { animation: none; } }
-  .hero p.subhead { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.25rem, 2.2vw, 1.6rem); font-weight: 500; line-height: 1.3; color: var(--gold-bright); margin: 0 0 18px; max-width: 30ch; }
+  @media (prefers-reduced-motion: reduce) { .hero .cursor { animation: none; } }
+  .hero p.subhead { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.3rem, 2.3vw, 1.7rem); font-weight: 600; line-height: 1.3; color: var(--gold-bright); margin: 0 0 18px; max-width: 30ch; }
   .hero p.lede { font-size: 1.15rem; max-width: 46ch; color: #c3cdd9; margin: 0 0 32px; }
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 18px; }
   .hero .fineprint { font-size: 0.88rem; color: #8fa0b3; margin: 0; }
