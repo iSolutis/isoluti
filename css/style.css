@@ -83,7 +83,7 @@
     mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, black 10%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, black 10%, transparent 75%);
   }
-  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 56px; align-items: center; }
+  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
   .hero .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: var(--gold-bright); margin-bottom: 22px; border: 1px solid rgba(201,169,97,0.35); padding: 6px 12px; border-radius: 3px; }
   .hero .tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold-bright); }
   .hero h1 { font-size: clamp(2.2rem, 4.8vw, 3.6rem); font-weight: 600; line-height: 1.08; margin: 0 0 22px; max-width: 15ch; letter-spacing: -0.02em; }
@@ -254,7 +254,7 @@
 
   @media (max-width: 900px) {
     .hero .wrap, .final .wrap, .why-grid { grid-template-columns: 1fr; }
-    .hero-video { transform: none; max-width: 460px; }
+    .hero-video { transform: none; max-width: 720px; }
     .problem-grid { grid-template-columns: 1fr 1fr; }
     .cases, .team-grid { grid-template-columns: 1fr 1fr; }
     .tiers { grid-template-columns: 1fr; }
