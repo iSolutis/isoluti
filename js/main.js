@@ -16,3 +16,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   sections.forEach((section) => observer.observe(section));
 });
+
+// O vídeo só roda enquanto está visível, e não roda sozinho para quem pediu menos movimento.
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.querySelector('.brand-video');
+  if (!video || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) video.play().catch(() => {});
+    else video.pause();
+  }, { threshold: 0.4 }).observe(video);
+});
