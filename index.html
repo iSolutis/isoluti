@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=15">
 </head>
 <body>
 
@@ -261,77 +261,149 @@
   </div>
 </section>
 
-<section id="investimento">
+<section id="investimento" class="offer">
   <div class="wrap">
-    <h2 class="section-title">Investimento, por faixa de complexidade</h2>
-    <p class="section-sub">Cada sistema é diferente. Depois de uma conversa para entender seu processo, apresentamos o valor fechado do projeto e da manutenção.</p>
-    <div class="tiers">
-      <div class="tier">
-        <h3>Simples</h3>
-        <p class="what">5 a 10 telas, um fluxo, um perfil de usuário</p>
-        <ul>
-          <li><span>Prazo</span><span>2 a 4 semanas</span></li>
-          <li><span>Manutenção mensal</span><span>Inclusa</span></li>
-          <li><span>Revisão de segurança</span><span>Inclusa</span></li>
+    <h2 class="section-title">Duas formas de trabalhar com a gente</h2>
+    <hr class="offer-rule">
+    <p class="section-sub">Você pode contratar a construção de um sistema que resolve um processo da sua empresa, ou trazer a gente para dentro do seu time para estruturar como vocês usam tecnologia. Em muitos casos, as duas coisas caminham juntas.</p>
+    <div class="paths">
+      <a class="o-card path" href="#faixas">
+        <span class="o-pill">Construir e sustentar</span>
+        <h3>Seu sistema no ar, e cuidado depois</h3>
+        <p>Escopo e preço fechados antes da primeira linha de código. Depois da entrega, seguimos responsáveis pela operação.</p>
+      </a>
+      <a class="o-card path" href="#consultoria">
+        <span class="o-pill">Consultoria</span>
+        <h3>Tecnologia com método no seu time</h3>
+        <p>Diagnóstico, mentoria e formação para times de tecnologia, operação comercial e cultura de produto.</p>
+      </a>
+    </div>
+
+    <div class="offer-block" id="faixas">
+      <h3 class="offer-heading">Qual é o tamanho do seu projeto?</h3>
+      <p class="offer-lead">Cada sistema é diferente. Depois de uma conversa para entender seu processo, apresentamos o valor fechado do projeto e da manutenção.</p>
+      <div class="o-tiers">
+        <div class="o-tier">
+          <div class="o-tier-body">
+            <h4>Simples</h4>
+            <p class="what">Um processo, um tipo de usuário</p>
+            <p class="o-label">Exemplos</p>
+            <ul>
+              <li>Controle de pedidos</li>
+              <li>Agenda de atendimentos</li>
+              <li>Formulário com painel de gestão</li>
+            </ul>
+          </div>
+          <div class="o-tier-foot"><span>Prazo de construção</span><strong>2 a 4 semanas</strong></div>
+        </div>
+        <div class="o-tier">
+          <div class="o-tier-body">
+            <h4>Média</h4>
+            <p class="what">Vários perfis, integrações e relatórios</p>
+            <p class="o-label">Exemplos</p>
+            <ul>
+              <li>Portal do cliente</li>
+              <li>CRM sob medida</li>
+              <li>Sistema integrado ao seu ERP</li>
+            </ul>
+          </div>
+          <div class="o-tier-foot"><span>Prazo de construção</span><strong>4 a 8 semanas</strong></div>
+        </div>
+        <div class="o-tier">
+          <div class="o-tier-body">
+            <h4>Complexa</h4>
+            <p class="what">Multiempresa, integrações críticas e exigência regulatória</p>
+            <p class="o-label">Exemplos</p>
+            <ul>
+              <li>Plataforma multiempresa</li>
+              <li>Sistema com auditoria e conformidade</li>
+              <li>Integração com sistemas legados</li>
+            </ul>
+          </div>
+          <div class="o-tier-foot"><span>Prazo de construção</span><strong>8 a 14 semanas</strong></div>
+        </div>
+      </div>
+      <div class="o-strip">
+        <strong>Em todas as faixas</strong>
+        <ul class="o-checks">
+          <li>Escopo fechado antes do código</li>
+          <li>Revisão de segurança por entrega</li>
+          <li>Manutenção mensal contratada</li>
         </ul>
-        <p class="value">Valor apresentado após a conversa de diagnóstico</p>
         <a href="#contato" class="btn">Agendar diagnóstico</a>
       </div>
-      <div class="tier">
-        <h3>Média</h3>
-        <p class="what">Vários perfis, integrações e relatórios</p>
-        <ul>
-          <li><span>Prazo</span><span>4 a 8 semanas</span></li>
-          <li><span>Manutenção mensal</span><span>Inclusa</span></li>
-          <li><span>Revisão de segurança</span><span>Inclusa</span></li>
-        </ul>
-        <p class="value">Valor apresentado após a conversa de diagnóstico</p>
-        <a href="#contato" class="btn">Agendar diagnóstico</a>
+      <p class="o-note">Valores apresentados após a conversa de diagnóstico, sem compromisso.</p>
+    </div>
+
+    <div class="offer-block" id="consultoria">
+      <h3 class="offer-heading">Consultoria</h3>
+      <p class="offer-lead">Para empresas que querem desenvolver a própria capacidade, e não só receber um sistema pronto.</p>
+      <div class="o-consult">
+        <div class="o-card">
+          <h4>Times de tecnologia</h4>
+          <p>Estruturamos e desenvolvemos seu time interno, com processos de segurança, qualidade de código e uso responsável de IA.</p>
+          <span class="o-lead-by">Conduzido por Jefferson Pereira</span>
+        </div>
+        <div class="o-card">
+          <h4>Tecnologia na operação comercial</h4>
+          <p>Levamos tecnologia para dentro da operação comercial e preparamos a cultura da empresa para que o time adote as novas ferramentas.</p>
+          <span class="o-lead-by">Conduzido por Soraya Sá</span>
+        </div>
+        <div class="o-card">
+          <h4>Cultura de produto</h4>
+          <p>Formamos lideranças e times para decidir o que construir a partir de problemas reais, dados e resultado de negócio.</p>
+          <span class="o-lead-by">Conduzido por Gileard Teixeira</span>
+        </div>
       </div>
-      <div class="tier">
-        <h3>Complexa</h3>
-        <p class="what">Multiempresa, integrações críticas, exigência regulatória</p>
-        <ul>
-          <li><span>Prazo</span><span>8 a 14 semanas</span></li>
-          <li><span>Manutenção mensal</span><span>Inclusa</span></li>
-          <li><span>Revisão de segurança</span><span>Inclusa</span></li>
-        </ul>
-        <p class="value">Valor apresentado após a conversa de diagnóstico</p>
-        <a href="#contato" class="btn">Agendar diagnóstico</a>
+      <div class="o-strip">
+        <p><strong>Formatos:</strong> diagnóstico pontual, mentoria recorrente e formação de times</p>
+        <a href="#contato" class="btn outline-gold">Conversar sobre consultoria</a>
       </div>
     </div>
-    <div style="margin-top: 36px;">
-      <div class="compare" role="table" aria-label="Comparação entre software house tradicional e SOLUTEC">
-        <div class="c-row c-head" role="row"><span role="columnheader"></span><span role="columnheader">Software house tradicional</span><span role="columnheader">SOLUTEC</span></div>
-        <div class="c-row" role="row"><span role="rowheader">Prazo</span><span role="cell">3 a 6 meses</span><span role="cell">2 a 14 semanas</span></div>
-        <div class="c-row" role="row"><span role="rowheader">Cobrança</span><span role="cell">Por hora ou estimativa aberta</span><span role="cell">Preço fechado antes de começar</span></div>
-        <div class="c-row" role="row"><span role="rowheader">Segurança</span><span role="cell">Varia conforme o fornecedor</span><span role="cell">Revisão em toda entrega</span></div>
-        <div class="c-row" role="row"><span role="rowheader">Depois da entrega</span><span role="cell">Suporte negociado à parte</span><span role="cell">Manutenção mensal desde o início</span></div>
+
+    <div class="offer-block">
+      <h3 class="offer-heading">Por que não fazer de outro jeito?</h3>
+      <p class="offer-lead">As alternativas mais comuns para quem não tem time técnico, lado a lado.</p>
+      <div class="o-table-wrap">
+        <table class="o-table">
+          <thead>
+            <tr><td></td><th scope="col">Freelancer</th><th scope="col">Fazer por conta própria com IA</th><th scope="col" class="us">SOLUTEC</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Preço</th><td>Por hora ou estimativa aberta</td><td>Custo de horas do seu time</td><td class="us">Fechado antes do código</td></tr>
+            <tr><th scope="row">Quem revisa o código</th><td>Depende do profissional</td><td>Ninguém</td><td class="us">Revisão técnica em toda entrega</td></tr>
+            <tr><th scope="row">Segurança</th><td>Varia conforme o profissional</td><td>Fica a cargo da IA</td><td class="us">Arquitetura e segurança validadas por especialista</td></tr>
+            <tr><th scope="row">Depois da entrega</th><td>Suporte negociado à parte</td><td>Sua equipe mantém sozinha</td><td class="us">Manutenção mensal contratada junto</td></tr>
+            <tr><th scope="row">Se der problema</th><td>Depende da disponibilidade</td><td>Você resolve</td><td class="us">Uma empresa responde pela solução</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
 </section>
 
-<section id="equipe">
+<section id="equipe" class="offer team-dark">
   <div class="wrap">
-    <h2 class="section-title">Quem responde pela sua entrega</h2>
-    <p class="section-sub">Um sócio para cada frente: quem garante que é seguro, quem vende e quem constrói.</p>
+    <h2 class="section-title">Quem responde pelo seu projeto</h2>
+    <hr class="offer-rule">
+    <p class="section-sub">A IA acelera a construção. Quem garante que a solução seja segura, se pague e continue funcionando são pessoas com experiência real de mercado. Três sócios, três olhares complementares e uma única responsabilidade: sua solução no ar, gerando resultado.</p>
     <div class="team-grid">
       <article class="team-card">
         <div class="team-photo">
           <img src="img/team-jefferson.jpg" alt="Jefferson Pereira" loading="lazy">
         </div>
         <div class="team-caption">
-          <span class="role-tag">Engenharia e segurança</span>
+          <span class="role-tag">Engenharia e Segurança</span>
           <h3>Jefferson Pereira</h3>
         </div>
         <div class="team-body">
-          <span class="ai-tag">Especialista em IA</span>
-          <p class="headline">20 anos transformando caos técnico em operações escaláveis, com automação fiscal, IA e .NET.</p>
+          <span class="area-pill">Consultoria em times de tecnologia</span>
+          <h4 class="team-quote">Arquitetura profissional, não o que a IA “acha”.</h4>
+          <p class="bio">Há 20 anos transforma caos técnico em operações escaláveis, com automação fiscal, IA e .NET. É quem define a arquitetura, revisa cada entrega e controla a dívida técnica, para que o sistema continue seguro e sustentável muito depois do primeiro deploy. Na consultoria, estrutura e desenvolve times de tecnologia internos para empresas que querem ganhar autonomia.</p>
           <ul class="credentials">
-            <li>Pós-graduação em Segurança da Informação e Cibersegurança com IA, XP Educação</li>
-            <li>Ciência de Dados, Descomplica</li>
-            <li>Análise e Desenvolvimento de Sistemas, UNOPAR</li>
+            <li>Especialista em Segurança da Informação e Cibersegurança com IA</li>
+            <li>Especialização em Desenvolvimento Web</li>
+            <li>Análise e Desenvolvimento de Sistemas</li>
           </ul>
         </div>
       </article>
@@ -344,12 +416,13 @@
           <h3>Soraya Sá</h3>
         </div>
         <div class="team-body">
-          <span class="ai-tag">Especialista em IA</span>
-          <p class="headline">Diretora Comercial, especialista em gestão comercial, marketing estratégico e negociações de alto impacto.</p>
+          <span class="area-pill">Consultoria em cultura e operação comercial</span>
+          <h4 class="team-quote">Tecnologia que começa no problema do cliente e termina em resultado.</h4>
+          <p class="bio">Diretora Comercial com trajetória em gestão comercial, marketing estratégico e negociações de alto impacto. Traduz a dor do seu cliente em requisitos de solução e garante que o que construímos faça sentido para o negócio, e não só para a tecnologia. Na consultoria, leva tecnologia para dentro da operação comercial e fortalece a cultura da empresa para que o time adote as novas ferramentas de verdade.</p>
           <ul class="credentials">
-            <li>MBA Executivo em Inteligência Artificial, Gestão e Negócios, Gran Faculdade</li>
-            <li>Selling Skills and Sales Operations, IE University</li>
-            <li>Gestão Comercial, Estácio</li>
+            <li>MBA Executivo em Inteligência Artificial, Gestão e Negócios</li>
+            <li>Especialização em Economia Empresarial</li>
+            <li>Gestão Comercial</li>
           </ul>
         </div>
       </article>
@@ -358,16 +431,17 @@
           <img src="img/team-gileard.jpg" alt="Gileard Teixeira" loading="lazy">
         </div>
         <div class="team-caption">
-          <span class="role-tag">Produto e entrega</span>
+          <span class="role-tag">Produto e Estratégia</span>
           <h3>Gileard Teixeira</h3>
         </div>
         <div class="team-body">
-          <span class="ai-tag">Especialista em IA</span>
-          <p class="headline">Head de Produto e Inovação, com portfólio multiproduto em SaaS, educação corporativa e consultoria de alta complexidade regulatória.</p>
+          <span class="area-pill">Consultoria em cultura de produto</span>
+          <h4 class="team-quote">Escopo certo antes da primeira linha de código.</h4>
+          <p class="bio">Head de Produto e Inovação à frente de um portfólio que reúne sistemas, educação corporativa e consultoria em um setor de alta complexidade regulatória. Especialista em gestão estratégica de negócios na era da IA, conduz o discovery, define o escopo e garante que a solução resolva o problema certo, do jeito certo. Na consultoria, implanta cultura de produto formando as pessoas que a sustentam.</p>
           <ul class="credentials">
-            <li>MBA Executivo em Gestão Estratégica de Negócios e Inteligência Artificial, FIAP</li>
-            <li>Formação em Gestão de Produtos Digitais, PM3</li>
-            <li>Bacharelado em Administração, Estácio</li>
+            <li>MBA Executivo em Gestão Estratégica de Negócios e IA</li>
+            <li>Especialização em Engenharia de Software</li>
+            <li>Formação em Gestão de Produtos Digitais</li>
           </ul>
         </div>
       </article>
@@ -427,6 +501,6 @@
 
 <div class="sticky-cta"><a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SOLUTEC." target="_blank" rel="noopener" class="btn gold">Falar no WhatsApp</a></div>
 
-<script src="js/main.js?v=12"></script>
+<script src="js/main.js?v=15"></script>
 </body>
 </html>
