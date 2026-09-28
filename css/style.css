@@ -4,12 +4,12 @@
     --navy-mid: #1a2f4c;
     --gold: #C9A961;
     --gold-bright: #E4C077;
-    --ink: #1c2126;
-    --muted: #4b5561;
-    --paper: #F7F5F0;
-    --card: #ffffff;
+    --ink: #14213a;
+    --muted: #4a5a70;
+    --paper: #ffffff;
+    --card: #f4f7fb;
     --white: #ffffff;
-    --line: rgba(31,58,95,0.16);
+    --line: rgba(16,29,48,0.12);
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -266,10 +266,9 @@
   .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
   .why-grid .stat { font-family: 'Space Grotesk', sans-serif; font-size: 3.4rem; color: var(--gold-bright); font-weight: 600; line-height: 1; }
   .why-grid p { color: #c1cbd8; }
-  .band-deep { background: #0b1526; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .band-deep { background: var(--navy-deep); }
 
   /* Team */
-  .team-dark { border-top: 1px solid rgba(255,255,255,0.06); }
   .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
   .team-card {
     display: flex; flex-direction: column; overflow: hidden; background: #16233a;
@@ -302,7 +301,7 @@
   .faq details p { margin: 0 0 22px; color: var(--muted); max-width: 64ch; }
 
   /* Final CTA */
-  .final { background: #0b1526; color: var(--white); text-align: left; border-top: 1px solid rgba(255,255,255,0.06); }
+  .final { background: var(--navy-deep); color: var(--white); text-align: left; }
   .final .wrap { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center; }
   .final h2 { font-size: clamp(1.8rem, 3.6vw, 2.6rem); margin: 0 0 14px; line-height: 1.15; max-width: 18ch; letter-spacing: -0.01em; }
   .final p { color: #c3cdd9; margin: 0; max-width: 50ch; }
