@@ -188,13 +188,14 @@
   .band { background: #16233a; color: #dfe6ee; border-top: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); }
   .band h2 { color: var(--white); }
   .band p.section-sub { color: #c1cbd8; }
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid rgba(255,255,255,0.18); }
+  .how { background: #f1f5fa; border-top: 1px solid var(--line); }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
   .step { padding: 28px 28px 8px 0; }
-  .step + .step { padding-left: 28px; border-left: 1px solid rgba(255,255,255,0.18); }
-  .step .num { font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; color: var(--gold-bright); margin-bottom: 10px; }
-  .step h3 { margin: 0 0 8px; font-size: 1.2rem; font-weight: 600; color: var(--white); }
-  .step p { margin: 0 0 14px; color: #c1cbd8; font-size: 0.95rem; }
-  .step .price { font-size: 0.9rem; color: var(--gold-bright); }
+  .step + .step { padding-left: 28px; border-left: 1px solid var(--line); }
+  .step .num { font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; color: #9a7a35; margin-bottom: 10px; }
+  .step h3 { margin: 0 0 8px; font-size: 1.2rem; font-weight: 600; color: var(--navy-deep); }
+  .step p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
+  .step .price { font-size: 0.9rem; font-weight: 600; color: #9a7a35; }
 
   /* Offer: ways to work, tiers, consulting, comparison */
   .offer { background: var(--navy-deep); color: #dfe6ee; }
@@ -329,7 +330,7 @@
     .cases, .team-grid { grid-template-columns: 1fr 1fr; }
     .o-tiers, .o-consult { grid-template-columns: 1fr; }
     .steps { grid-template-columns: 1fr; }
-    .step, .step + .step { padding: 24px 0 8px; border-left: none; border-bottom: 1px solid rgba(255,255,255,0.18); }
+    .step, .step + .step { padding: 24px 0 8px; border-left: none; border-bottom: 1px solid var(--line); }
   }
   @media (max-width: 640px) {
     .wrap { padding: 0 20px; }
