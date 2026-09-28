@@ -24,7 +24,7 @@
     color-scheme: dark;
   }
   *, *::before, *::after { box-sizing: border-box; }
-  html { scroll-padding-top: calc(76px + env(safe-area-inset-top, 0px)); scroll-behavior: smooth; }
+  html { scroll-padding-top: calc(92px + env(safe-area-inset-top, 0px)); scroll-behavior: smooth; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   html, body { margin: 0; }
   body {
@@ -44,11 +44,12 @@
     background: var(--paper); border-bottom: 1px solid var(--line);
   }
   header.top .wrap { display: flex; align-items: center; justify-content: space-between; padding-top: 14px; padding-bottom: 14px; }
-  .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; line-height: 1.1; }
-  .logo-icon { height: 32px; width: auto; display: block; }
-  .mark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.3rem; color: var(--navy); letter-spacing: 0.01em; }
+  .brand { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; line-height: 1.1; }
+  .logo-icon { height: 48px; width: auto; display: block; }
+  .mark { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.6rem; color: var(--navy); letter-spacing: 0.01em; }
   .mark span { color: var(--gold); }
-  .submark { font-size: 0.72rem; color: #6b7684; margin-top: 1px; }
+  .submark { font-size: 0.78rem; color: #6b7684; margin-top: 1px; white-space: nowrap; }
+  @media (max-width: 1080px) { nav a:not(.btn) { display: none; } }
   nav { display: flex; align-items: center; }
   nav a { text-decoration: none; margin-left: 26px; font-size: 0.92rem; color: var(--navy); }
   nav a:not(.btn):hover { text-decoration: underline; text-underline-offset: 4px; }
@@ -201,7 +202,7 @@
   .offer .section-title { margin-bottom: 16px; max-width: none; }
   .offer-rule { width: 48px; height: 3px; margin: 0 0 22px; border: 0; background: var(--gold); }
   .offer .section-sub { color: #aab7c7; margin-bottom: 32px; }
-  .offer-block { margin-top: 76px; scroll-margin-top: calc(84px + env(safe-area-inset-top, 0px)); }
+  .offer-block { margin-top: 76px; scroll-margin-top: calc(100px + env(safe-area-inset-top, 0px)); }
   .offer-heading { margin: 0 0 10px; font-size: clamp(1.4rem, 2.4vw, 1.75rem); font-weight: 600; letter-spacing: -0.01em; }
   .offer-lead { margin: 0 0 28px; max-width: 52ch; color: #aab7c7; font-size: 0.95rem; }
 
@@ -336,6 +337,8 @@
     nav a:not(.btn) { display: none; }
     header.top .btn { padding: 9px 14px; font-size: 0.85rem; }
     .submark { display: none; }
+    .logo-icon { height: 40px; }
+    .mark { font-size: 1.4rem; }
     .problem-grid, .cases, .team-grid { grid-template-columns: 1fr; }
     .paths { grid-template-columns: 1fr; }
     .o-tier .what { min-height: 0; }
