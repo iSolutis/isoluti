@@ -1,3 +1,9 @@
+// Conteúdo que depende de dado real vem marcado com data-preencher e hidden.
+// Só aparece quando não sobra nenhum [[PREENCHER: ...]] dentro dele (texto ou atributos).
+document.querySelectorAll('[data-preencher]').forEach((el) => {
+  el.hidden = el.outerHTML.includes('[[PREENCHER');
+});
+
 // Marca no menu qual seção está visível durante a rolagem.
 document.addEventListener('DOMContentLoaded', () => {
   const sections = document.querySelectorAll('main section[id], section[id]');

@@ -191,6 +191,59 @@
   </div>
 </section>
 
+<!--
+  Seção "Resultados" (prova social). Fica oculta enquanto houver qualquer
+  [[PREENCHER: ...]] dentro dela: o js/main.js só remove o atributo hidden de
+  elementos com data-preencher quando não sobra nenhum placeholder.
+  Para ativar: substitua todos os placeholders por dados reais (autorizados
+  pelo cliente). Se tiver menos de 3 cases, apague o cartão que sobrar. Se um
+  número da faixa não existir, apague o item inteiro. Depois, se quiser que a
+  seção apareça também sem JavaScript, remova hidden e data-preencher da tag
+  <section> abaixo.
+-->
+<section id="resultados" class="results" data-preencher hidden>
+  <div class="wrap">
+    <h2 class="section-title">Resultados</h2>
+    <p class="section-sub">[[PREENCHER: frase de abertura da seção, ex.: o que mudou na operação de quem já trabalha com a gente]]</p>
+
+    <ul class="results-numbers">
+      <li><strong>[[PREENCHER: número real de projetos entregues]]</strong><span>projetos entregues</span></li>
+      <li><strong>[[PREENCHER: prazo médio real, em semanas]]</strong><span>semanas de prazo médio</span></li>
+      <li><strong>[[PREENCHER: terceiro número real, ex.: clientes em manutenção]]</strong><span>[[PREENCHER: legenda do terceiro número]]</span></li>
+    </ul>
+
+    <div class="results-cases">
+      <article class="result-case">
+        <p class="result-client">[[PREENCHER: case 1 — cliente ou segmento, com autorização]]</p>
+        <dl>
+          <dt>Contexto</dt><dd>[[PREENCHER: case 1 — contexto da empresa]]</dd>
+          <dt>Problema</dt><dd>[[PREENCHER: case 1 — processo que travava]]</dd>
+          <dt>Solução</dt><dd>[[PREENCHER: case 1 — o que foi construído]]</dd>
+        </dl>
+        <p class="result-number"><strong>[[PREENCHER: case 1 — número do resultado]]</strong> [[PREENCHER: case 1 — o que esse número mede]]</p>
+      </article>
+      <article class="result-case">
+        <p class="result-client">[[PREENCHER: case 2 — cliente ou segmento, com autorização]]</p>
+        <dl>
+          <dt>Contexto</dt><dd>[[PREENCHER: case 2 — contexto da empresa]]</dd>
+          <dt>Problema</dt><dd>[[PREENCHER: case 2 — processo que travava]]</dd>
+          <dt>Solução</dt><dd>[[PREENCHER: case 2 — o que foi construído]]</dd>
+        </dl>
+        <p class="result-number"><strong>[[PREENCHER: case 2 — número do resultado]]</strong> [[PREENCHER: case 2 — o que esse número mede]]</p>
+      </article>
+      <article class="result-case">
+        <p class="result-client">[[PREENCHER: case 3 — cliente ou segmento, com autorização]]</p>
+        <dl>
+          <dt>Contexto</dt><dd>[[PREENCHER: case 3 — contexto da empresa]]</dd>
+          <dt>Problema</dt><dd>[[PREENCHER: case 3 — processo que travava]]</dd>
+          <dt>Solução</dt><dd>[[PREENCHER: case 3 — o que foi construído]]</dd>
+        </dl>
+        <p class="result-number"><strong>[[PREENCHER: case 3 — número do resultado]]</strong> [[PREENCHER: case 3 — o que esse número mede]]</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <section id="como-funciona" class="how">
   <div class="wrap">
     <h2 class="section-title">Como funciona, do primeiro contato em diante</h2>
