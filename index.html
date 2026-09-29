@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=21">
+<link rel="stylesheet" href="css/style.css?v=22">
 </head>
 <body>
 
@@ -507,7 +507,56 @@
     </div>
     <div class="ctas">
       <a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SOLUTEC." target="_blank" rel="noopener" class="btn gold big">Falar no WhatsApp</a>
+      <a href="#contato" class="btn outline-gold big" data-agenda target="_blank" rel="noopener" hidden>Agendar horário</a>
+      <small>Prefere escrever? Use o formulário abaixo.</small>
     </div>
+  </div>
+
+  <div class="wrap contact-wrap">
+    <form class="contact-form is-off" id="form-contato" method="post" novalidate>
+      <h3>Deixe seu contato e a gente retorna</h3>
+      <p class="form-off" data-form-off>O formulário ainda não está disponível. Fale com a gente pelo WhatsApp, logo acima.</p>
+      <fieldset disabled>
+        <legend class="sr-only">Seus dados</legend>
+        <div class="form-grid">
+          <div class="field">
+            <label for="f-nome">Nome</label>
+            <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="f-nome-erro">
+            <p class="field-error" id="f-nome-erro"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">E-mail</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-erro">
+            <p class="field-error" id="f-email-erro"></p>
+          </div>
+          <div class="field">
+            <label for="f-empresa">Empresa</label>
+            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required aria-describedby="f-empresa-erro">
+            <p class="field-error" id="f-empresa-erro"></p>
+          </div>
+          <div class="field">
+            <label for="f-cargo">Cargo <span class="optional">(opcional)</span></label>
+            <input id="f-cargo" name="cargo" type="text" autocomplete="organization-title">
+          </div>
+          <div class="field field-wide">
+            <label for="f-processo">Qual processo está travando?</label>
+            <textarea id="f-processo" name="processo" rows="4" required aria-describedby="f-processo-erro"></textarea>
+            <p class="field-error" id="f-processo-erro"></p>
+          </div>
+        </div>
+        <div class="hp" aria-hidden="true">
+          <label for="f-site">Não preencha este campo</label>
+          <input id="f-site" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+        </div>
+        <div class="field consent">
+          <input id="f-lgpd" name="consentimento_lgpd" type="checkbox" value="sim" required aria-describedby="f-lgpd-erro">
+          <label for="f-lgpd">Autorizo a SOLUTEC a usar estes dados para entrar em contato comigo, conforme a <a href="#contato" data-politica target="_blank" rel="noopener">política de privacidade</a>.</label>
+          <p class="field-error" id="f-lgpd-erro"></p>
+        </div>
+        <button type="submit" class="btn gold big">Enviar</button>
+      </fieldset>
+      <p class="form-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
 </section>
 
@@ -523,6 +572,7 @@
 
 <div class="sticky-cta"><a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SOLUTEC." target="_blank" rel="noopener" class="btn gold">Falar no WhatsApp</a></div>
 
-<script src="js/main.js?v=21"></script>
+<script src="js/config.js?v=22"></script>
+<script src="js/main.js?v=22"></script>
 </body>
 </html>
