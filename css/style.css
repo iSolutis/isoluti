@@ -258,6 +258,9 @@
     display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 14px 22px;
     background: rgba(255,255,255,0.03); border-top: 1px solid rgba(255,255,255,0.08);
   }
+  .o-tier-price { padding: 12px 22px; border-top: 1px solid rgba(255,255,255,0.08); }
+  .o-tier-price p { margin: 0; color: #c3cdd9; font-size: 0.85rem; line-height: 1.7; }
+  .o-tier-price strong { color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 1rem; }
   .o-tier-foot span { color: #7f8ea3; font-size: 0.8rem; }
   .o-tier-foot strong { color: var(--gold-bright); font-family: 'Space Grotesk', sans-serif; font-size: 1.1rem; }
 
