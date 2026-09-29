@@ -121,7 +121,7 @@
   .twin > div { padding: 36px 34px; background: var(--card); }
   .twin > div + div { border-left: 1px solid var(--line); }
   .twin .word { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; line-height: 1; letter-spacing: -0.02em; color: var(--navy); margin: 0 0 8px; }
-  .twin .word.safe { color: var(--gold); }
+  .twin .word.safe { color: #9a7a35; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .twin .word { color: #dfe6ee; } :root:not([data-theme="light"]) .twin .word.safe { color: var(--gold-bright); } }
   :root[data-theme="dark"] .twin .word { color: #dfe6ee; } :root[data-theme="dark"] .twin .word.safe { color: var(--gold-bright); }
   .twin .how { color: var(--muted); margin: 0 0 22px; max-width: 42ch; }
@@ -225,10 +225,10 @@
   .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
   .step { padding: 28px 28px 8px 0; }
   .step + .step { padding-left: 28px; border-left: 1px solid var(--line); }
-  .step .num { font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; color: #9a7a35; margin-bottom: 10px; }
+  .step .num { font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; color: #7d6329; margin-bottom: 10px; }
   .step h3 { margin: 0 0 8px; font-size: 1.2rem; font-weight: 600; color: var(--navy-deep); }
   .step p { margin: 0 0 14px; color: var(--muted); font-size: 0.95rem; }
-  .step .price { font-size: 0.9rem; font-weight: 600; color: #9a7a35; }
+  .step .price { font-size: 0.9rem; font-weight: 600; color: #7d6329; }
 
   /* Offer: ways to work, tiers, consulting, comparison */
   .offer { background: var(--navy-deep); color: #dfe6ee; }

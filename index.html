@@ -3,7 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SOLUTEC — Tão rápido quanto seguro</title>
+<!-- Título sugerido na avaliação de marketing: confirmar com a SOLUTEC antes de publicar. O anterior era "SOLUTEC — Tão rápido quanto seguro". -->
+<title>SOLUTEC | Software sob medida com preço fechado e segurança</title>
+<meta name="description" content="Software sob medida com preço fechado, revisão de segurança em toda entrega e manutenção mensal. Agende sua conversa de diagnóstico.">
+<link rel="canonical" href="https://soydeoliveira-create.github.io/solutec/">
+<meta name="theme-color" content="#1F3A5F">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="SOLUTEC">
+<meta property="og:url" content="https://soydeoliveira-create.github.io/solutec/">
+<meta property="og:title" content="SOLUTEC | Software sob medida com preço fechado e segurança">
+<meta property="og:description" content="Software sob medida com preço fechado, revisão de segurança em toda entrega e manutenção mensal. Agende sua conversa de diagnóstico.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SOLUTEC | Software sob medida com preço fechado e segurança">
+<meta name="twitter:description" content="Software sob medida com preço fechado, revisão de segurança em toda entrega e manutenção mensal. Agende sua conversa de diagnóstico.">
+<!--
+  Imagem de compartilhamento: quando existir a arte 1200x630, descomente as linhas
+  abaixo com o endereço completo dela e troque twitter:card para summary_large_image.
+  <meta property="og:image" content="[[PREENCHER: imagem 1200x630]]">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="[[PREENCHER: imagem 1200x630]]">
+-->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://soydeoliveira-create.github.io/solutec/#organizacao",
+      "name": "SOLUTEC",
+      "alternateName": "SOLUTEC Soluções Tecnológicas e Inovação",
+      "url": "https://soydeoliveira-create.github.io/solutec/",
+      "logo": "https://soydeoliveira-create.github.io/solutec/img/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+55-71-99239-0992",
+        "contactType": "sales",
+        "availableLanguage": "Portuguese"
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://soydeoliveira-create.github.io/solutec/#servico",
+      "name": "SOLUTEC",
+      "url": "https://soydeoliveira-create.github.io/solutec/",
+      "image": "https://soydeoliveira-create.github.io/solutec/img/logo.png",
+      "telephone": "+55-71-99239-0992",
+      "description": "Desenvolvimento de software sob medida para empresas de médio porte, com preço fechado, revisão de segurança e manutenção mensal, além de consultoria.",
+      "areaServed": { "@type": "Country", "name": "Brasil" },
+      "parentOrganization": { "@id": "https://soydeoliveira-create.github.io/solutec/#organizacao" }
+    }
+  ]
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -14,7 +71,7 @@
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#inicio">
-      <img class="logo-icon" src="img/logo.png" alt="">
+      <img class="logo-icon" src="img/logo-96.webp" width="52" height="48" alt="">
       <div>
         <div class="mark">SOLU<span>TEC</span></div>
         <div class="submark">Soluções Tecnológicas e Inovação</div>
@@ -46,7 +103,8 @@
     </div>
 
     <div class="hero-video">
-      <video class="brand-video" src="video/solutec.mp4?v=2" muted loop playsinline controls preload="metadata" aria-label="Vídeo institucional da SOLUTEC"></video>
+      <!-- O arquivo do vídeo só é pedido quando o vídeo aparece na tela (js/main.js); até lá fica o poster. -->
+      <video class="brand-video" data-src="video/solutec.mp4?v=2" poster="img/video-poster.webp" width="1280" height="720" muted loop playsinline controls preload="none" aria-label="Vídeo institucional da SOLUTEC"></video>
     </div>
   </div>
 </section>
@@ -427,7 +485,7 @@
     <div class="team-grid">
       <article class="team-card">
         <div class="team-photo">
-          <img src="img/team-jefferson.jpg?v=2" alt="Jefferson Pereira" loading="lazy">
+          <img src="img/team-jefferson.webp" width="680" height="680" alt="Jefferson Pereira" loading="lazy">
         </div>
         <div class="team-caption">
           <span class="role-tag">Engenharia e Segurança</span>
@@ -446,7 +504,7 @@
       </article>
       <article class="team-card">
         <div class="team-photo">
-          <img src="img/team-soraya.jpg?v=2" alt="Soraya Sá" loading="lazy">
+          <img src="img/team-soraya.webp" width="640" height="640" alt="Soraya Sá" loading="lazy">
         </div>
         <div class="team-caption">
           <span class="role-tag">Comercial</span>
@@ -465,7 +523,7 @@
       </article>
       <article class="team-card">
         <div class="team-photo">
-          <img src="img/team-gileard.jpg?v=2" alt="Gileard Teixeira" loading="lazy">
+          <img src="img/team-gileard.webp" width="640" height="640" alt="Gileard Teixeira" loading="lazy">
         </div>
         <div class="team-caption">
           <span class="role-tag">Produto e Estratégia</span>
@@ -599,7 +657,7 @@
 <footer>
   <div class="wrap">
     <a class="brand" href="#inicio">
-      <img class="logo-icon" src="img/logo.png" alt="">
+      <img class="logo-icon" src="img/logo-96.webp" width="52" height="48" alt="" loading="lazy">
       <div class="mark">SOLU<span>TEC</span></div>
     </a>
     <p>Desenvolvimento sob medida para empresas de médio porte, do diagnóstico à manutenção.</p>

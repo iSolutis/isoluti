@@ -32,14 +32,20 @@ document.addEventListener('DOMContentLoaded', () => {
   sections.forEach((section) => observer.observe(section));
 });
 
-// O vídeo só roda enquanto está visível, e não roda sozinho para quem pediu menos movimento.
-document.addEventListener('DOMContentLoaded', () => {
+// O arquivo do vídeo só é pedido quando ele aparece na tela, depois do resto da página.
+// Roda só enquanto está visível, e não roda sozinho para quem pediu menos movimento.
+window.addEventListener('load', () => {
   const video = document.querySelector('.brand-video');
-  if (!video || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!video) return;
+  const autoplay = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   new IntersectionObserver(([entry]) => {
-    if (entry.isIntersecting) video.play().catch(() => {});
-    else video.pause();
+    if (!entry.isIntersecting) { video.pause(); return; }
+    if (!video.src && video.dataset.src) {
+      video.preload = 'auto';
+      video.src = video.dataset.src;
+    }
+    if (autoplay) video.play().catch(() => {});
   }, { threshold: 0.4 }).observe(video);
 });
 
