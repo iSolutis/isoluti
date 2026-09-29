@@ -136,6 +136,9 @@
   .problem-cell { background: var(--paper); padding: 26px 24px; }
   .problem-cell h3 { margin: 0 0 8px; font-size: 1.05rem; font-weight: 600; }
   .problem-cell p { margin: 0; color: var(--muted); font-size: 0.93rem; }
+  .source { margin: 12px 0 0; font-size: 0.8rem; color: var(--muted); }
+  .band .source, .why-grid p.source { color: #aab7c7; }
+  .source a { color: inherit; text-underline-offset: 3px; }
   .problem-cell .cost { display: block; margin-top: 14px; font-size: 0.82rem; color: #9a4b3c; }
   @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .problem-cell .cost { color: #e39a8a; } }
   :root[data-theme="dark"] .problem-cell .cost { color: #e39a8a; }
