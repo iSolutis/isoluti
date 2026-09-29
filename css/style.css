@@ -192,6 +192,22 @@
   :root[data-theme="dark"] .ba-before .ba-label { color: #e39a8a; }
   :root[data-theme="dark"] .ba-after .ba-label { color: #7fcf9c; }
 
+  /* Páginas de solução */
+  .case-more { margin-top: 14px; font-size: 0.88rem; font-weight: 600; color: var(--navy); text-underline-offset: 4px; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .case-more { color: var(--gold-bright); } }
+  :root[data-theme="dark"] .case-more { color: var(--gold-bright); }
+  .hero-page .wrap { grid-template-columns: 1fr; }
+  .hero-page h1 { max-width: 28ch; }
+  .breadcrumb { margin: 0 0 18px; font-size: 0.85rem; color: var(--muted); }
+  .breadcrumb a { color: var(--navy); text-underline-offset: 3px; }
+  .breadcrumb span { margin: 0 6px; }
+  .problem-grid.problem-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .page-ba { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: start; }
+  .page-ba .section-sub { margin-bottom: 0; }
+  .page-more { margin: 22px 0 0; }
+  .page-more a { color: var(--navy); font-weight: 600; text-underline-offset: 4px; }
+  @media (max-width: 900px) { .page-ba, .problem-grid.problem-grid-3 { grid-template-columns: 1fr; } }
+
   /* Results (prova social) */
   .results { padding-top: 0; }
   .results-numbers {
