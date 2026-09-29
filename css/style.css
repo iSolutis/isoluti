@@ -410,6 +410,23 @@
   footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
   footer p { color: #6b7684; font-size: 0.86rem; margin: 0; }
 
+  .link-btn { padding: 0; border: 0; background: none; color: #5d6877; font: inherit; font-size: 0.86rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+  .link-btn:hover { color: var(--ink); }
+
+  /* Cookie banner */
+  .cookie-banner {
+    position: fixed; left: 16px; right: 16px; bottom: 16px; z-index: 40; max-width: 720px; margin: 0 auto;
+    display: flex; flex-wrap: wrap; align-items: center; gap: 14px 20px; padding: 18px 20px;
+    background: var(--navy-deep); color: #dfe6ee; border: 1px solid rgba(201,169,97,0.45); border-radius: 10px;
+    box-shadow: 0 20px 40px -20px rgba(0,0,0,0.6);
+  }
+  .cookie-banner p { flex: 1 1 320px; margin: 0; font-size: 0.9rem; line-height: 1.5; }
+  .cookie-banner a { color: var(--gold-bright); }
+  .cookie-actions { display: flex; gap: 10px; }
+  .cookie-actions .btn { cursor: pointer; font-family: inherit; }
+  .btn.outline-light { background: transparent; border-color: rgba(255,255,255,0.45); color: #fff; }
+  .btn.outline-light:hover { background: rgba(255,255,255,0.08); }
+
   /* Mobile sticky CTA */
   .sticky-cta { display: none; }
 
@@ -442,4 +459,7 @@
     }
     .sticky-cta .btn { display: block; text-align: center; }
     body { padding-bottom: 72px; }
+    .cookie-banner { bottom: 80px; left: 12px; right: 12px; padding: 16px; }
+    .cookie-actions { width: 100%; }
+    .cookie-actions .btn { flex: 1; text-align: center; }
   }

@@ -82,7 +82,7 @@
       <a href="#como-funciona">Como funciona</a>
       <a href="#investimento">Investimento</a>
       <a href="#equipe">Equipe</a>
-      <a href="#contato" class="btn">Agendar diagnóstico</a>
+      <a href="#contato" class="btn" data-evento="click_agendar">Agendar diagnóstico</a>
     </nav>
   </div>
 </header>
@@ -96,7 +96,7 @@
       <p class="subhead"><span>Entregue em semanas.</span> <span>Feito sob medida.</span> <span>Seguro de ponta a ponta.</span></p>
       <p class="lede">Construímos a aplicação que a sua empresa já sabe que precisa — com escopo documentado antes de começar e alguém responsável depois da entrega.</p>
       <div class="hero-actions">
-        <a href="#contato" class="btn gold big">Agendar diagnóstico</a>
+        <a href="#contato" class="btn gold big" data-evento="click_agendar">Agendar diagnóstico</a>
         <a href="#rapido-seguro" class="btn ghost-light big">Como fazemos isso</a>
       </div>
       <p class="fineprint">Na conversa de diagnóstico você já sai com <b>prazo e valor fechados</b>.</p>
@@ -425,7 +425,7 @@
           <li>Revisão de segurança por entrega</li>
           <li>Manutenção mensal contratada</li>
         </ul>
-        <a href="#contato" class="btn">Agendar diagnóstico</a>
+        <a href="#contato" class="btn" data-evento="click_agendar">Agendar diagnóstico</a>
       </div>
       <p class="o-note">Valores apresentados após a conversa de diagnóstico, sem compromisso.</p>
     </div>
@@ -601,7 +601,7 @@
     </div>
     <div class="ctas">
       <a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SOLUTEC." target="_blank" rel="noopener" class="btn gold big">Falar no WhatsApp</a>
-      <a href="#contato" class="btn outline-gold big" data-agenda target="_blank" rel="noopener" hidden>Agendar horário</a>
+      <a href="#contato" class="btn outline-gold big" data-agenda data-evento="click_agendar" target="_blank" rel="noopener" hidden>Agendar horário</a>
       <small>Prefere escrever? Use o formulário abaixo.</small>
     </div>
   </div>
@@ -661,10 +661,20 @@
       <div class="mark">SOLU<span>TEC</span></div>
     </a>
     <p>Desenvolvimento sob medida para empresas de médio porte, do diagnóstico à manutenção.</p>
+    <button type="button" class="link-btn" data-cookies-abrir hidden>Preferências de cookies</button>
   </div>
 </footer>
 
 <div class="sticky-cta"><a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SOLUTEC." target="_blank" rel="noopener" class="btn gold">Falar no WhatsApp</a></div>
+
+<!-- Aviso de cookies: só aparece se houver GA4 ou Meta Pixel configurado em js/config.js. -->
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Usamos cookies de medição (Google Analytics e Meta) para entender como o site é usado. Eles só são ativados se você aceitar. <a href="#contato" data-politica target="_blank" rel="noopener" hidden>Política de privacidade</a></p>
+  <div class="cookie-actions">
+    <button type="button" class="btn gold" data-consentimento="aceito">Aceitar</button>
+    <button type="button" class="btn outline-light" data-consentimento="recusado">Recusar</button>
+  </div>
+</div>
 
 <script src="js/config.js?v=22"></script>
 <script src="js/main.js?v=22"></script>

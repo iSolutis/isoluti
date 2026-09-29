@@ -49,6 +49,13 @@ window.addEventListener('load', () => {
   }, { threshold: 0.4 }).observe(video);
 });
 
+// Links para a política de privacidade (formulário e aviso de cookies).
+document.querySelectorAll('[data-politica]').forEach((link) => {
+  if (!configurado(CONFIG.politicaUrl)) return;
+  link.href = CONFIG.politicaUrl;
+  link.hidden = false;
+});
+
 // Botão de agendamento: só aparece com o link configurado.
 document.querySelectorAll('[data-agenda]').forEach((link) => {
   if (!configurado(CONFIG.agendaUrl)) return;
@@ -70,7 +77,6 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   fieldset.disabled = false;
   form.classList.remove('is-off');
   form.querySelector('[data-form-off]').hidden = true;
-  form.querySelectorAll('[data-politica]').forEach((a) => { a.href = CONFIG.politicaUrl; });
 
   const emailValido = (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v);
   const regras = {
@@ -156,4 +162,107 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
       botao.textContent = textoBotao;
     }
   });
+})();
+
+// Medição (GA4 e Meta Pixel). Nenhum script de terceiros carrega antes do "Aceitar";
+// eventos disparados antes disso são descartados.
+(() => {
+  const ga4 = configurado(CONFIG.ga4Id) ? CONFIG.ga4Id : null;
+  const pixel = configurado(CONFIG.metaPixelId) ? CONFIG.metaPixelId : null;
+  if (!ga4 && !pixel) return;
+
+  const CHAVE = 'solutec-cookies';
+  const lerEscolha = () => { try { return localStorage.getItem(CHAVE); } catch (e) { return null; } };
+  const salvarEscolha = (v) => { try { localStorage.setItem(CHAVE, v); } catch (e) { /* segue só nesta visita */ } };
+  const banner = document.getElementById('cookie-banner');
+  const abrir = document.querySelector('[data-cookies-abrir]');
+  let carregado = false;
+
+  const carregarScript = (src) => {
+    const s = document.createElement('script');
+    s.async = true;
+    s.src = src;
+    document.head.appendChild(s);
+  };
+
+  const carregar = () => {
+    if (carregado) return;
+    carregado = true;
+    if (ga4) {
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function gtag() { window.dataLayer.push(arguments); };
+      window.gtag('js', new Date());
+      window.gtag('config', ga4);
+      carregarScript(`https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga4)}`);
+    }
+    if (pixel) {
+      // Trecho oficial do Meta Pixel, sem o carregamento automático.
+      const fbq = function fbq() {
+        if (fbq.callMethod) fbq.callMethod.apply(fbq, arguments);
+        else fbq.queue.push(arguments);
+      };
+      if (!window._fbq) window._fbq = fbq;
+      fbq.push = fbq; fbq.loaded = true; fbq.version = '2.0'; fbq.queue = [];
+      window.fbq = fbq;
+      window.fbq('init', pixel);
+      window.fbq('track', 'PageView');
+      carregarScript('https://connect.facebook.net/en_US/fbevents.js');
+    }
+    window.solutecMedicao = (nome, params) => {
+      if (window.gtag) window.gtag('event', nome, params);
+      if (window.fbq) window.fbq('trackCustom', nome, params);
+    };
+  };
+
+  const escolher = (valor) => {
+    const tinhaAceitado = lerEscolha() === 'aceito' || carregado;
+    salvarEscolha(valor);
+    banner.hidden = true;
+    if (valor === 'aceito') carregar();
+    // Quem recusa depois de aceitar precisa recarregar para descarregar os scripts.
+    else if (tinhaAceitado) window.location.reload();
+  };
+
+  banner.querySelectorAll('[data-consentimento]').forEach((botao) => {
+    botao.addEventListener('click', () => escolher(botao.dataset.consentimento));
+  });
+  abrir.hidden = false;
+  abrir.addEventListener('click', () => { banner.hidden = false; banner.querySelector('button').focus(); });
+
+  const escolha = lerEscolha();
+  if (escolha === 'aceito') carregar();
+  else if (escolha !== 'recusado') banner.hidden = false;
+})();
+
+// Eventos: cliques no WhatsApp e no agendamento (com o local do clique) e rolagem até 75%.
+(() => {
+  const localDoClique = (el) => {
+    const marcado = el.closest('[data-local]');
+    if (marcado) return marcado.dataset.local;
+    if (el.closest('header, #inicio')) return 'topo';
+    if (el.closest('.sticky-cta')) return 'barra-fixa';
+    if (el.closest('footer')) return 'rodape';
+    const secao = el.closest('[id]');
+    return secao ? secao.id : 'pagina';
+  };
+
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a');
+    if (!link) return;
+    if (link.href.includes('wa.me/')) track('click_whatsapp', { local: localDoClique(link) });
+    else if (link.dataset.evento) track(link.dataset.evento, { local: localDoClique(link) });
+  });
+
+  let rolou = false;
+  const checarRolagem = () => {
+    // Antes do consentimento não conta: o evento sai na primeira rolagem depois do "Aceitar".
+    if (rolou || !window.solutecMedicao) return;
+    const doc = document.documentElement;
+    if (window.scrollY + window.innerHeight >= doc.scrollHeight * 0.75) {
+      rolou = true;
+      track('scroll_75');
+      window.removeEventListener('scroll', checarRolagem);
+    }
+  };
+  window.addEventListener('scroll', checarRolagem, { passive: true });
 })();
