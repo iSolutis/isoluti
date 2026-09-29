@@ -425,6 +425,16 @@
   footer { padding: 36px 0 40px; border-top: 1px solid var(--line); }
   footer .wrap { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
   footer p { color: #6b7684; font-size: 0.86rem; margin: 0; }
+  .footer-links { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; }
+  .footer-links a { color: #5d6877; font-size: 0.86rem; text-underline-offset: 3px; }
+  .footer-links a:hover { color: var(--ink); }
+  /* Página de texto (política de privacidade) */
+  .doc { max-width: 760px; }
+  .doc h2 { margin: 36px 0 10px; font-size: 1.3rem; font-weight: 600; }
+  .doc p, .doc li { color: var(--muted); }
+  .doc ul { padding-left: 20px; }
+  .doc li { margin-bottom: 6px; }
+  .doc a { color: var(--navy); text-underline-offset: 3px; }
 
   .link-btn { padding: 0; border: 0; background: none; color: #5d6877; font: inherit; font-size: 0.86rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
   .link-btn:hover { color: var(--ink); }

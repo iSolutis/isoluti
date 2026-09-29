@@ -128,14 +128,19 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
     }
 
     // Campo invisível preenchido: é robô. Finge sucesso e não envia nada.
-    if (form.elements._gotcha.value) {
+    if (form.elements._honey.value) {
       form.reset();
       mostrarStatus('sucesso', 'Recebemos sua mensagem. Retornamos em breve.');
       return;
     }
 
     // Os dados saem antes de travar o formulário: campo desabilitado não entra no FormData.
-    const dados = new FormData(form);
+    // Vão em JSON, formato aceito pelo FormSubmit e pelo Formspree; _subject e _template
+    // definem o assunto e o layout do e-mail que chega para a SOLUTEC.
+    const dados = Object.fromEntries(new FormData(form));
+    delete dados._honey;
+    dados._subject = `Contato pelo site: ${dados.empresa}`;
+    dados._template = 'table';
     form.setAttribute('aria-busy', 'true');
     fieldset.disabled = true;
     botao.textContent = 'Enviando…';
@@ -144,10 +149,13 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
     try {
       const resposta = await fetch(CONFIG.formEndpoint, {
         method: 'POST',
-        body: dados,
-        headers: { Accept: 'application/json' },
+        body: JSON.stringify(dados),
+        headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
       });
       if (!resposta.ok) throw new Error(`HTTP ${resposta.status}`);
+      // O FormSubmit responde 200 mesmo quando recusa o envio (ex.: formulário ainda não ativado).
+      const retorno = await resposta.json().catch(() => ({}));
+      if (retorno.success === false || retorno.success === 'false') throw new Error(retorno.message || 'recusado');
       form.reset();
       form.classList.add('is-sent');
       mostrarStatus('sucesso', '<strong>Mensagem enviada.</strong> Retornamos pelo e-mail informado em breve.');

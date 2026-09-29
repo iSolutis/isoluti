@@ -73,7 +73,7 @@ Todos os `[[PREENCHER: ...]]`, com arquivo e linha.
 - JSON-LD em `index.html`: confirmar `areaServed` = Brasil.
 
 ### Jurídico
-- `js/config.js:8`: URL da política de privacidade. Sem ela, o formulário não liga. A política ainda não existe.
+- `privacidade.html`: revisar a versão inicial publicada em 29/09/2026 (base legal, prazo de guarda, CNPJ e endereço da empresa, e o compromisso de não ceder dados).
 - `index.html:577`: a quem pertencem o código e o sistema depois da entrega.
 - `index.html:581`: encerramento da manutenção (aviso prévio e o que é entregue).
 - `index.html:585`: tratamento de dados pessoais e LGPD.
@@ -85,7 +85,7 @@ Todos os `[[PREENCHER: ...]]`, com arquivo e linha.
 - `index.html:150`: link do relatório da Veracode. **Conferir o ano:** o site diz "Veracode em 2026", mas o levantamento conhecido com o número de 45% é de 2025.
 
 ### Engenharia
-- `js/config.js:6`: endpoint do serviço de formulários (Formspree, Getform ou similar).
+- `js/config.js`: depois que o FormSubmit for ativado, trocar o e-mail do endpoint pelo código que ele manda por e-mail, para o endereço não ficar exposto no código.
 - `index.html:162`: ferramentas usadas na revisão de segurança.
 - `solucoes/automacao-rotinas-fiscais.html:99`: rotinas fiscais que a SOLUTEC já automatiza.
 
@@ -93,3 +93,7 @@ Todos os `[[PREENCHER: ...]]`, com arquivo e linha.
 
 - O `robots.txt` foi criado como a spec pede, mas o site é uma página de projeto (`/solutec/`) e os buscadores só leem o `robots.txt` da raiz do domínio (`soydeoliveira-create.github.io/robots.txt`). O sitemap deve ser enviado direto no Google Search Console.
 - As fotos JPG e o `logo.png` antigos continuam no repositório. O `logo.png` é usado nos dados estruturados; as fotos JPG não são mais usadas pelo site.
+
+## Depois da publicação
+
+- 29/09/2026: formulário ligado com o FormSubmit (os envios chegam em e-mail) e página `privacidade.html` publicada, com link no rodapé de todas as páginas. O envio agora vai em JSON, com assunto "Contato pelo site: <empresa>". O primeiro envio dispara um e-mail de ativação do FormSubmit; enquanto ele não for confirmado, o formulário mostra a mensagem de erro com o link do WhatsApp.
