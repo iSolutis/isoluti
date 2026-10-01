@@ -274,3 +274,17 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   };
   window.addEventListener('scroll', checarRolagem, { passive: true });
 })();
+
+// Gráficos animam quando aparecem na tela (uma vez só).
+(() => {
+  const graficos = document.querySelectorAll('.donut, .timeline-chart');
+  if (!graficos.length || !('IntersectionObserver' in window)) return;
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('anima');
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.35 });
+  graficos.forEach((g) => obs.observe(g));
+})();

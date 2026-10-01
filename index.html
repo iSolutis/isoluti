@@ -137,7 +137,19 @@
       <p class="section-sub" style="margin-bottom:0;">Código gerado por IA sem revisão é rápido e frágil. É exatamente essa etapa que separa a nossa velocidade da velocidade arriscada.</p>
     </div>
     <div>
-      <div class="stat">45%</div>
+      <div class="stat-chart">
+        <figure class="donut" role="img" aria-label="Gráfico: 45% do código gerado por IA contém vulnerabilidades">
+          <svg viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="donut-track" cx="60" cy="60" r="50"/>
+            <circle class="donut-value" cx="60" cy="60" r="50" stroke-dasharray="141.37 314.16" transform="rotate(-90 60 60)"/>
+          </svg>
+          <span class="donut-label">45%</span>
+        </figure>
+        <ul class="donut-legend" aria-hidden="true">
+          <li><span class="sw sw-on"></span>com vulnerabilidades</li>
+          <li><span class="sw sw-off"></span>restante do código analisado</li>
+        </ul>
+      </div>
       <p>do código gerado por IA no mercado contém vulnerabilidades <span class="gloss-inline">(brechas que permitem ataques)</span> do OWASP Top 10, segundo levantamento da Veracode em 2026. Nenhum projeto nosso vai ao ar sem passar por essa verificação.</p>
       <!-- Conferir o ano: o levantamento conhecido da Veracode com esse número é de 2025. -->
       <p class="source" data-preencher hidden>Fonte: <a href="[[PREENCHER: URL do relatório da Veracode]]" target="_blank" rel="noopener">relatório da Veracode</a></p>
@@ -145,12 +157,12 @@
   </div>
   <div class="wrap review">
     <h3>Como revisamos</h3>
-    <ol class="review-steps">
-      <li><strong>Revisão de arquitetura</strong><span>Conferimos se a estrutura do sistema aguenta o uso real e o crescimento da operação.</span></li>
-      <li><strong>Análise estática</strong><span>Leitura automatizada do código em busca de erros e trechos inseguros, antes de ele rodar.</span></li>
-      <li><strong>Verificação OWASP Top 10</strong><span>Checamos, uma a uma, as falhas de segurança mais comuns e perigosas.</span></li>
-      <li><strong>Teste de acesso e permissões</strong><span>Cada perfil de usuário só vê e altera o que deve.</span></li>
-      <li><strong>Revisão final</strong><span>O sócio de engenharia e segurança aprova a entrega antes de ela ir ao ar.</span></li>
+    <ol class="review-steps flow">
+      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span><strong>Revisão de arquitetura</strong><span>Conferimos se a estrutura do sistema aguenta o uso real e o crescimento da operação.</span></li>
+      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></span><strong>Análise estática</strong><span>Leitura automatizada do código em busca de erros e trechos inseguros, antes de ele rodar.</span></li>
+      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg></span><strong>Verificação OWASP Top 10</strong><span>Checamos, uma a uma, as falhas de segurança mais comuns e perigosas.</span></li>
+      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><strong>Teste de acesso e permissões</strong><span>Cada perfil de usuário só vê e altera o que deve.</span></li>
+      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span><strong>Revisão final</strong><span>O sócio de engenharia e segurança aprova a entrega antes de ela ir ao ar.</span></li>
     </ol>
     <p class="source" data-preencher hidden>Ferramentas usadas: [[PREENCHER: ferramentas usadas]]</p>
   </div>
@@ -317,23 +329,26 @@
   <div class="wrap">
     <h2 class="section-title">Como funciona, do primeiro contato em diante</h2>
     <p class="section-sub">A segurança não é uma etapa no final. Ela entra em cada passo, sem atrasar nenhum deles.</p>
-    <div class="steps">
+    <div class="steps flow">
       <div class="step">
-        <div class="num">01</div>
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <div class="num">Etapa 01</div>
         <h3>Diagnóstico</h3>
-        <p>Uma conversa para entender seu processo e o gargalo real. A partir dela, apresentamos prazo e valor fechado da solução.</p>
+        <p>Uma conversa para entender seu processo e o gargalo real. Você sai com prazo e valor fechados.</p>
         <div class="price">Valor definido após a conversa</div>
       </div>
       <div class="step">
-        <div class="num">02</div>
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
+        <div class="num">Etapa 02</div>
         <h3>Desenvolvimento</h3>
-        <p>A IA acelera a construção, com especificação aprovada antes do código. Antes de ir ao ar, a engenharia revisa tudo e verifica vulnerabilidades.</p>
+        <p>A IA acelera a construção, com especificação aprovada antes do código. A engenharia revisa tudo antes de ir ao ar.</p>
         <div class="price">Preço fechado, nunca por hora</div>
       </div>
       <div class="step">
-        <div class="num">03</div>
+        <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+        <div class="num">Etapa 03</div>
         <h3>Manutenção mensal</h3>
-        <p>Hospedagem, monitoramento, correções, atualizações de segurança e pequenas evoluções. Sistema sem manutenção vira passivo, por isso ela vem junto.</p>
+        <p>Hospedagem, monitoramento, correções, atualizações de segurança e pequenas evoluções.</p>
         <div class="price">Mensalidade previsível</div>
       </div>
     </div>
@@ -361,6 +376,15 @@
     <div class="offer-block" id="faixas">
       <h3 class="offer-heading">Qual é o tamanho do seu projeto?</h3>
       <p class="offer-lead">Cada sistema é diferente. Depois de uma conversa para entender seu processo, apresentamos o valor fechado do projeto e da manutenção.</p>
+      <figure class="timeline-chart" role="img" aria-label="Prazo de construção por faixa: Simples, 2 a 4 semanas; Média, 4 a 8 semanas; Complexa, 8 a 14 semanas.">
+        <figcaption>Prazo de construção, em semanas</figcaption>
+        <div class="tl-rows" aria-hidden="true">
+          <div class="tl-row"><span class="tl-name">Simples<small>2 a 4 sem.</small></span><span class="tl-track"><span class="tl-bar" style="left:14.2857%;width:14.2857%"><span class="tl-val">2 a 4 sem.</span></span></span></div>
+          <div class="tl-row"><span class="tl-name">Média<small>4 a 8 sem.</small></span><span class="tl-track"><span class="tl-bar" style="left:28.5714%;width:28.5714%"><span class="tl-val">4 a 8 sem.</span></span></span></div>
+          <div class="tl-row"><span class="tl-name">Complexa<small>8 a 14 sem.</small></span><span class="tl-track"><span class="tl-bar" style="left:57.1429%;width:42.8571%"><span class="tl-val">8 a 14 sem.</span></span></span></div>
+          <div class="tl-row tl-axis-row"><span class="tl-name"></span><span class="tl-axis"><span style="left:0.0000%">0</span><span style="left:14.2857%">2</span><span style="left:28.5714%">4</span><span style="left:42.8571%">6</span><span style="left:57.1429%">8</span><span style="left:71.4286%">10</span><span style="left:85.7143%">12</span><span style="left:100.0000%">14</span></span></div>
+        </div>
+      </figure>
       <div class="o-tiers">
         <div class="o-tier">
           <div class="o-tier-body">
