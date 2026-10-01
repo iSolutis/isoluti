@@ -1,4 +1,4 @@
-# Melhorias de marketing do site isolutis (antes SOLUTEC)
+# Melhorias de marketing do site iSolutis (antes SOLUTEC)
 
 Branch `melhorias-marketing`, um commit por tarefa, feito a partir da spec baseada na avaliação de 29/09/2026. Nada foi publicado na `main`.
 
@@ -96,3 +96,4 @@ Todos os `[[PREENCHER: ...]]`, com arquivo e linha.
 
 - 29/09/2026: formulário ligado com o FormSubmit (os envios chegam em e-mail) e página `privacidade.html` publicada, com link no rodapé de todas as páginas. O envio agora vai em JSON, com assunto "Contato pelo site: <empresa>". O primeiro envio dispara um e-mail de ativação do FormSubmit; enquanto ele não for confirmado, o formulário mostra a mensagem de erro com o link do WhatsApp.
 - 01/10/2026: troca de marca de SOLUTEC para **isolutis — Tecnologia que impulsiona**. Novo símbolo "iS" em SVG (`img/logo.svg`), favicon, ícone de celular, `logo.png` e imagem de compartilhamento 1200x630 (`img/og-image.png`) gerados a partir dele. Paleta trocada do dourado para o turquesa da marca (`#22C1CC`, com `#0D727A` em textos sobre fundo claro para manter o contraste AA) e o azul-marinho `#1B2B4B`. O endereço do site e o nome do repositório continuam `solutec`.
+- 01/10/2026 (mais tarde): logo oficial aplicada. Wordmark "iSolutis" no cabeçalho e logo principal com slogan no rodapé (versão colorida gerada a partir do arquivo reverso `isolutis_logo_principal_reverso.png`), símbolo oficial em favicon, ícone de celular e `logo.png`, e imagem de compartilhamento com o logo reverso. Grafia passou a ser **iSolutis**. Paleta oficial aplicada em todo o site: Azul Profundo `#01376D`, Ciano Energia `#01CADC`, Branco `#FFFFFF` e Cinza Neutro `#E9EEF2`; tons intermediários são essas cores com transparência. O ciano não é usado como texto sobre fundo claro (contraste 2:1); lá os destaques ficam em Azul Profundo. Única exceção à paleta: o vermelho claro das mensagens de erro do formulário.
