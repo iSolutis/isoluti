@@ -7,7 +7,7 @@ window.SOLUTEC_CONFIG = {
   formEndpoint: 'https://formsubmit.co/ajax/soydeoliveira@gmail.com',
   // Endereço da política de privacidade, linkada no consentimento LGPD do formulário.
   // Endereço completo, porque o link também aparece nas páginas de solucoes/.
-  politicaUrl: 'https://soydeoliveira-create.github.io/solutec/privacidade.html',
+  politicaUrl: 'https://isolutis.com.br/privacidade.html',
   // Link de agendamento (Calendly, Cal.com). Sem ele, o botão "Agendar horário" não aparece.
   agendaUrl: '[[PREENCHER: URL Calendly/Cal.com]]',
   // Medição: só carregam depois que o visitante aceita os cookies.

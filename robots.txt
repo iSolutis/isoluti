@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soydeoliveira-create.github.io/solutec/sitemap.xml
+Sitemap: https://isolutis.com.br/sitemap.xml
