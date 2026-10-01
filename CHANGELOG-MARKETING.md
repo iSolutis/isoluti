@@ -1,4 +1,4 @@
-# Melhorias de marketing do site SOLUTEC
+# Melhorias de marketing do site isolutis (antes SOLUTEC)
 
 Branch `melhorias-marketing`, um commit por tarefa, feito a partir da spec baseada na avaliação de 29/09/2026. Nada foi publicado na `main`.
 
@@ -69,7 +69,6 @@ Todos os `[[PREENCHER: ...]]`, com arquivo e linha.
 - `solucoes/crm-sob-medida.html:99`: o que um CRM da SOLUTEC costuma incluir.
 - `solucoes/sistema-ordens-de-servico.html:99`: faixa típica e o que um sistema de OS inclui.
 - `js/config.js:10`: link do Calendly ou Cal.com.
-- `index.html` (título): confirmar o novo título "SOLUTEC | Software sob medida com preço fechado e segurança" antes de publicar.
 - JSON-LD em `index.html`: confirmar `areaServed` = Brasil.
 
 ### Jurídico
@@ -81,7 +80,6 @@ Todos os `[[PREENCHER: ...]]`, com arquivo e linha.
 ### Marketing
 - `js/config.js:12`: ID do GA4 (G-XXXXXXX).
 - `js/config.js:13`: ID do Meta Pixel.
-- `index.html:26-29`: imagem de compartilhamento 1200x630. Ao criar, descomentar as linhas e trocar `twitter:card` para `summary_large_image`.
 - `index.html:150`: link do relatório da Veracode. **Conferir o ano:** o site diz "Veracode em 2026", mas o levantamento conhecido com o número de 45% é de 2025.
 
 ### Engenharia
@@ -97,3 +95,4 @@ Todos os `[[PREENCHER: ...]]`, com arquivo e linha.
 ## Depois da publicação
 
 - 29/09/2026: formulário ligado com o FormSubmit (os envios chegam em e-mail) e página `privacidade.html` publicada, com link no rodapé de todas as páginas. O envio agora vai em JSON, com assunto "Contato pelo site: <empresa>". O primeiro envio dispara um e-mail de ativação do FormSubmit; enquanto ele não for confirmado, o formulário mostra a mensagem de erro com o link do WhatsApp.
+- 01/10/2026: troca de marca de SOLUTEC para **isolutis — Tecnologia que impulsiona**. Novo símbolo "iS" em SVG (`img/logo.svg`), favicon, ícone de celular, `logo.png` e imagem de compartilhamento 1200x630 (`img/og-image.png`) gerados a partir dele. Paleta trocada do dourado para o turquesa da marca (`#22C1CC`, com `#0D727A` em textos sobre fundo claro para manter o contraste AA) e o azul-marinho `#1B2B4B`. O endereço do site e o nome do repositório continuam `solutec`.

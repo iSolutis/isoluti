@@ -136,7 +136,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
 
     // Os dados saem antes de travar o formulário: campo desabilitado não entra no FormData.
     // Vão em JSON, formato aceito pelo FormSubmit e pelo Formspree; _subject e _template
-    // definem o assunto e o layout do e-mail que chega para a SOLUTEC.
+    // definem o assunto e o layout do e-mail que chega para a isolutis.
     const dados = Object.fromEntries(new FormData(form));
     delete dados._honey;
     dados._subject = `Contato pelo site: ${dados.empresa}`;
@@ -164,7 +164,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
       track('submit_form', { local: 'contato' });
     } catch (erro) {
       fieldset.disabled = false;
-      mostrarStatus('erro', 'Não conseguimos enviar agora. Tente de novo em instantes ou <a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20SOLUTEC." target="_blank" rel="noopener">fale pelo WhatsApp</a>.');
+      mostrarStatus('erro', 'Não conseguimos enviar agora. Tente de novo em instantes ou <a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20isolutis." target="_blank" rel="noopener">fale pelo WhatsApp</a>.');
     } finally {
       form.removeAttribute('aria-busy');
       botao.textContent = textoBotao;
