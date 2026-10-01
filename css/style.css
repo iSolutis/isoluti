@@ -96,7 +96,7 @@
     mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, black 10%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, black 10%, transparent 75%);
   }
-  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 1.3fr 0.7fr; gap: 48px; align-items: center; }
   .hero .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #01376D; margin-bottom: 22px; background: #fff; border: 1px solid rgba(1,202,220,0.55); padding: 6px 12px; border-radius: 3px; }
   .hero .tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
   .hero h1 { font-size: clamp(1.9rem, 3.2vw, 2.45rem); font-weight: 600; line-height: 1.1; margin: 0 0 20px; max-width: 22ch; letter-spacing: -0.02em; text-wrap: balance; color: var(--navy-deep); }
@@ -114,8 +114,10 @@
   .hero .fineprint b { color: var(--ink); font-weight: 600; }
 
   /* Hero video — the memorable element */
+  /* Vídeo vertical (768x1344, proporção 4:7), em moldura de celular */
   .hero-video {
-    aspect-ratio: 16 / 9; overflow: hidden; background: #000; border-radius: 8px;
+    justify-self: center; width: min(100%, 330px);
+    aspect-ratio: 4 / 7; overflow: hidden; background: #01376D; border-radius: 18px;
     border: 1px solid rgba(1,202,220,0.45); box-shadow: 0 30px 60px -24px rgba(1,55,109,0.45); transform: rotate(1.2deg);
   }
   .brand-video { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -463,7 +465,7 @@
 
   @media (max-width: 900px) {
     .hero .wrap, .final .wrap, .why-grid { grid-template-columns: 1fr; }
-    .hero-video { transform: none; max-width: 720px; }
+    .hero-video { transform: none; width: min(100%, 300px); }
     .problem-grid { grid-template-columns: 1fr 1fr; }
     .cases, .team-grid { grid-template-columns: 1fr 1fr; }
     .results-cases { grid-template-columns: 1fr; }
