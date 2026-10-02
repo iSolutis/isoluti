@@ -290,22 +290,64 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
 })();
 
 // Carrossel: setas andam um cartão por vez e ficam desabilitadas nas pontas.
+// Passa sozinho a cada 4 s (volta ao início no fim); pausa com mouse em cima, toque, foco,
+// fora da tela ou pelo botão de pausa. Não passa sozinho para quem pediu menos movimento.
 document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
   const faixa = document.getElementById(nav.dataset.carouselNav);
   if (!faixa) return;
-  const [anterior, proximo] = nav.querySelectorAll('.carousel-btn');
+  const anterior = nav.querySelector('[data-dir="-1"]');
+  const proximo = nav.querySelector('[data-dir="1"]');
+  const botaoPlay = nav.querySelector('[data-play]');
+  const INTERVALO = 4000;
   const passo = () => {
     const cartao = faixa.firstElementChild;
     const gap = parseFloat(getComputedStyle(faixa).columnGap) || 0;
     return cartao ? cartao.getBoundingClientRect().width + gap : faixa.clientWidth;
   };
+  const noFim = () => faixa.scrollLeft + faixa.clientWidth >= faixa.scrollWidth - 2;
   const atualizar = () => {
     anterior.disabled = faixa.scrollLeft <= 2;
-    proximo.disabled = faixa.scrollLeft + faixa.clientWidth >= faixa.scrollWidth - 2;
+    proximo.disabled = noFim();
   };
+  const andar = (dir) => faixa.scrollBy({ left: passo() * dir, behavior: 'smooth' });
+
+  // Passagem automática
+  const automatico = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let pausadoPeloUsuario = false, interagindo = false, visivel = false, timer = null;
+  const parar = () => { clearInterval(timer); timer = null; };
+  const talvezRodar = () => {
+    parar();
+    if (!automatico || pausadoPeloUsuario || interagindo || !visivel || document.hidden) return;
+    timer = setInterval(() => {
+      if (noFim()) faixa.scrollTo({ left: 0, behavior: 'smooth' });
+      else andar(1);
+    }, INTERVALO);
+  };
+  if (automatico && botaoPlay) {
+    botaoPlay.hidden = false;
+    botaoPlay.addEventListener('click', () => {
+      pausadoPeloUsuario = !pausadoPeloUsuario;
+      botaoPlay.setAttribute('aria-pressed', String(pausadoPeloUsuario));
+      botaoPlay.setAttribute('aria-label', pausadoPeloUsuario ? 'Retomar a passagem automática' : 'Pausar a passagem automática');
+      talvezRodar();
+    });
+    const segurar = () => { interagindo = true; talvezRodar(); };
+    const soltar = () => { interagindo = false; talvezRodar(); };
+    [faixa, nav].forEach((el) => {
+      el.addEventListener('mouseenter', segurar);
+      el.addEventListener('mouseleave', soltar);
+      el.addEventListener('focusin', segurar);
+      el.addEventListener('focusout', soltar);
+    });
+    faixa.addEventListener('touchstart', segurar, { passive: true });
+    faixa.addEventListener('touchend', () => setTimeout(soltar, INTERVALO), { passive: true });
+    new IntersectionObserver(([e]) => { visivel = e.isIntersecting; talvezRodar(); }, { threshold: 0.4 }).observe(faixa);
+    document.addEventListener('visibilitychange', talvezRodar);
+  }
+
   nav.addEventListener('click', (e) => {
-    const botao = e.target.closest('.carousel-btn');
-    if (botao) faixa.scrollBy({ left: passo() * Number(botao.dataset.dir), behavior: 'smooth' });
+    const botao = e.target.closest('[data-dir]');
+    if (botao) andar(Number(botao.dataset.dir));
   });
   faixa.addEventListener('scroll', atualizar, { passive: true });
   window.addEventListener('resize', atualizar);
