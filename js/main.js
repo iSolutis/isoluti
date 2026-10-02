@@ -353,3 +353,66 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
   window.addEventListener('resize', atualizar);
   atualizar();
 });
+
+// Equipe: "Ver perfil completo" abre uma janela com tudo da pessoa.
+// Sem suporte a <dialog> (ou sem JS), o cartão continua expandindo no lugar.
+(() => {
+  const cartoes = document.querySelectorAll('.team-card');
+  if (!cartoes.length || typeof HTMLDialogElement !== 'function') return;
+
+  const janela = document.createElement('dialog');
+  janela.className = 'team-modal';
+  janela.setAttribute('aria-labelledby', 'team-modal-nome');
+  janela.innerHTML = '<button type="button" class="team-modal-fechar" aria-label="Fechar"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button><div class="team-modal-corpo"></div>';
+  document.body.appendChild(janela);
+  const corpo = janela.querySelector('.team-modal-corpo');
+  document.documentElement.classList.add('tem-janela');
+
+  const fechar = () => janela.close();
+  janela.querySelector('.team-modal-fechar').addEventListener('click', fechar);
+  // Clique fora da caixa (no fundo escurecido) fecha.
+  janela.addEventListener('click', (e) => { if (e.target === janela) fechar(); });
+  janela.addEventListener('close', () => { document.documentElement.classList.remove('modal-aberto'); });
+
+  const copia = (el) => (el ? el.cloneNode(true) : document.createTextNode(''));
+
+  cartoes.forEach((cartao) => {
+    const mais = cartao.querySelector('.team-more');
+    const resumo = mais && mais.querySelector('summary');
+    if (!resumo) return;
+    resumo.addEventListener('click', (e) => {
+      e.preventDefault();
+      corpo.textContent = '';
+      const foto = cartao.querySelector('.team-photo img');
+      const lado = document.createElement('div');
+      lado.className = 'team-modal-foto';
+      if (foto) {
+        const img = document.createElement('img');
+        img.src = foto.currentSrc || foto.src; img.alt = foto.alt; img.width = 640; img.height = 640;
+        lado.appendChild(img);
+      }
+      const info = document.createElement('div');
+      info.className = 'team-modal-info';
+      info.appendChild(copia(cartao.querySelector('.role-tag')));
+      const nome = document.createElement('h2');
+      nome.id = 'team-modal-nome';
+      nome.textContent = cartao.querySelector('.team-caption h3').textContent;
+      info.appendChild(nome);
+      info.appendChild(copia(cartao.querySelector('.area-pill')));
+      const frase = document.createElement('p');
+      frase.className = 'team-quote';
+      frase.textContent = cartao.querySelector('.team-quote').textContent;
+      info.appendChild(frase);
+      [...mais.children].forEach((filho) => { if (filho.tagName !== 'SUMMARY') info.appendChild(copia(filho)); });
+      corpo.append(lado, info);
+      document.documentElement.classList.add('modal-aberto');
+      janela.showModal();
+      corpo.scrollTop = 0;
+    });
+    // Clicar em qualquer parte do cartão (menos em links) também abre a janela.
+    cartao.addEventListener('click', (e) => {
+      if (e.target.closest('a, summary')) return;
+      resumo.click();
+    });
+  });
+})();
