@@ -311,7 +311,8 @@
   .btn.outline-gold { background: transparent; border-color: var(--gold); color: var(--gold-bright); }
   .btn.outline-gold:hover { background: rgba(20,188,198,0.12); }
 
-  .o-consult { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .o-consult { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 1100px) { .o-consult { grid-template-columns: 1fr 1fr; } }
   .o-consult .o-card { display: flex; flex-direction: column; }
   .o-consult h4 { margin: 0 0 10px; font-size: 1.2rem; font-weight: 600; line-height: 1.25; }
   .o-consult p { margin: 0 0 20px; color: #c0cdda; font-size: 0.88rem; line-height: 1.55; }
@@ -344,7 +345,8 @@
 
   /* Team */
   #equipe { background: var(--card); }
-  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  @media (max-width: 1100px) { .team-grid { grid-template-columns: 1fr 1fr; } }
   .team-card {
     display: flex; flex-direction: column; overflow: hidden; background: #fff;
     border: 1px solid var(--line); border-radius: 10px;
