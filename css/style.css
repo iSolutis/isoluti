@@ -574,3 +574,30 @@
     .tl-name small { display: block; color: #b3c3d3; font-size: 0.72rem; font-weight: 400; }
     .tl-val { display: none; }
   }
+
+  /* Carrossel dos tipos de sistema: faixa que rola para o lado */
+  .carousel-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 28px; }
+  .carousel-head .section-sub { margin-bottom: 0; }
+  .carousel-nav { display: flex; gap: 10px; flex: none; }
+  .carousel-btn {
+    display: grid; place-items: center; width: 46px; height: 46px; padding: 0; border-radius: 50%; cursor: pointer;
+    background: var(--paper); border: 1px solid rgba(1,55,109,0.25); color: var(--navy); transition: background 0.15s ease, border-color 0.15s ease;
+  }
+  .carousel-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .carousel-btn:hover:not(:disabled) { background: var(--gold); border-color: var(--gold); }
+  .carousel-btn:disabled { opacity: 0.35; cursor: default; }
+  .cases.carousel {
+    display: flex; gap: 20px; overflow-x: auto; overscroll-behavior-x: contain; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+    padding: 8px 2px 18px; scrollbar-width: thin; scrollbar-color: var(--gold) var(--card);
+  }
+  .cases.carousel::-webkit-scrollbar { height: 8px; }
+  .cases.carousel::-webkit-scrollbar-track { background: var(--card); border-radius: 4px; }
+  .cases.carousel::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 4px; }
+  .cases.carousel:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+  .cases.carousel .case { flex: 0 0 calc((100% - 60px) / 3.4); scroll-snap-align: start; }
+  @media (prefers-reduced-motion: reduce) { .cases.carousel { scroll-behavior: auto; } }
+  @media (max-width: 900px) { .cases.carousel .case { flex-basis: calc((100% - 20px) / 2.2); } }
+  @media (max-width: 640px) {
+    .carousel-head { align-items: flex-start; flex-direction: column; gap: 14px; }
+    .cases.carousel .case { flex-basis: 82%; }
+  }

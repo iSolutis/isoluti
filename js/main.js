@@ -288,3 +288,26 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   }, { threshold: 0.35 });
   graficos.forEach((g) => obs.observe(g));
 })();
+
+// Carrossel: setas andam um cartão por vez e ficam desabilitadas nas pontas.
+document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
+  const faixa = document.getElementById(nav.dataset.carouselNav);
+  if (!faixa) return;
+  const [anterior, proximo] = nav.querySelectorAll('.carousel-btn');
+  const passo = () => {
+    const cartao = faixa.firstElementChild;
+    const gap = parseFloat(getComputedStyle(faixa).columnGap) || 0;
+    return cartao ? cartao.getBoundingClientRect().width + gap : faixa.clientWidth;
+  };
+  const atualizar = () => {
+    anterior.disabled = faixa.scrollLeft <= 2;
+    proximo.disabled = faixa.scrollLeft + faixa.clientWidth >= faixa.scrollWidth - 2;
+  };
+  nav.addEventListener('click', (e) => {
+    const botao = e.target.closest('.carousel-btn');
+    if (botao) faixa.scrollBy({ left: passo() * Number(botao.dataset.dir), behavior: 'smooth' });
+  });
+  faixa.addEventListener('scroll', atualizar, { passive: true });
+  window.addEventListener('resize', atualizar);
+  atualizar();
+});

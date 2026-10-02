@@ -61,7 +61,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=29">
+<link rel="stylesheet" href="css/style.css?v=30">
 </head>
 <body>
 
@@ -201,8 +201,14 @@
 <section id="exemplos" style="padding-top: 0;">
   <div class="wrap">
     <h2 class="section-title">O tipo de sistema que construímos</h2>
-    <p class="section-sub">Alguns exemplos do que já sabemos construir. Se a sua necessidade for outra, fazemos de acordo com a demanda.</p>
-    <div class="cases">
+    <div class="carousel-head">
+      <p class="section-sub">Alguns exemplos do que já sabemos construir. Se a sua necessidade for outra, fazemos de acordo com a demanda.</p>
+      <div class="carousel-nav" data-carousel-nav="casos">
+        <button type="button" class="carousel-btn" data-dir="-1" aria-label="Ver sistemas anteriores" aria-controls="casos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <button type="button" class="carousel-btn" data-dir="1" aria-label="Ver mais sistemas" aria-controls="casos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
+      </div>
+    </div>
+    <div class="cases carousel" id="casos" tabindex="0" role="region" aria-label="Tipos de sistema que construímos. Role para o lado para ver todos.">
       <article class="case">
         <div class="case-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>CRM</h3>
@@ -698,7 +704,7 @@
   </div>
 </div>
 
-<script src="js/config.js?v=29"></script>
-<script src="js/main.js?v=29"></script>
+<script src="js/config.js?v=30"></script>
+<script src="js/main.js?v=30"></script>
 </body>
 </html>
