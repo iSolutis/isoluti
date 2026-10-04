@@ -344,7 +344,9 @@
 
   /* Team */
   #equipe { background: var(--card); }
-  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; align-items: start; }
+  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  /* Sem JS (cartão expande no lugar), cada cartão cresce sozinho */
+  html:not(.tem-janela) .team-grid { align-items: start; }
   @media (max-width: 1100px) { .team-grid { grid-template-columns: 1fr 1fr; } }
   .team-card {
     display: flex; flex-direction: column; overflow: hidden; background: #fff;
@@ -673,3 +675,6 @@
   .tem-janela .team-more summary::after { transform: rotate(-45deg) translateY(-1px); }
   .tem-janela .team-card { cursor: pointer; }
   .tem-janela .team-card:hover .team-more summary .txt-mais { text-decoration: underline; text-decoration-color: var(--gold); text-decoration-thickness: 2px; text-underline-offset: 4px; }
+  /* Título opcional acima das credenciais (ex.: "Formação") */
+  .cred-label { width: 100%; margin: 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
+  .team-card .cred-label + ul.credentials, .team-modal-info .cred-label + ul.credentials { border-top: 0; padding-top: 10px; }
