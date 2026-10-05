@@ -914,8 +914,8 @@
     .band p.section-sub, #problema p.section-sub, #investimento > .wrap > p.section-sub,
     #equipe p.section-sub, .offer-lead { display: none; }
 
-    /* Topo: um botão principal; o secundário sai */
-    .hero .btn.ghost-light { display: none; }
+    /* Topo: etiqueta e título bastam; a frase de público e o botão secundário saem */
+    .hero .for-whom, .hero .btn.ghost-light { display: none; }
 
     /* Soluções: o carrossel já desliza com o dedo; as setas saem */
     .carousel-nav { display: none; }
