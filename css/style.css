@@ -827,3 +827,182 @@
     .tem-revelar .revela, .tem-revelar .flow > :not(:last-child)::after { opacity: 1; transform: none; transition: none; }
     .btn, .btn:hover { transform: none; }
   }
+
+  /* ---------- Celular: vídeo em tela cheia, faixas deslizantes e divisões claras ---------- */
+
+  /* Rótulo de seção com traço: marca o começo de cada parte */
+  .eyebrow { display: flex; align-items: center; gap: 10px; }
+  .eyebrow::before { content: ""; width: 22px; height: 2px; background: var(--gold); flex: none; }
+
+  /* Barra do WhatsApp: com JS, só aparece depois dos botões do topo e some no contato */
+  .tem-barra .sticky-cta { transition: transform 0.3s ease; }
+  .tem-barra:not(.mostra-barra) .sticky-cta { transform: translateY(110%); }
+
+  @media (max-width: 640px) {
+    /* Topo: o vídeo sobe para logo abaixo do título e ocupa a largura toda */
+    .hero { padding-bottom: 0; background: #E9EEF2; }
+    .hero .wrap { display: flex; flex-direction: column; align-items: stretch; gap: 0; }
+    .hero .wrap > div:first-child { display: contents; }
+    .hero .tag { order: 1; align-self: flex-start; }
+    .hero .for-whom { order: 2; }
+    .hero h1 { order: 3; margin-bottom: 22px; }
+    .hero-video { order: 4; }
+    .hero p.lede { order: 5; margin-top: 24px; }
+    .hero-actions { order: 6; }
+    .hero .fineprint { order: 7; padding-bottom: 36px; }
+    .hero-video {
+      margin: 0 -20px; width: auto; aspect-ratio: auto; overflow: visible;
+      border: 0; border-radius: 0; box-shadow: none; background: none;
+    }
+    .brand-video { aspect-ratio: 16 / 9; height: auto; background: var(--navy); }
+    .video-som { position: static; margin: 12px 20px 0; box-shadow: none; }
+
+    /* Seções alternam fundo; o primeiro bloco depois do topo fica branco com linha */
+    #exemplos { border-top: 1px solid var(--line); }
+    #rapido-seguro, #problema, #duvidas { background: var(--paper); }
+    section { padding: 56px 0; }
+    .eyebrow { margin-bottom: 10px; }
+
+    /* Cartões em faixa que desliza para o lado, com o próximo aparecendo na borda */
+    .team-grid, .team-integrada ul {
+      display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+      margin: 0 -20px; padding: 4px 20px 16px; scroll-padding: 0 20px; scrollbar-width: none;
+      background: none; border: 0;
+    }
+    .team-grid::-webkit-scrollbar, .team-integrada ul::-webkit-scrollbar { display: none; }
+    .team-grid > *, .team-integrada li {
+      flex: 0 0 84%; scroll-snap-align: start;
+    }
+    .problem-cell { border: 1px solid var(--line); border-radius: 8px; }
+    .team-grid { align-items: stretch; }
+    .team-integrada { padding: 22px 0 6px; overflow: hidden; }
+    .team-integrada h3 { padding: 0 18px; }
+    .team-integrada ul { margin: 0; padding: 4px 18px 16px; }
+    .team-integrada li { flex-basis: 78%; }
+    .o-tier .what { min-height: 0; }
+    .o-tier-foot strong { white-space: nowrap; }
+
+    /* Dica de deslizar, escrita pelo JS abaixo de cada faixa */
+    .dica-deslize { display: flex; align-items: center; gap: 8px; margin: 2px 0 0; font-size: 0.8rem; color: var(--muted); }
+    .dica-deslize::after { content: "→"; color: var(--gold); font-weight: 700; animation: desliza 1.6s ease-in-out infinite; }
+    .offer .dica-deslize, .band .dica-deslize { color: #b3c3d3; }
+    @keyframes desliza { 50% { transform: translateX(5px); } }
+  }
+  @media (min-width: 641px) { .dica-deslize { display: none; } }
+  @media (prefers-reduced-motion: reduce) { .dica-deslize::after { animation: none; } .tem-barra .sticky-cta { transition: none; } }
+
+  /* Celular: cartões empilham ao rolar. Cada um gruda no topo e o próximo desliza por cima;
+     o de baixo encolhe e escurece um pouco (escala e brilho vêm do js/main.js). */
+  @media (max-width: 640px) {
+    .empilha { display: block; background: none; border: 0; margin: 0; padding: 0; }
+    .empilha > * {
+      position: sticky; top: calc(84px + var(--i, 0) * 12px); margin: 0 0 16px;
+      transform-origin: center top; will-change: transform;
+      box-shadow: 0 -10px 30px -18px rgba(1,55,109,0.45);
+    }
+    .empilha > *:last-child { margin-bottom: 0; }
+    .problem-grid.empilha > * { background: var(--paper); }
+    .tem-revelar .empilha > .revela { opacity: 1; transform: none; transition: none; }
+    .offer .empilha > * { box-shadow: 0 -12px 30px -14px rgba(0,0,0,0.55); }
+  }
+
+  /* Celular: só o essencial. Explicações, legendas e blocos repetidos ficam para telas maiores;
+     no celular cada seção mostra título, a informação-chave e o próximo passo. */
+  @media (max-width: 640px) {
+    /* Subtítulos explicativos das seções (o título e o rótulo já dizem do que se trata) */
+    #exemplos p.section-sub, #como-funciona p.section-sub, #rapido-seguro p.section-sub,
+    .band p.section-sub, #problema p.section-sub, #investimento > .wrap > p.section-sub,
+    #equipe p.section-sub, .offer-lead { display: none; }
+
+    /* Topo: um botão principal; o secundário sai */
+    .hero .btn.ghost-light { display: none; }
+
+    /* Soluções: o carrossel já desliza com o dedo; as setas saem */
+    .carousel-nav { display: none; }
+    .carousel-head { margin-bottom: 8px; }
+
+    /* Prazo e segurança: ficam as listas, sai a frase de apoio de cada coluna */
+    .twin .how { display: none; }
+    .twin > div { padding: 24px 20px; }
+
+    /* Revisão: fica o número e os nomes das etapas; saem a legenda do gráfico e as descrições */
+    .donut-legend, .review-steps.flow li > span:not(.flow-icon) { display: none; }
+    .review { margin-top: 36px; }
+    .review-steps.flow { gap: 18px; }
+
+    /* Alternativas: os quatro cartões bastam; a tabela repetia a comparação */
+    .compare { display: none; }
+
+    /* Investimento: os dois caminhos ficam só com o nome; faixas sem gráfico e sem exemplos */
+    .paths .o-card p { display: none; }
+    .timeline-chart, .o-tier .o-label, .o-tier ul { display: none; }
+    .o-tier .what { margin-bottom: 0; }
+    .o-consult .o-card p { display: none; }
+    .o-consult h4 { margin-bottom: 4px; }
+    .o-lead-by { padding-top: 10px; }
+    .offer-block { margin-top: 44px; }
+
+    /* Equipe: cartões com nome, área e frase; a leitura integrada repetia o mesmo */
+    .team-integrada { display: none; }
+
+    /* Contato: o formulário ainda desligado ocupava a tela sem servir para nada */
+    .contact-wrap:has(.contact-form.is-off) { display: none; }
+    #contato:has(.contact-form.is-off) .ctas small { display: none; }
+  }
+
+  /* Celular: últimas seções compactas */
+  @media (max-width: 640px) {
+    /* Investimento: os dois "caminhos" só apontavam para os blocos logo abaixo */
+    .paths { display: none; }
+    .o-tier-body { padding: 16px 18px 12px; }
+    .o-tier h4 { font-size: 1.15rem; margin-bottom: 4px; }
+    .o-tier-foot { padding: 10px 18px; }
+    .o-strip { padding: 14px 16px; gap: 10px; }
+    .o-checks { gap: 6px 14px; }
+    .o-consult .o-card { padding: 16px 18px; }
+    .o-consult h4 { font-size: 1.05rem; }
+
+    /* Sócios: lista compacta. Foto redonda, nome e área; tocar abre o perfil completo */
+    .team-grid { display: grid; grid-template-columns: 1fr; gap: 10px; overflow: visible; margin: 0; padding: 0; }
+    .team-grid + .dica-deslize { display: none; }
+    .team-card {
+      display: grid; grid-template-columns: 64px 1fr 16px; grid-template-areas: "foto nome seta" "foto area seta";
+      align-items: center; gap: 2px 14px; padding: 12px 16px 12px 12px; border-radius: 12px;
+    }
+    .team-card:hover { transform: none; }
+    .team-card::after {
+      content: ""; grid-area: seta; width: 9px; height: 9px; border: solid var(--gold); border-width: 0 2px 2px 0;
+      transform: rotate(-45deg); justify-self: center;
+    }
+    .team-photo { grid-area: foto; width: 64px; height: 64px; border-radius: 50%; }
+    .team-caption { grid-area: nome; align-self: end; padding: 0; background: none; }
+    .team-caption h3 { color: var(--navy); font-size: 1.08rem; }
+    .team-card .role-tag, .team-quote, .team-more { display: none; }
+    .team-body { grid-area: area; align-self: start; padding: 0; border: 0; }
+    .team-card .area-pill { margin: 0; padding: 0; background: none; color: var(--muted); font-size: 0.82rem; font-weight: 500; line-height: 1.35; }
+
+    /* Dúvidas: perguntas mais justas */
+    .faq summary { padding: 15px 32px 15px 0; font-size: 1rem; line-height: 1.35; }
+    .faq summary::after { top: 11px; }
+
+    /* Contato: formulário enxuto (o cargo, opcional, fica para telas maiores) */
+    .final .wrap { gap: 24px; }
+    .final .wrap.contact-wrap { margin-top: 32px; }
+    .contact-form { padding: 20px 16px; }
+    .contact-form h3 { font-size: 1.15rem; margin-bottom: 12px; }
+    .field:has(#f-cargo) { display: none; }
+    .field textarea { min-height: 84px; }
+    .field-error { min-height: 0; margin: 4px 0 10px; }
+
+    /* Rodapé */
+    footer { padding: 26px 0 30px; }
+    footer .wrap { gap: 12px; }
+    .logo-footer { height: 52px; }
+  }
+
+  /* Vídeo sem controles no celular: some também o botão de play que o iPhone desenha por cima */
+  .brand-video.sem-controles { cursor: pointer; }
+  .brand-video.sem-controles::-webkit-media-controls,
+  .brand-video.sem-controles::-webkit-media-controls-panel,
+  .brand-video.sem-controles::-webkit-media-controls-start-playback-button,
+  .brand-video.sem-controles::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; }
