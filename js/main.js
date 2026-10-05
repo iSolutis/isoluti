@@ -439,3 +439,61 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
     });
   });
 })();
+
+// Menu: abaixo de 1080px os links viram uma gaveta aberta pelo botão.
+(() => {
+  const botao = document.querySelector('.menu-toggle');
+  const menu = document.getElementById('menu');
+  const header = document.querySelector('header.top');
+  if (!botao || !menu || !header) return;
+  document.documentElement.classList.add('tem-menu');
+  botao.hidden = false;
+  const alternar = (abrir) => {
+    menu.classList.toggle('aberto', abrir);
+    botao.setAttribute('aria-expanded', String(abrir));
+    botao.setAttribute('aria-label', abrir ? 'Fechar menu' : 'Abrir menu');
+  };
+  botao.addEventListener('click', () => alternar(!menu.classList.contains('aberto')));
+  menu.addEventListener('click', (e) => { if (e.target.closest('a')) alternar(false); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && menu.classList.contains('aberto')) { alternar(false); botao.focus(); } });
+  document.addEventListener('click', (e) => { if (!header.contains(e.target)) alternar(false); });
+
+  // Sombra no cabeçalho depois que a página começa a rolar.
+  const marcar = () => header.classList.toggle('rolou', window.scrollY > 8);
+  window.addEventListener('scroll', marcar, { passive: true });
+  marcar();
+})();
+
+// Blocos entram suavemente quando aparecem na tela (uma vez só).
+// Para quem pediu menos movimento, ou sem IntersectionObserver, tudo aparece direto.
+(() => {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+  const grupos = [
+    '.section-title, .eyebrow, p.section-sub, .compare-heading, .offer-heading, .offer-lead',
+    '.flow > *', '.problem-grid > *', '.twin > *', '.paths > *', '.o-tiers > *', '.o-consult > *',
+    '.team-grid > *', '.team-integrada li', '.faq details', '.why-grid > *', '.timeline-chart', '.o-strip',
+    '.o-table-wrap', '.final .wrap > *', '.results-cases > *',
+  ];
+  const alvos = new Set();
+  grupos.forEach((sel) => document.querySelectorAll(sel).forEach((el) => {
+    if (el.closest('.hero')) return;
+    alvos.add(el);
+  }));
+  if (!alvos.size) return;
+  // Itens irmãos entram em sequência curta.
+  alvos.forEach((el) => {
+    const irmaos = [...el.parentElement.children].filter((x) => alvos.has(x));
+    const ordem = irmaos.indexOf(el);
+    if (irmaos.length > 1) el.style.setProperty('--atraso', `${Math.min(ordem, 5) * 0.08}s`);
+    el.classList.add('revela');
+  });
+  document.documentElement.classList.add('tem-revelar');
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visivel');
+      obs.unobserve(e.target);
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  alvos.forEach((el) => obs.observe(el));
+})();
