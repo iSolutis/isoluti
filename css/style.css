@@ -1006,3 +1006,12 @@
   .brand-video.sem-controles::-webkit-media-controls-panel,
   .brand-video.sem-controles::-webkit-media-controls-start-playback-button,
   .brand-video.sem-controles::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; }
+
+  /* Topo (tablet e desktop): os dois botões dividem a largura da coluna e terminam
+     alinhados com a borda do título e do texto */
+  @media (min-width: 641px) {
+    /* Mesma largura máxima do texto de apoio (46ch no corpo de 1,15rem) */
+    .hero-actions { font-size: 1.15rem; max-width: 46ch; }
+    /* Cada botão parte da largura natural e cresce até preencher a linha */
+    .hero-actions .btn { flex: 1 1 auto; text-align: center; white-space: nowrap; }
+  }
