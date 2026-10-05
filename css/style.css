@@ -678,3 +678,12 @@
   /* Título opcional acima das credenciais (ex.: "Formação") */
   .cred-label { width: 100%; margin: 0; padding-top: 16px; border-top: 1px solid var(--line); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--navy); }
   .team-card .cred-label + ul.credentials, .team-modal-info .cred-label + ul.credentials { border-top: 0; padding-top: 10px; }
+
+  /* Leitura integrada das quatro atuações, abaixo dos cartões da equipe */
+  .team-integrada { margin-top: 44px; padding: 30px 30px 26px; background: var(--paper); border: 1px solid var(--line); border-radius: 10px; }
+  .team-integrada h3 { margin: 0 0 20px; font-size: 1.3rem; font-weight: 600; color: var(--navy); }
+  .team-integrada ul { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 0; padding: 0; list-style: none; }
+  .team-integrada li { padding-top: 14px; border-top: 3px solid var(--gold); color: var(--muted); font-size: 0.92rem; line-height: 1.55; }
+  .team-integrada li strong { display: block; margin-bottom: 4px; font-family: 'Space Grotesk', sans-serif; font-size: 1.08rem; color: var(--navy); }
+  @media (max-width: 1100px) { .team-integrada ul { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 640px) { .team-integrada { padding: 22px 18px; } .team-integrada ul { grid-template-columns: 1fr; gap: 18px; } }
