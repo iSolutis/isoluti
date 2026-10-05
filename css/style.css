@@ -96,7 +96,7 @@
     mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, black 10%, transparent 75%);
     -webkit-mask-image: radial-gradient(ellipse 70% 60% at 70% 35%, black 10%, transparent 75%);
   }
-  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 48px; align-items: center; }
+  .hero .wrap { position: relative; z-index: 1; display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 40px; align-items: center; }
   .hero .tag { display: inline-flex; align-items: center; gap: 8px; font-size: 0.85rem; color: #01376D; margin-bottom: 22px; background: #fff; border: 1px solid rgba(20,188,198,0.55); padding: 6px 12px; border-radius: 3px; }
   .hero .tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); }
   .hero h1 { font-size: clamp(1.9rem, 3.2vw, 2.45rem); font-weight: 600; line-height: 1.1; margin: 0 0 20px; max-width: 22ch; letter-spacing: -0.02em; text-wrap: balance; color: var(--navy-deep); }
@@ -116,7 +116,7 @@
   /* Hero video — the memorable element */
   /* Vídeo horizontal (1280x720), reto */
   .hero-video {
-    aspect-ratio: 16 / 9; overflow: hidden; background: #01376D; border-radius: 10px;
+    position: relative; aspect-ratio: 16 / 9; overflow: hidden; background: #01376D; border-radius: 10px;
     border: 1px solid rgba(20,188,198,0.45); box-shadow: 0 30px 60px -24px rgba(1,55,109,0.45);
   }
   .brand-video { display: block; width: 100%; height: 100%; object-fit: cover; }
@@ -687,3 +687,13 @@
   .team-integrada li strong { display: block; margin-bottom: 4px; font-family: 'Space Grotesk', sans-serif; font-size: 1.08rem; color: var(--navy); }
   @media (max-width: 1100px) { .team-integrada ul { grid-template-columns: 1fr 1fr; } }
   @media (max-width: 640px) { .team-integrada { padding: 22px 18px; } .team-integrada ul { grid-template-columns: 1fr; gap: 18px; } }
+
+  /* Botão para ouvir a narração do vídeo do topo (o vídeo começa sem som) */
+  .video-som {
+    position: absolute; left: 14px; top: 14px; z-index: 2; display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border: 0; border-radius: 24px; background: rgba(1,55,109,0.88); color: #fff;
+    font: 600 0.9rem 'IBM Plex Sans', sans-serif; cursor: pointer; box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  }
+  .video-som svg { width: 18px; height: 18px; fill: none; stroke: var(--gold); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .video-som:hover { background: var(--navy); }
+  .video-som:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }

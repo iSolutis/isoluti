@@ -45,8 +45,31 @@ window.addEventListener('load', () => {
       video.preload = 'auto';
       video.src = video.dataset.src;
     }
-    if (autoplay) video.play().catch(() => {});
+    if (autoplay && video.muted) video.play().catch(() => {});
   }, { threshold: 0.4 }).observe(video);
+
+  // Narração: o vídeo roda sem som; o botão recomeça do início com som, uma vez.
+  // Ao terminar, volta a rodar em silêncio e o botão reaparece.
+  const som = document.querySelector('[data-video-som]');
+  if (!som) return;
+  som.hidden = false;
+  som.addEventListener('click', () => {
+    if (!video.src && video.dataset.src) video.src = video.dataset.src;
+    video.muted = false;
+    video.loop = false;
+    video.currentTime = 0;
+    video.play().catch(() => {});
+    som.hidden = true;
+  });
+  video.addEventListener('ended', () => {
+    if (video.muted) return;
+    video.muted = true;
+    video.loop = true;
+    som.hidden = false;
+    if (autoplay) video.play().catch(() => {});
+  });
+  // Se a pessoa ativar o som pelos controles do próprio vídeo, o botão sai do caminho.
+  video.addEventListener('volumechange', () => { if (!video.muted) som.hidden = true; });
 });
 
 // Links para a política de privacidade (formulário e aviso de cookies).
