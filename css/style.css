@@ -914,8 +914,8 @@
     .band p.section-sub, #problema p.section-sub, #investimento > .wrap > p.section-sub,
     #equipe p.section-sub, .offer-lead { display: none; }
 
-    /* Topo: um botão principal; o secundário sai */
-    .hero .btn.ghost-light { display: none; }
+    /* Topo: etiqueta e título bastam; a frase de público e o botão secundário saem */
+    .hero .for-whom, .hero .btn.ghost-light { display: none; }
 
     /* Soluções: o carrossel já desliza com o dedo; as setas saem */
     .carousel-nav { display: none; }
@@ -1006,3 +1006,78 @@
   .brand-video.sem-controles::-webkit-media-controls-panel,
   .brand-video.sem-controles::-webkit-media-controls-start-playback-button,
   .brand-video.sem-controles::-webkit-media-controls-overlay-play-button { display: none !important; -webkit-appearance: none; }
+
+  /* Topo (tablet e desktop): os dois botões dividem a largura da coluna e terminam
+     alinhados com a borda do título e do texto */
+  @media (min-width: 641px) {
+    /* Mesma largura máxima do texto de apoio (46ch no corpo de 1,15rem) */
+    .hero-actions { font-size: 1.15rem; max-width: 46ch; }
+    /* Cada botão parte da largura natural e cresce até preencher a linha */
+    .hero-actions .btn { flex: 1 1 auto; text-align: center; white-space: nowrap; }
+  }
+
+  /* Equipe (tablet e desktop): "Como os quatro atuam" como fluxo do projeto.
+     Fundo azul, foto de cada sócio, fase em que atua e linha ligando as fotos. */
+  @media (min-width: 641px) {
+    .team-integrada { padding: 34px 36px 32px; background: var(--navy); border: 0; border-radius: 12px; }
+    .team-integrada h3 { margin-bottom: 26px; color: #fff; }
+    .team-integrada ul { gap: 28px; }
+    .team-integrada li { position: relative; padding-top: 0; border-top: 0; color: #c0cdda; }
+    .team-integrada li strong { margin: 0 0 4px; color: #fff; }
+    .team-integrada li:not(:last-child)::after {
+      content: ""; position: absolute; top: 28px; left: 70px; right: -20px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), rgba(20,188,198,0.25));
+    }
+    .ti-foto {
+      position: relative; z-index: 1; display: block; width: 56px; height: 56px; margin-bottom: 14px;
+      border-radius: 50%; object-fit: cover; border: 2px solid var(--gold); background: var(--navy-mid);
+    }
+    .ti-fase {
+      display: block; margin-bottom: 6px; font-family: 'IBM Plex Mono', monospace; font-size: 0.72rem;
+      letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold-bright);
+    }
+    .tem-revelar .team-integrada li:not(:last-child)::after { transform: scaleX(0); transform-origin: left; transition: transform 0.8s ease calc(var(--atraso, 0s) + 0.3s); }
+    .tem-revelar .team-integrada li.visivel:not(:last-child)::after { transform: none; }
+  }
+  @media (min-width: 641px) and (max-width: 1100px) {
+    .team-integrada li:not(:last-child)::after { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .tem-revelar .team-integrada li:not(:last-child)::after { transform: none; transition: none; }
+  }
+
+  /* Equipe em ordem de projeto: cada cartão traz a fase em que o sócio atua,
+     com um ponto sobre uma linha que liga os quatro cartões (tablet e desktop). */
+  .team-fase { display: none; }
+  @media (min-width: 641px) {
+    .team-grid { position: relative; padding-top: 58px; }
+    .team-grid::before {
+      content: ""; position: absolute; top: 9px; left: 6px; right: 6px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), rgba(20,188,198,0.3));
+    }
+    .team-card { position: relative; overflow: visible; }
+    .team-photo { border-radius: 10px 10px 0 0; }
+    /* A linha passa só pelos pontos; o nome da fase fica abaixo dela, sem cruzar o texto */
+    .team-fase {
+      position: absolute; top: -58px; left: 0; display: block; margin: 0; padding-top: 26px;
+      font-family: 'IBM Plex Mono', monospace; font-size: 0.74rem; font-weight: 500; line-height: 20px;
+      letter-spacing: 0.08em; text-transform: uppercase; color: #0e8c94;
+    }
+    .team-fase::before {
+      content: ""; position: absolute; top: 2px; left: 0; width: 14px; height: 14px; border-radius: 50%;
+      background: var(--card); border: 3px solid var(--gold); box-sizing: border-box;
+    }
+    .team-card .role-tag { display: none; }
+    .team-caption { padding: 16px 24px 18px; }
+    .team-quote { font-size: 1.02rem; font-weight: 500; line-height: 1.45; color: var(--ink); }
+    .tem-revelar .team-grid::before { transform: scaleX(0); transform-origin: left; transition: transform 1.1s ease 0.2s; }
+    .tem-revelar .team-grid:has(.visivel)::before { transform: none; }
+  }
+  @media (min-width: 1101px) { .team-quote { min-height: 4.4em; } }
+  @media (min-width: 641px) and (max-width: 1100px) {
+    .team-grid { row-gap: 60px; }
+    .team-grid::before { display: none; }
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .team-fase { color: var(--gold-bright); } }
+  :root[data-theme="dark"] .team-fase { color: var(--gold-bright); }
+  @media (prefers-reduced-motion: reduce) { .tem-revelar .team-grid::before { transform: none; transition: none; } }
