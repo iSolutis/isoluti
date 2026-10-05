@@ -497,3 +497,91 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
   }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
   alvos.forEach((el) => obs.observe(el));
 })();
+
+// Celular: faixas que deslizam ganham uma dica curta logo abaixo (some na primeira rolagem lateral).
+(() => {
+  const faixas = document.querySelectorAll('.team-grid');
+  faixas.forEach((faixa) => {
+    const dica = document.createElement('p');
+    dica.className = 'dica-deslize';
+    dica.setAttribute('aria-hidden', 'true');
+    dica.textContent = 'Deslize para ver mais';
+    faixa.after(dica);
+    faixa.addEventListener('scroll', () => { if (faixa.scrollLeft > 30) dica.style.visibility = 'hidden'; }, { passive: true });
+  });
+})();
+
+// Barra fixa do WhatsApp (celular): aparece depois que os botões do topo saem da tela
+// e some quando o contato está visível, para não repetir o mesmo convite.
+(() => {
+  const barra = document.querySelector('.sticky-cta');
+  const topo = document.querySelector('.hero-actions');
+  const contato = document.getElementById('contato');
+  if (!barra || !topo || !contato || !('IntersectionObserver' in window)) return;
+  const raiz = document.documentElement;
+  raiz.classList.add('tem-barra');
+  let passouTopo = false, noContato = false;
+  const atualizar = () => raiz.classList.toggle('mostra-barra', passouTopo && !noContato);
+  new IntersectionObserver(([e]) => {
+    passouTopo = !e.isIntersecting && e.boundingClientRect.top < 0;
+    atualizar();
+  }).observe(topo);
+  new IntersectionObserver(([e]) => { noContato = e.isIntersecting; atualizar(); }, { threshold: 0.15 }).observe(contato);
+})();
+
+// Celular: cartões empilhados. O cartão que está sendo coberto pelo próximo encolhe e escurece
+// conforme a rolagem. Sem efeito em telas maiores ou para quem pediu menos movimento.
+(() => {
+  const pilhas = document.querySelectorAll('.problem-grid, .paths, .o-tiers, .o-consult');
+  if (!pilhas.length) return;
+  const celular = window.matchMedia('(max-width: 640px)');
+  const calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  pilhas.forEach((p) => {
+    p.classList.add('empilha');
+    [...p.children].forEach((c, i) => c.style.setProperty('--i', i));
+  });
+  if (calmo) return;
+
+  let pedido = false;
+  const desenhar = () => {
+    pedido = false;
+    pilhas.forEach((p) => {
+      const cartoes = [...p.children];
+      cartoes.forEach((c, i) => {
+        const prox = cartoes[i + 1];
+        if (!celular.matches || !prox) { c.style.transform = ''; c.style.filter = ''; return; }
+        const a = c.getBoundingClientRect();
+        const b = prox.getBoundingClientRect();
+        // 0 quando o próximo ainda está abaixo; 1 quando ele cobriu este cartão.
+        const cobertura = Math.min(1, Math.max(0, (a.bottom - b.top) / a.height));
+        c.style.transform = `scale(${1 - cobertura * 0.06})`;
+        c.style.filter = `brightness(${1 - cobertura * 0.18})`;
+      });
+    });
+  };
+  const pedir = () => { if (!pedido) { pedido = true; requestAnimationFrame(desenhar); } };
+  window.addEventListener('scroll', pedir, { passive: true });
+  window.addEventListener('resize', pedir);
+  celular.addEventListener('change', pedir);
+  desenhar();
+})();
+
+// Celular: vídeo do topo limpo, sem controles nativos (play, tempo, velocidade, tela cheia).
+// Continua rodando sozinho, sem som e em loop; tocar no vídeo pausa e retoma.
+// O som segue pelo botão "Ouvir narração", logo abaixo do vídeo.
+(() => {
+  const video = document.querySelector('.brand-video');
+  if (!video) return;
+  const celular = window.matchMedia('(max-width: 640px)');
+  const aplicar = () => {
+    video.controls = !celular.matches;
+    video.classList.toggle('sem-controles', celular.matches);
+  };
+  video.addEventListener('click', () => {
+    if (!celular.matches) return;
+    if (!video.src && video.dataset.src) video.src = video.dataset.src;
+    if (video.paused) video.play().catch(() => {}); else video.pause();
+  });
+  celular.addEventListener('change', aplicar);
+  aplicar();
+})();
