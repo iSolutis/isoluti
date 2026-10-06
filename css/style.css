@@ -1422,3 +1422,9 @@
     .hero .fineprint { order: 6; margin-top: 10px; padding-bottom: 0; }
     .hero p.lede { order: 7; margin-top: 22px; margin-bottom: 0; padding-bottom: 30px; }
   }
+
+  /* Prazo e segurança: fundo branco entre Como funciona (turquesa suave) e Investimento (azul) */
+  #rapido-seguro { background: var(--paper); }
+  #rapido-seguro .twin { border-radius: 14px; overflow: hidden; }
+  #rapido-seguro .seguranca { margin-top: 56px; }
+  @media (max-width: 640px) { #rapido-seguro .seguranca { margin-top: 36px; } }
