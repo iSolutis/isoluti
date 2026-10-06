@@ -472,7 +472,7 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
     '.section-title, .eyebrow, p.section-sub, .compare-heading, .offer-heading, .offer-lead',
     '.flow > *', '.problem-grid > *', '.twin > *', '.paths > *', '.o-tiers > *', '.o-consult > *',
     '.team-grid > *', '.team-integrada li', '.faq details', '.why-grid > *', '.timeline-chart', '.o-strip',
-    '.o-table-wrap', '.final .wrap > *', '.results-cases > *',
+    '.o-table-wrap', '.final .wrap > *', '.results-cases > *', '.marcas-lista li',
   ];
   const alvos = new Set();
   grupos.forEach((sel) => document.querySelectorAll(sel).forEach((el) => {
