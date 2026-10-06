@@ -1124,3 +1124,301 @@
     .nav-links a { margin-left: 0; }
     header.top nav > .btn { margin-left: 0; flex: none; }
   }
+
+  /* ---------- Página enxuta: menos blocos e mais respiro ---------- */
+
+  /* Mais espaço entre as seções em telas grandes */
+  @media (min-width: 901px) {
+    section { padding: 120px 0; }
+    .marcas { padding: 44px 0 48px; }
+    h2.section-title { margin-bottom: 18px; }
+    p.section-sub { margin-bottom: 56px; }
+  }
+  .carousel-head { justify-content: flex-end; }
+
+  /* Como funciona: a segurança vira uma linha, com o número em destaque */
+  .seguranca {
+    display: flex; align-items: center; gap: 24px; max-width: 720px; margin: 64px 0 0; padding-top: 32px;
+    border-top: 1px solid var(--line);
+  }
+  .seguranca-num {
+    margin: 0; flex: none; font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.6rem, 5vw, 3.4rem);
+    font-weight: 600; line-height: 1; color: var(--navy);
+  }
+  .seguranca-txt { margin: 0; color: var(--muted); max-width: 46ch; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .seguranca-num { color: var(--gold-bright); } }
+  :root[data-theme="dark"] .seguranca-num { color: var(--gold-bright); }
+
+  /* Investimento: faixas enxutas, um botão e a consultoria em lista */
+  .offer .eyebrow { color: var(--gold-bright); }
+  .offer #faixas { margin-top: 0; }
+  .offer .o-tier .what { min-height: 0; margin-bottom: 4px; }
+  .offer-cta { margin: 36px 0 0; }
+  .consult-lista { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,0.12); }
+  .consult-lista li { display: flex; flex-direction: column; gap: 4px; padding: 20px 24px 4px 0; }
+  .consult-lista li + li { padding-left: 24px; border-left: 1px solid rgba(255,255,255,0.12); }
+  .consult-lista strong { color: #fff; font-family: 'Space Grotesk', sans-serif; font-size: 1.05rem; font-weight: 600; line-height: 1.3; }
+  .consult-lista span { color: var(--gold-bright); font-size: 0.85rem; }
+  @media (max-width: 900px) {
+    .consult-lista { grid-template-columns: 1fr 1fr; }
+    .consult-lista li:nth-child(3) { padding-left: 0; border-left: 0; }
+  }
+  @media (max-width: 640px) {
+    .seguranca { flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 40px; padding-top: 24px; }
+    .offer-cta .btn { display: block; text-align: center; }
+    .consult-lista { grid-template-columns: 1fr; }
+    .consult-lista li, .consult-lista li + li { padding: 14px 0; border-left: 0; border-bottom: 1px solid rgba(255,255,255,0.12); }
+  }
+
+  /* ---------- Ritmo de cores entre as seções ----------
+     Topo (branco para cinza) > Marcas (branco) > Soluções (cinza, cartões brancos) >
+     Como funciona (turquesa suave) > Investimento (azul com brilho turquesa) >
+     Equipe (cinza) > Dúvidas (branco) > Contato (azul em degradê com brilho turquesa) */
+  :root { --turquesa-suave: #E6F6F7; }
+
+  .hero { background: linear-gradient(180deg, #ffffff 0%, #E9EEF2 100%); }
+
+  #exemplos { background: var(--card); }
+  #exemplos .case:not(.custom) { background: #fff; }
+  #exemplos .ba-after::before { border-color: #fff; }
+  #exemplos .carousel-btn { background: #fff; }
+  #exemplos .cases.carousel { scrollbar-color: var(--gold) #fff; }
+
+  #como-funciona { background: var(--turquesa-suave); border-top: 0; }
+  #como-funciona .steps.flow .price { background: #fff; border-color: rgba(20,188,198,0.35); }
+  #como-funciona .flow-icon { background: #fff; }
+  #como-funciona .seguranca { border-top-color: rgba(1,55,109,0.12); }
+
+  .offer {
+    background:
+      radial-gradient(ellipse 55% 60% at 100% 0%, rgba(20,188,198,0.22) 0%, transparent 70%),
+      var(--navy-deep);
+  }
+  .final {
+    background:
+      radial-gradient(ellipse 60% 70% at 0% 100%, rgba(20,188,198,0.25) 0%, transparent 70%),
+      linear-gradient(135deg, #01376D 0%, #012a54 100%);
+  }
+
+  @media (max-width: 640px) {
+    .hero { background: linear-gradient(180deg, #ffffff 0%, #E9EEF2 100%); }
+    #exemplos { border-top: 0; }
+  }
+
+  /* ---------- Revisão de UI: hierarquia e alinhamento ---------- */
+
+  /* Topo (desktop): coluna de texto mais larga, título em 3 linhas */
+  @media (min-width: 1081px) {
+    .hero .wrap { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 56px; }
+    .hero h1 { max-width: 18ch; }
+  }
+
+  /* Soluções: título e controles do carrossel na mesma linha */
+  #exemplos .carousel-head { justify-content: space-between; align-items: flex-end; margin-bottom: 32px; }
+  #exemplos .carousel-head .section-title { margin-bottom: 0; }
+
+  /* Como funciona: a linha acima dos 45% ocupa a largura toda */
+  .seguranca { max-width: none; }
+
+  /* Dúvidas (desktop): título à esquerda, perguntas à direita */
+  @media (min-width: 901px) {
+    .duvidas-wrap { display: grid; grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr); gap: 64px; align-items: start; }
+    .duvidas-cabeca { position: sticky; top: 120px; }
+    .duvidas-wrap .faq { max-width: none; }
+  }
+
+  /* Contato: texto e WhatsApp à esquerda, formulário à direita */
+  .final .wrap.contato-grid { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 64px; align-items: start; }
+  .contato-texto h2 { max-width: 14ch; }
+  .contato-texto p { margin-bottom: 32px; }
+  .contato-texto .ctas { align-items: flex-start; max-width: 340px; }
+  .contato-texto .ctas .btn { width: 100%; }
+  .contato-texto .ctas small { text-align: left; }
+  .contato-form .contact-form { max-width: none; }
+  @media (max-width: 900px) {
+    .final .wrap.contato-grid { grid-template-columns: 1fr; gap: 40px; }
+    .contato-texto .ctas { max-width: none; }
+  }
+
+  /* ---------- Responsividade: tamanho das seções, toque e legibilidade ---------- */
+
+  /* Equipe em telas médias: 4 cartões lado a lado de 901 a 1100px */
+  @media (min-width: 901px) and (max-width: 1100px) {
+    .team-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; row-gap: 16px; }
+    .team-grid::before { display: block; }
+    .team-caption { padding: 14px 16px 16px; }
+    .team-caption h3 { font-size: 1.05rem; white-space: normal; }
+    .team-body { padding: 16px 16px 18px; }
+    .team-card .area-pill { font-size: 0.78rem; }
+    .team-quote { font-size: 0.94rem; }
+  }
+  /* De 641 a 900px: a lista compacta do celular, em duas colunas */
+  @media (min-width: 641px) and (max-width: 900px) {
+    .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; padding-top: 0; }
+    .team-grid::before, .team-fase { display: none; }
+    .team-card {
+      display: grid; grid-template-columns: 64px 1fr 16px; grid-template-areas: "foto nome seta" "foto area seta";
+      align-items: center; gap: 2px 14px; padding: 12px 16px 12px 12px; border-radius: 12px;
+    }
+    .team-card:hover { transform: none; }
+    .team-card::after {
+      content: ""; grid-area: seta; width: 9px; height: 9px; border: solid var(--gold); border-width: 0 2px 2px 0;
+      transform: rotate(-45deg); justify-self: center;
+    }
+    .team-photo { grid-area: foto; width: 64px; height: 64px; border-radius: 50%; }
+    .team-caption { grid-area: nome; align-self: end; padding: 0; background: none; }
+    .team-caption h3 { color: var(--navy); font-size: 1.08rem; }
+    .team-card .role-tag, .team-quote, .team-more { display: none; }
+    .team-body { grid-area: area; align-self: start; padding: 0; border: 0; }
+    .team-card .area-pill { margin: 0; padding: 0; background: none; color: var(--muted); font-size: 0.82rem; font-weight: 500; line-height: 1.35; }
+  }
+
+  /* Legibilidade: nenhum texto abaixo de 12px */
+  .ba-label { font-size: 0.78rem; }
+  .team-fase { font-size: 0.78rem; }
+  .cred-label { font-size: 0.76rem; }
+
+  /* Toque: links e botões pequenos ganham área mínima de 44px em telas de toque */
+  @media (hover: none), (max-width: 900px) {
+    .case-more { display: inline-flex; align-items: center; min-height: 44px; }
+    .video-som { min-height: 44px; }
+  }
+
+  /* ---------- Telas grandes (monitores de 24" a 32") ----------
+     O conteúdo cresce em degraus: mais largura útil e tipografia maior,
+     para não sobrar faixa vazia nas laterais nem texto pequeno demais. */
+  @media (min-width: 1600px) {
+    html { font-size: 17px; }
+    body { font-size: 18px; }
+    .wrap { max-width: 1320px; }
+    .marcas-lista { max-width: 1240px; }
+    .logo-wordmark { height: 52px; }
+  }
+  @media (min-width: 2000px) {
+    html { font-size: 18.5px; }
+    body { font-size: 19.5px; }
+    .wrap { max-width: 1520px; padding: 0 40px; }
+    .marcas-lista { max-width: 1400px; }
+    .marcas-lista img { max-height: 60px; }
+    .marcas-lista li { height: 72px; }
+    .logo-wordmark { height: 58px; }
+    header.top .wrap { padding-top: 18px; padding-bottom: 18px; }
+  }
+  @media (min-width: 2400px) {
+    html { font-size: 20px; }
+    body { font-size: 21px; }
+    .wrap { max-width: 1720px; padding: 0 48px; }
+    .marcas-lista { max-width: 1560px; }
+    .marcas-lista img { max-height: 68px; }
+    .marcas-lista li { height: 80px; }
+    .logo-wordmark { height: 64px; }
+    section { padding: 140px 0; }
+  }
+
+  /* ---------- Soluções: grade limpa no lugar do carrossel ----------
+     Cartões brancos de mesma altura; "Antes" e "Depois" como texto separado por uma linha fina,
+     sem caixas internas. Desktop 4 x 2, tablet 2 colunas, celular desliza para o lado. */
+  #exemplos .carousel-head { margin-bottom: 40px; }
+  #exemplos .cases { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+  #exemplos .case {
+    display: flex; flex-direction: column; padding: 26px 24px 22px; border: 1px solid rgba(1,55,109,0.1);
+    border-radius: 14px; background: #fff; box-shadow: 0 1px 2px rgba(1,55,109,0.04);
+  }
+  #exemplos .case:hover { transform: translateY(-3px); border-color: rgba(20,188,198,0.5); box-shadow: 0 16px 32px -22px rgba(1,55,109,0.4); }
+  #exemplos .case-icon { width: 40px; height: 40px; margin-bottom: 16px; border-radius: 10px; background: var(--turquesa-suave); color: #0e8c94; }
+  #exemplos .case-icon svg { width: 20px; height: 20px; }
+  #exemplos .case h3 { margin: 0 0 18px; font-size: 1.12rem; color: var(--navy); }
+  #exemplos .ba { gap: 0; flex: 1; }
+  #exemplos .ba-before, #exemplos .ba-after { padding: 0; border: 0; border-radius: 0; background: none; flex: none; }
+  #exemplos .ba-after { margin-top: 14px; padding-top: 14px; border-top: 1px solid rgba(1,55,109,0.1); }
+  #exemplos .ba-after::before { content: none; }
+  #exemplos .ba-label { letter-spacing: 0.1em; }
+  #exemplos .ba-before .ba-label { color: #6b88a6; }
+  #exemplos .ba-after .ba-label { color: #0e8c94; }
+  #exemplos .ba-before p { margin-top: 4px; color: var(--muted); font-size: 0.9rem; line-height: 1.5; }
+  #exemplos .ba-after p { margin-top: 4px; color: var(--navy); font-size: 0.95rem; font-weight: 600; line-height: 1.45; }
+  #exemplos .case-more {
+    align-self: flex-start; margin-top: 18px; padding-top: 0; font-size: 0.88rem; font-weight: 600; color: var(--navy);
+    text-decoration: none;
+  }
+  #exemplos .case-more::after { content: "→"; margin-left: 6px; color: #0e8c94; transition: margin 0.2s ease; }
+  #exemplos .case-more:hover { color: #0e8c94; }
+  #exemplos .case-more:hover::after { margin-left: 10px; }
+
+  /* Sob demanda: destaque leve em turquesa, sem competir com as soluções */
+  #exemplos .case.custom { background: var(--turquesa-suave); border-color: rgba(20,188,198,0.45); color: var(--ink); }
+  #exemplos .case.custom .case-icon { background: #fff; color: #0e8c94; }
+  #exemplos .case.custom h3 { color: var(--navy); }
+  #exemplos .case.custom p { flex: 1; margin: 0 0 20px; color: var(--muted); font-size: 0.92rem; }
+  #exemplos .case.custom .btn { margin-top: auto; }
+
+  /* Tablet em pé: desliza para o lado, com dois cartões visíveis */
+  @media (max-width: 900px) and (min-width: 641px) {
+    #exemplos .cases {
+      display: flex; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+      margin: 0 -28px; padding: 2px 28px 18px; scroll-padding: 0 28px; scrollbar-width: none;
+    }
+    #exemplos .cases::-webkit-scrollbar { display: none; }
+    #exemplos .case { flex: 0 0 calc(50% - 8px); scroll-snap-align: start; }
+    #exemplos .dica-deslize { display: flex; }
+  }
+  @media (min-width: 901px) and (max-width: 1100px) {
+    #exemplos .cases { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    #exemplos .case { padding: 22px 18px 18px; }
+  }
+  @media (max-width: 640px) {
+    #exemplos .carousel-head { margin-bottom: 24px; }
+    #exemplos .cases {
+      display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; overscroll-behavior-x: contain;
+      margin: 0 -20px; padding: 2px 20px 18px; scroll-padding: 0 20px; scrollbar-width: none;
+    }
+    #exemplos .cases::-webkit-scrollbar { display: none; }
+    #exemplos .case { flex: 0 0 82%; scroll-snap-align: start; }
+    #exemplos .case:hover { transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { #exemplos .case:hover { transform: none; } #exemplos .case-more::after { transition: none; } }
+  @media (max-width: 900px) and (min-width: 641px) {
+    #exemplos .dica-deslize { align-items: center; gap: 8px; margin: 2px 0 0; font-size: 0.85rem; color: var(--muted); }
+    #exemplos .dica-deslize::after { content: "→"; color: var(--gold); font-weight: 700; animation: desliza 1.6s ease-in-out infinite; }
+  }
+
+  /* Cabeçalho no toque: logo e botão com área mínima de 44px, sem mudar o tamanho visual */
+  @media (max-width: 1080px) {
+    header.top .brand { min-height: 44px; }
+    header.top nav > .btn { display: inline-flex; align-items: center; min-height: 44px; }
+  }
+  /* Investimento no celular: o subtítulo agora é curto e informa o essencial (valor fechado, sem compromisso) */
+  @media (max-width: 640px) { #investimento > .wrap > p.section-sub { display: block; margin-bottom: 24px; } }
+  @media (hover: none), (max-width: 900px) { .page-more a { display: inline-flex; align-items: center; min-height: 44px; } }
+
+  /* Celulares de tela baixa: topo mais compacto para o botão principal caber na primeira tela */
+  @media (max-width: 640px) and (max-height: 800px) {
+    .hero { padding-top: 22px; }
+    .hero .tag { margin-bottom: 12px; padding: 4px 10px; font-size: 0.76rem; }
+    .hero h1 { font-size: 1.72rem; margin-bottom: 16px; }
+    .hero p.lede { margin-top: 16px; margin-bottom: 18px; font-size: 0.98rem; line-height: 1.5; }
+    .video-som { margin-top: 10px; }
+    .hero .fineprint { padding-bottom: 28px; }
+  }
+  @media (max-width: 640px) and (max-height: 620px) {
+    .hero h1 { font-size: 1.55rem; }
+    .video-som { display: none !important; }
+  }
+
+  /* Monitores 4K sem ampliação do sistema */
+  @media (min-width: 3200px) {
+    html { font-size: 26px; }
+    body { font-size: 27px; }
+    .wrap { max-width: 2300px; padding: 0 64px; }
+    .marcas-lista { max-width: 2100px; }
+    .marcas-lista img { max-height: 90px; }
+    .marcas-lista li { height: 104px; }
+    .logo-wordmark { height: 84px; }
+    section { padding: 180px 0; }
+  }
+  /* Celulares bem baixos (iPhone SE e afins): o botão sobe para antes do texto de apoio */
+  @media (max-width: 640px) and (max-height: 720px) {
+    .hero-actions { order: 5; margin-top: 18px; }
+    .hero .fineprint { order: 6; margin-top: 10px; padding-bottom: 0; }
+    .hero p.lede { order: 7; margin-top: 22px; margin-bottom: 0; padding-bottom: 30px; }
+  }
