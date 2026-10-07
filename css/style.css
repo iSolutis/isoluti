@@ -1601,3 +1601,58 @@
     header.top nav > .btn { display: inline-flex; padding: 0 14px; }
     header.top nav > .btn .btn-extra { display: none; }
   }
+
+/* Botão do cabeçalho é flex e descarta o espaço inicial do span; o espaço vem do CSS */
+.btn-extra::before { content: "\00a0"; }
+
+/* Celular: Soluções em lista vertical. O carrossel lateral disputava o gesto com a rolagem da página */
+@media (max-width: 640px) {
+  #exemplos .cases { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 0; padding: 0; overflow: visible; scroll-snap-type: none; }
+  #exemplos .case { padding: 18px 18px 16px; }
+  #exemplos .case:not(.custom) { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-items: center; }
+  #exemplos .case:not(.custom) .case-icon { margin: 0; }
+  #exemplos .case:not(.custom) h3 { margin: 0; }
+  #exemplos .case:not(.custom) .ba, #exemplos .case:not(.custom) .case-more { grid-column: 1 / -1; }
+  #exemplos .case:not(.custom) .ba { margin-top: 14px; }
+  #exemplos .ba-after { margin-top: 10px; padding-top: 10px; }
+  #exemplos .case-more { margin-top: 12px; }
+  #exemplos .dica-deslize { display: none !important; }
+}
+
+/* Celular: etapas de Como funciona empilham e se recolhem. Cada etapa gruda no topo; quando a
+   próxima sobe por cima, a de baixo encolhe e esconde o texto, ficando só ícone e nome.
+   --cob (0 a 1) vem do js/main.js. */
+@media (max-width: 640px) {
+  #como-funciona .steps.flow.empilha > .step {
+    position: sticky; top: calc(84px + var(--i, 0) * 70px);
+    padding: 20px 18px 20px 88px; min-height: 0; background: #fff; border: 1px solid rgba(6,52,88,0.1);
+    border-radius: 14px; margin-bottom: 14px;
+  }
+  #como-funciona .steps.flow.empilha > .step:last-child { margin-bottom: 0; }
+  #como-funciona .steps.flow.empilha .flow-icon { left: 18px; top: 18px; background: var(--turquesa-suave); }
+  #como-funciona .steps.flow.empilha .step::after { content: none; }
+  #como-funciona .steps.flow.empilha .step p,
+  #como-funciona .steps.flow.empilha .step .price {
+    opacity: calc(1 - var(--cob, 0) * 1.6); transform: translateY(calc(var(--cob, 0) * -8px));
+  }
+  #como-funciona .steps.flow.empilha .step h3 { transform: translateY(calc(var(--cob, 0) * 4px)); }
+}
+@media (max-width: 640px) {
+  #exemplos .case:not(.custom) .ba { margin-top: 10px; }
+  #exemplos .ba-label { display: none; }
+  #exemplos .ba-before p { margin: 0; font-size: 0.86rem; }
+  #exemplos .ba-after { margin-top: 6px; padding-top: 0; border-top: 0; }
+  #exemplos .ba-after p { margin: 0; font-size: 0.92rem; }
+  #exemplos .ba-after p::before { content: "→ "; color: #00838C; }
+  #exemplos .case-more { margin-top: 10px; font-size: 0.84rem; }
+}
+
+/* Tablet em pé: Soluções em grade de 2 colunas, sem deslizar para o lado */
+@media (max-width: 900px) and (min-width: 641px) {
+  #exemplos .cases { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0; padding: 0; overflow: visible; scroll-snap-type: none; }
+  #exemplos .case { flex: none; }
+}
+@media (max-width: 640px) {
+  .marcas-titulo { font-size: 0.75rem; }
+  .video-som { min-height: 40px; }
+}
