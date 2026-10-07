@@ -64,7 +64,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=53">
+<link rel="stylesheet" href="css/style.css?v=80">
 </head>
 <body>
 
@@ -77,8 +77,8 @@
       <div class="nav-links" id="menu">
         <a href="#exemplos">Soluções</a>
         <a href="#como-funciona">Como funciona</a>
-        <a href="#investimento">Investimento</a>
         <a href="#equipe">Equipe</a>
+        <a href="#investimento">Investimento</a>
         <a href="#duvidas">Dúvidas</a>
       </div>
       <a href="#contato" class="btn" data-evento="click_agendar">Agendar conversa</a>
@@ -109,19 +109,28 @@
   </div>
 </section>
 
+<section id="marcas" class="marcas" aria-labelledby="marcas-titulo">
+  <div class="wrap">
+    <p class="marcas-titulo" id="marcas-titulo">Sistemas que criamos e empresas que atendemos</p>
+    <ul class="marcas-lista">
+      <li><img src="img/marcas/open-solucoes-tributarias.png" width="400" height="149" alt="Open Soluções Tributárias" decoding="async"></li>
+      <li><img src="img/marcas/gestao-tributaria.svg" width="690" height="226" alt="Gestão Tributária" decoding="async"></li>
+      <li><img src="img/marcas/easyprocess.png" width="584" height="204" alt="EasyProcess" decoding="async"></li>
+      <li><img src="img/marcas/damasceno-marques.png" width="380" height="180" alt="Damasceno &amp; Marques Advocacia" decoding="async"></li>
+      <li><img src="img/marcas/coomap.png" width="456" height="150" alt="Coomap" decoding="async"></li>
+    </ul>
+  </div>
+</section>
+
 <section id="exemplos">
   <div class="wrap">
-    <p class="eyebrow">Soluções</p>
-    <h2 class="section-title">Onde a operação costuma travar, e o que muda depois</h2>
     <div class="carousel-head">
-      <p class="section-sub">Gargalos que aparecem em quase toda empresa de médio porte. Se o seu é outro, a conversa começa por ele.</p>
-      <div class="carousel-nav" data-carousel-nav="casos">
-        <button type="button" class="carousel-btn" data-dir="-1" aria-label="Ver sistemas anteriores" aria-controls="casos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <button type="button" class="carousel-btn" data-dir="1" aria-label="Ver mais sistemas" aria-controls="casos"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button>
-        <button type="button" class="carousel-btn carousel-play" data-play aria-controls="casos" aria-label="Pausar a passagem automática" aria-pressed="false" hidden><svg class="ic-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6v12M15 6v12"/></svg><svg class="ic-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5l11 7-11 7z"/></svg></button>
+      <div>
+        <p class="eyebrow">Soluções</p>
+        <h2 class="section-title">Onde a operação costuma travar, e o que muda depois</h2>
       </div>
     </div>
-    <div class="cases carousel" id="casos" tabindex="0" role="region" aria-label="Tipos de sistema que construímos. Role para o lado para ver todos.">
+    <div class="cases" id="casos">
       <article class="case">
         <div class="case-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
         <h3>CRM</h3>
@@ -244,284 +253,62 @@
   </div>
 </section>
 
+
 <section id="como-funciona" class="how">
   <div class="wrap">
     <p class="eyebrow">Como funciona</p>
-    <h2 class="section-title">Da primeira conversa ao sistema em uso</h2>
-    <p class="section-sub">São três etapas. A terceira começa no dia da entrega: é o período de manutenção, em que seguimos em contato com o seu time e respondemos pelo sistema.</p>
+    <h2 class="section-title">Semanas, não meses. E nada vai ao ar sem revisão.</h2>
     <div class="steps flow">
       <div class="step">
         <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div class="num">Etapa 01</div>
         <h3>Diagnóstico</h3>
-        <p>Ouvimos quem vive o processo e encontramos o gargalo real. Você recebe escopo, prazo e valor fechados.</p>
+        <p>Encontramos o gargalo real. Você recebe escopo, prazo e valor fechados.</p>
         <div class="price">Sem compromisso</div>
       </div>
       <div class="step">
         <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
         <div class="num">Etapa 02</div>
         <h3>Construção</h3>
-        <p>Você aprova a especificação antes do código, e a engenharia revisa tudo antes de ir ao ar.</p>
+        <p>Especificação aprovada antes do código e revisão de segurança antes de ir ao ar.</p>
         <div class="price">Preço fechado, nunca por hora</div>
       </div>
       <div class="step">
         <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
         <div class="num">Etapa 03</div>
         <h3>Período de manutenção</h3>
-        <p>Hospedagem, monitoramento, correções, atualizações de segurança e pequenas evoluções, com a mesma equipe que construiu.</p>
+        <p>Hospedagem, monitoramento, correções e evoluções, com a mesma equipe.</p>
         <div class="price">Mensalidade previsível</div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="rapido-seguro">
-  <div class="wrap">
-    <p class="eyebrow">Prazo e segurança</p>
-    <h2 class="section-title">Semanas, não meses. E nada vai ao ar sem revisão.</h2>
-    <p class="section-sub">Sistema feito às pressas falha e expõe dados. Sistema feito devagar chega quando o problema já custou caro. Trabalhamos para evitar os dois.</p>
-    <div class="twin">
-      <div>
-        <p class="word">Rápido</p>
-        <p class="how">A IA cuida do trabalho repetitivo. O time investe o tempo em entender o seu processo.</p>
+    <div class="garantias">
+      <div class="garantia">
+        <p class="garantia-titulo">Rápido</p>
         <ul>
           <li>Sistemas prontos em 2 a 14 semanas</li>
-          <li>Escopo e prazo definidos no diagnóstico</li>
-          <li>Preço fechado, sem hora extra no fim</li>
+          <li>A IA cuida do trabalho repetitivo; o time investe o tempo em entender o seu processo</li>
         </ul>
       </div>
-      <div>
-        <p class="word safe">Seguro</p>
-        <p class="how">Um especialista dedicado à engenharia e à segurança revisa cada entrega antes de ela chegar ao seu time.</p>
+      <div class="garantia">
+        <p class="garantia-titulo">Seguro</p>
         <ul>
           <li>Revisão técnica e de segurança em toda entrega</li>
-          <li>Verificação contra as falhas do OWASP Top 10<span class="gloss">lista das falhas de segurança mais comuns e perigosas</span></li>
-          <li>Monitoramento e atualizações depois de estar no ar</li>
+          <li>Verificação contra as falhas do OWASP Top 10</li>
         </ul>
       </div>
-    </div>
-  </div>
-</section>
-
-<section class="band band-deep">
-  <div class="wrap why-grid">
-    <div>
-      <h2 class="section-title">Por que a revisão nunca sai do cronograma</h2>
-      <p class="section-sub" style="margin-bottom:0;">Código gerado por IA sem revisão sai rápido e quebra fácil. A revisão é o que permite entregar em semanas sem correr esse risco.</p>
-    </div>
-    <div>
-      <div class="stat-chart">
-        <figure class="donut" role="img" aria-label="Gráfico: 45% do código gerado por IA contém vulnerabilidades">
-          <svg viewBox="0 0 120 120" aria-hidden="true">
-            <circle class="donut-track" cx="60" cy="60" r="50"/>
-            <circle class="donut-value" cx="60" cy="60" r="50" stroke-dasharray="141.37 314.16" transform="rotate(-90 60 60)"/>
-          </svg>
-          <span class="donut-label">45%</span>
-        </figure>
-        <ul class="donut-legend" aria-hidden="true">
-          <li><span class="sw sw-on"></span>com vulnerabilidades</li>
-          <li><span class="sw sw-off"></span>restante do código analisado</li>
-        </ul>
-      </div>
-      <p>do código gerado por IA no mercado contém vulnerabilidades <span class="gloss-inline">(brechas que permitem ataques)</span> do OWASP Top 10, segundo levantamento da Veracode em 2026. Nenhum projeto nosso vai ao ar sem essa verificação.</p>
-      <!-- Conferir o ano: o levantamento conhecido da Veracode com esse número é de 2025. -->
-      <p class="source" data-preencher hidden>Fonte: <a href="[[PREENCHER: URL do relatório da Veracode]]" target="_blank" rel="noopener">relatório da Veracode</a></p>
-    </div>
-  </div>
-  <div class="wrap review">
-    <h3>Como revisamos</h3>
-    <ol class="review-steps flow">
-      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m12 2 10 5-10 5L2 7l10-5z"/><path d="m2 17 10 5 10-5M2 12l10 5 10-5"/></svg></span><strong>Revisão de arquitetura</strong><span>Conferimos se a estrutura do sistema aguenta o uso real e o crescimento da operação.</span></li>
-      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg></span><strong>Análise estática</strong><span>Leitura automatizada do código em busca de erros e trechos inseguros, antes de ele rodar.</span></li>
-      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg></span><strong>Verificação OWASP Top 10</strong><span>Checamos, uma a uma, as falhas de segurança mais comuns e perigosas.</span></li>
-      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></span><strong>Teste de acesso e permissões</strong><span>Cada perfil de usuário só vê e altera o que deve.</span></li>
-      <li><span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg></span><strong>Revisão final</strong><span>Um especialista em engenharia e segurança aprova a entrega antes de ela ir ao ar.</span></li>
-    </ol>
-    <p class="source" data-preencher hidden>Ferramentas usadas: [[PREENCHER: ferramentas usadas]]</p>
-  </div>
-</section>
-
-<section id="problema">
-  <div class="wrap">
-    <p class="eyebrow">Alternativas</p>
-    <h2 class="section-title">Você já sabe o que precisa. O difícil é escolher quem vai construir.</h2>
-    <p class="section-sub">Cada opção comum resolve uma parte do problema e cobra caro pela outra.</p>
-    <div class="problem-grid">
-      <div class="problem-cell">
-        <h3>Software house</h3>
-        <p>Orçamento a partir de R$ 100 mil para um processo que trava hoje.</p>
-        <span class="cost">Três a seis meses de espera</span>
-      </div>
-      <div class="problem-cell">
-        <h3>Freelancer</h3>
-        <p>Sai mais barato na entrega, mas ninguém consegue manter o que ficou.</p>
-        <span class="cost">Sem garantia de continuidade</span>
-      </div>
-      <div class="problem-cell">
-        <h3>Time interno</h3>
-        <p>Manter um desenvolvedor sênior no quadro não se paga para um único sistema.</p>
-        <span class="cost">Custo fixo permanente</span>
-      </div>
-      <div class="problem-cell">
-        <h3>Sistema de prateleira</h3>
-        <p>Resolve 60% do processo e obriga sua empresa a se adaptar aos outros 40%.</p>
-        <span class="cost">A operação se molda ao software</span>
+      <div class="garantia garantia-dado">
+        <p class="seguranca-num">45%</p>
+        <p class="seguranca-txt">do código gerado por IA tem falhas de segurança, segundo a Veracode. Por isso nada vai ao ar sem a revisão de um especialista.</p>
       </div>
     </div>
-    <p class="source" data-preencher hidden>Software house, R$ 100 mil: [[PREENCHER: fonte ou 'estimativa da iSolutis']]. Sistema de prateleira, 60% do processo: [[PREENCHER: fonte ou 'estimativa da iSolutis']].</p>
-    <div class="compare">
-      <h3 class="compare-heading">Lado a lado com as opções mais comuns</h3>
-      <div class="o-table-wrap">
-        <table class="o-table">
-          <thead>
-            <tr><td></td><th scope="col">Freelancer</th><th scope="col">Fazer por conta própria com IA</th><th scope="col" class="us">iSolutis</th></tr>
-          </thead>
-          <tbody>
-            <tr><th scope="row">Preço</th><td data-rotulo="Freelancer">Por hora ou estimativa aberta</td><td data-rotulo="Por conta própria com IA">Custo de horas do seu time</td><td data-rotulo="iSolutis" class="us">Fechado antes do código</td></tr>
-            <tr><th scope="row">Quem revisa o código</th><td data-rotulo="Freelancer">Depende do profissional</td><td data-rotulo="Por conta própria com IA">Ninguém</td><td data-rotulo="iSolutis" class="us">Revisão técnica em toda entrega</td></tr>
-            <tr><th scope="row">Segurança</th><td data-rotulo="Freelancer">Varia conforme o profissional</td><td data-rotulo="Por conta própria com IA">Fica a cargo da IA</td><td data-rotulo="iSolutis" class="us">Arquitetura <span class="gloss-inline">(a estrutura por trás do sistema)</span> e segurança validadas por especialista</td></tr>
-            <tr><th scope="row">Depois da entrega</th><td data-rotulo="Freelancer">Suporte negociado à parte</td><td data-rotulo="Por conta própria com IA">Sua equipe mantém sozinha</td><td data-rotulo="iSolutis" class="us">Período de manutenção contratado junto</td></tr>
-            <tr><th scope="row">Se der problema</th><td data-rotulo="Freelancer">Depende da disponibilidade</td><td data-rotulo="Por conta própria com IA">Você resolve</td><td data-rotulo="iSolutis" class="us">Uma empresa responde pela solução</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="investimento" class="offer">
-  <div class="wrap">
-    <h2 class="section-title">Duas formas de trabalhar com a gente</h2>
-    <hr class="offer-rule">
-    <p class="section-sub">Construímos o sistema que resolve um processo, ou entramos no seu time para estruturar o uso de tecnologia. Muitas vezes, as duas coisas juntas.</p>
-    <div class="paths">
-      <a class="o-card path" href="#faixas">
-        <span class="o-pill">Construir e sustentar</span>
-        <h3>Seu sistema no ar e acompanhado</h3>
-        <p>Escopo e preço fechados antes do código. Depois da entrega, seguimos responsáveis pelo sistema no período de manutenção.</p>
-      </a>
-      <a class="o-card path" href="#consultoria">
-        <span class="o-pill">Consultoria</span>
-        <h3>Tecnologia com método no seu time</h3>
-        <p>Diagnóstico, mentoria e formação para tecnologia, operação comercial, produto e processos fiscais.</p>
-      </a>
-    </div>
-
-    <div class="offer-block" id="faixas">
-      <h3 class="offer-heading">Qual é o tamanho do seu projeto?</h3>
-      <p class="offer-lead">O valor fechado do projeto e da manutenção sai depois da conversa. O prazo de construção segue estas faixas.</p>
-      <figure class="timeline-chart" role="img" aria-label="Prazo de construção por faixa: Simples, 2 a 4 semanas; Média, 4 a 8 semanas; Complexa, 8 a 14 semanas.">
-        <figcaption>Prazo de construção, em semanas</figcaption>
-        <div class="tl-rows" aria-hidden="true">
-          <div class="tl-row"><span class="tl-name">Simples<small>2 a 4 sem.</small></span><span class="tl-track"><span class="tl-bar" style="left:14.2857%;width:14.2857%"><span class="tl-val">2 a 4 sem.</span></span></span></div>
-          <div class="tl-row"><span class="tl-name">Média<small>4 a 8 sem.</small></span><span class="tl-track"><span class="tl-bar" style="left:28.5714%;width:28.5714%"><span class="tl-val">4 a 8 sem.</span></span></span></div>
-          <div class="tl-row"><span class="tl-name">Complexa<small>8 a 14 sem.</small></span><span class="tl-track"><span class="tl-bar" style="left:57.1429%;width:42.8571%"><span class="tl-val">8 a 14 sem.</span></span></span></div>
-          <div class="tl-row tl-axis-row"><span class="tl-name"></span><span class="tl-axis"><span style="left:0.0000%">0</span><span style="left:14.2857%">2</span><span style="left:28.5714%">4</span><span style="left:42.8571%">6</span><span style="left:57.1429%">8</span><span style="left:71.4286%">10</span><span style="left:85.7143%">12</span><span style="left:100.0000%">14</span></span></div>
-        </div>
-      </figure>
-      <div class="o-tiers">
-        <div class="o-tier">
-          <div class="o-tier-body">
-            <h4>Simples</h4>
-            <p class="what">Um processo, um tipo de usuário</p>
-            <p class="o-label">Exemplos</p>
-            <ul>
-              <li>Controle de pedidos</li>
-              <li>Agenda de atendimentos</li>
-              <li>Formulário com painel de gestão</li>
-            </ul>
-          </div>
-          <div class="o-tier-price" data-preencher hidden>
-            <p>Projetos a partir de <strong>[[PREENCHER: valor mínimo do projeto — faixa Simples]]</strong></p>
-            <p>Manutenção a partir de <strong>[[PREENCHER: valor mínimo da manutenção — faixa Simples]]</strong>/mês</p>
-          </div>
-          <div class="o-tier-foot"><span>Prazo de construção</span><strong>2 a 4 semanas</strong></div>
-        </div>
-        <div class="o-tier">
-          <div class="o-tier-body">
-            <h4>Média</h4>
-            <p class="what">Vários perfis, integrações <span class="gloss-inline">(sistemas trocando dados entre si, sem redigitar)</span> e relatórios</p>
-            <p class="o-label">Exemplos</p>
-            <ul>
-              <li>Portal do cliente</li>
-              <li>CRM sob medida</li>
-              <li>Sistema integrado ao seu ERP<span class="gloss">o sistema de gestão que a empresa já usa</span></li>
-            </ul>
-          </div>
-          <div class="o-tier-price" data-preencher hidden>
-            <p>Projetos a partir de <strong>[[PREENCHER: valor mínimo do projeto — faixa Média]]</strong></p>
-            <p>Manutenção a partir de <strong>[[PREENCHER: valor mínimo da manutenção — faixa Média]]</strong>/mês</p>
-          </div>
-          <div class="o-tier-foot"><span>Prazo de construção</span><strong>4 a 8 semanas</strong></div>
-        </div>
-        <div class="o-tier">
-          <div class="o-tier-body">
-            <h4>Complexa</h4>
-            <p class="what">Multiempresa <span class="gloss-inline">(várias empresas ou filiais no mesmo sistema)</span>, integrações críticas e exigência regulatória</p>
-            <p class="o-label">Exemplos</p>
-            <ul>
-              <li>Plataforma multiempresa</li>
-              <li>Sistema com auditoria e conformidade</li>
-              <li>Integração com sistemas legados<span class="gloss">sistemas antigos que a empresa ainda usa</span></li>
-            </ul>
-          </div>
-          <div class="o-tier-price" data-preencher hidden>
-            <p>Projetos a partir de <strong>[[PREENCHER: valor mínimo do projeto — faixa Complexa]]</strong></p>
-            <p>Manutenção a partir de <strong>[[PREENCHER: valor mínimo da manutenção — faixa Complexa]]</strong>/mês</p>
-          </div>
-          <div class="o-tier-foot"><span>Prazo de construção</span><strong>8 a 14 semanas</strong></div>
-        </div>
-      </div>
-      <div class="o-strip">
-        <strong>Em todas as faixas</strong>
-        <ul class="o-checks">
-          <li>Escopo fechado antes do código</li>
-          <li>Revisão de segurança por entrega</li>
-          <li>Período de manutenção contratado junto</li>
-        </ul>
-        <a href="#contato" class="btn" data-evento="click_agendar">Agendar uma conversa</a>
-      </div>
-      <p class="o-note">Valores apresentados depois da conversa, sem compromisso.</p>
-    </div>
-
-    <div class="offer-block" id="consultoria">
-      <h3 class="offer-heading">Consultoria</h3>
-      <p class="offer-lead">Para empresas que querem desenvolver a capacidade do próprio time.</p>
-      <div class="o-consult">
-        <div class="o-card">
-          <h4>Times de tecnologia</h4>
-          <p>Estruturamos o time interno com processos de segurança, qualidade de código e uso responsável de IA.</p>
-          <span class="o-lead-by">Conduzido por Jefferson Pereira</span>
-        </div>
-        <div class="o-card">
-          <h4>Tecnologia na operação comercial</h4>
-          <p>Levamos tecnologia para a operação comercial e preparamos o time para adotar as novas ferramentas.</p>
-          <span class="o-lead-by">Conduzido por Soraya Sá</span>
-        </div>
-        <div class="o-card">
-          <h4>Cultura de produto</h4>
-          <p>Formamos lideranças para decidir o que construir a partir de problemas reais, dados e resultado.</p>
-          <span class="o-lead-by">Conduzido por Gileard Teixeira</span>
-        </div>
-        <div class="o-card">
-          <h4>Processos fiscais e regulatórios</h4>
-          <p>Traduzimos exigências fiscais em regras de negócio claras, prontas para virar processo e sistema.</p>
-          <span class="o-lead-by">Conduzido por Alexandre Marques</span>
-        </div>
-      </div>
-      <div class="o-strip">
-        <p><strong>Formatos:</strong> diagnóstico pontual, mentoria recorrente e formação de times</p>
-        <a href="#contato" class="btn outline-gold">Conversar sobre consultoria</a>
-      </div>
-    </div>
-
+    <p class="source" data-preencher hidden>Fonte: <a href="[[PREENCHER: URL do relatório da Veracode]]" target="_blank" rel="noopener">relatório da Veracode</a></p>
   </div>
 </section>
 
 <section id="equipe">
   <div class="wrap">
+    <p class="eyebrow">Equipe</p>
     <h2 class="section-title">Quem responde pelo seu projeto</h2>
-    <hr class="offer-rule">
     <div class="team-grid">
       <article class="team-card">
         <p class="team-fase">Antes do código</p>
@@ -643,9 +430,69 @@
   </div>
 </section>
 
-<section id="duvidas">
+<section id="investimento" class="offer">
   <div class="wrap">
-    <h2 class="section-title">Perguntas frequentes</h2>
+    <p class="eyebrow">Investimento</p>
+    <h2 class="section-title">Qual é o tamanho do seu projeto?</h2>
+    <p class="section-sub">Valor fechado depois da conversa, sem compromisso.</p>
+    <div class="offer-block" id="faixas">
+      <div class="o-tiers">
+        <div class="o-tier">
+          <div class="o-tier-body">
+            <h4>Simples</h4>
+            <p class="what">Um processo, um tipo de usuário</p>
+          </div>
+          <div class="o-tier-price" data-preencher hidden>
+            <p>Projetos a partir de <strong>[[PREENCHER: valor mínimo do projeto — faixa Simples]]</strong></p>
+            <p>Manutenção a partir de <strong>[[PREENCHER: valor mínimo da manutenção — faixa Simples]]</strong>/mês</p>
+          </div>
+          <div class="o-tier-foot"><span>Prazo</span><strong>2 a 4 semanas</strong></div>
+        </div>
+        <div class="o-tier">
+          <div class="o-tier-body">
+            <h4>Média</h4>
+            <p class="what">Vários perfis, integrações e relatórios</p>
+          </div>
+          <div class="o-tier-price" data-preencher hidden>
+            <p>Projetos a partir de <strong>[[PREENCHER: valor mínimo do projeto — faixa Média]]</strong></p>
+            <p>Manutenção a partir de <strong>[[PREENCHER: valor mínimo da manutenção — faixa Média]]</strong>/mês</p>
+          </div>
+          <div class="o-tier-foot"><span>Prazo</span><strong>4 a 8 semanas</strong></div>
+        </div>
+        <div class="o-tier">
+          <div class="o-tier-body">
+            <h4>Complexa</h4>
+            <p class="what">Multiempresa, integrações críticas e exigência regulatória</p>
+          </div>
+          <div class="o-tier-price" data-preencher hidden>
+            <p>Projetos a partir de <strong>[[PREENCHER: valor mínimo do projeto — faixa Complexa]]</strong></p>
+            <p>Manutenção a partir de <strong>[[PREENCHER: valor mínimo da manutenção — faixa Complexa]]</strong>/mês</p>
+          </div>
+          <div class="o-tier-foot"><span>Prazo</span><strong>8 a 14 semanas</strong></div>
+        </div>
+      </div>
+      <p class="offer-cta"><a href="#contato" class="btn gold big" data-evento="click_agendar">Agendar uma conversa</a></p>
+    </div>
+
+    <div class="offer-block" id="consultoria">
+      <h3 class="offer-heading">Consultoria</h3>
+      <p class="offer-lead">Também apoiamos o seu time em quatro frentes.</p>
+      <ul class="consult-lista">
+        <li><strong>Times de tecnologia</strong><span>Jefferson Pereira</span></li>
+        <li><strong>Tecnologia na operação comercial</strong><span>Soraya Sá</span></li>
+        <li><strong>Cultura de produto</strong><span>Gileard Teixeira</span></li>
+        <li><strong>Processos fiscais e regulatórios</strong><span>Alexandre Marques</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas">
+  <div class="wrap duvidas-wrap">
+    <div class="duvidas-cabeca">
+      <p class="eyebrow">Dúvidas</p>
+      <h2 class="section-title">Perguntas frequentes</h2>
+    </div>
     <div class="faq">
       <details>
         <summary>Se é tão rápido, onde fica a segurança?</summary>
@@ -693,63 +540,62 @@
 </section>
 
 <section id="contato" class="final">
-  <div class="wrap">
-    <div>
+  <div class="wrap contato-grid">
+    <div class="contato-texto">
       <h2>Qual processo está travando a sua operação?</h2>
       <p>Conte em uma conversa sem compromisso. Depois, apresentamos prazo e valor fechados para resolver.</p>
+      <div class="ctas">
+        <a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20iSolutis." target="_blank" rel="noopener" class="btn gold big">Falar no WhatsApp</a>
+        <a href="#contato" class="btn outline-gold big" data-agenda data-evento="click_agendar" target="_blank" rel="noopener" hidden>Agendar horário</a>
+        <small>Prefere escrever? Deixe seu contato no formulário.</small>
+      </div>
     </div>
-    <div class="ctas">
-      <a href="https://wa.me/5571992390992?text=Ol%C3%A1!%20Quero%20agendar%20um%20diagn%C3%B3stico%20com%20a%20iSolutis." target="_blank" rel="noopener" class="btn gold big">Falar no WhatsApp</a>
-      <a href="#contato" class="btn outline-gold big" data-agenda data-evento="click_agendar" target="_blank" rel="noopener" hidden>Agendar horário</a>
-      <small>Prefere escrever? Use o formulário abaixo.</small>
+    <div class="contato-form">
+      <form class="contact-form is-off" id="form-contato" method="post" novalidate>
+        <h3>Deixe seu contato e a gente retorna</h3>
+        <p class="form-off" data-form-off>O formulário ainda não está disponível. Fale com a gente pelo WhatsApp.</p>
+        <fieldset disabled>
+          <legend class="sr-only">Seus dados</legend>
+          <div class="form-grid">
+            <div class="field">
+              <label for="f-nome">Nome</label>
+              <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="f-nome-erro">
+              <p class="field-error" id="f-nome-erro"></p>
+            </div>
+            <div class="field">
+              <label for="f-email">E-mail</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-erro">
+              <p class="field-error" id="f-email-erro"></p>
+            </div>
+            <div class="field">
+              <label for="f-empresa">Empresa</label>
+              <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required aria-describedby="f-empresa-erro">
+              <p class="field-error" id="f-empresa-erro"></p>
+            </div>
+            <div class="field">
+              <label for="f-cargo">Cargo <span class="optional">(opcional)</span></label>
+              <input id="f-cargo" name="cargo" type="text" autocomplete="organization-title">
+            </div>
+            <div class="field field-wide">
+              <label for="f-processo">Qual processo está travando?</label>
+              <textarea id="f-processo" name="processo" rows="4" required aria-describedby="f-processo-erro"></textarea>
+              <p class="field-error" id="f-processo-erro"></p>
+            </div>
+          </div>
+          <div class="hp" aria-hidden="true">
+            <label for="f-site">Não preencha este campo</label>
+            <input id="f-site" name="_honey" type="text" tabindex="-1" autocomplete="off">
+          </div>
+          <div class="field consent">
+            <input id="f-lgpd" name="consentimento_lgpd" type="checkbox" value="sim" required aria-describedby="f-lgpd-erro">
+            <label for="f-lgpd">Autorizo a iSolutis a usar estes dados para entrar em contato comigo, conforme a <a href="#contato" data-politica target="_blank" rel="noopener">política de privacidade</a>.</label>
+            <p class="field-error" id="f-lgpd-erro"></p>
+          </div>
+          <button type="submit" class="btn gold big">Enviar</button>
+        </fieldset>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
-  </div>
-
-  <div class="wrap contact-wrap">
-    <form class="contact-form is-off" id="form-contato" method="post" novalidate>
-      <h3>Deixe seu contato e a gente retorna</h3>
-      <p class="form-off" data-form-off>O formulário ainda não está disponível. Fale com a gente pelo WhatsApp, logo acima.</p>
-      <fieldset disabled>
-        <legend class="sr-only">Seus dados</legend>
-        <div class="form-grid">
-          <div class="field">
-            <label for="f-nome">Nome</label>
-            <input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="f-nome-erro">
-            <p class="field-error" id="f-nome-erro"></p>
-          </div>
-          <div class="field">
-            <label for="f-email">E-mail</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="f-email-erro">
-            <p class="field-error" id="f-email-erro"></p>
-          </div>
-          <div class="field">
-            <label for="f-empresa">Empresa</label>
-            <input id="f-empresa" name="empresa" type="text" autocomplete="organization" required aria-describedby="f-empresa-erro">
-            <p class="field-error" id="f-empresa-erro"></p>
-          </div>
-          <div class="field">
-            <label for="f-cargo">Cargo <span class="optional">(opcional)</span></label>
-            <input id="f-cargo" name="cargo" type="text" autocomplete="organization-title">
-          </div>
-          <div class="field field-wide">
-            <label for="f-processo">Qual processo está travando?</label>
-            <textarea id="f-processo" name="processo" rows="4" required aria-describedby="f-processo-erro"></textarea>
-            <p class="field-error" id="f-processo-erro"></p>
-          </div>
-        </div>
-        <div class="hp" aria-hidden="true">
-          <label for="f-site">Não preencha este campo</label>
-          <input id="f-site" name="_honey" type="text" tabindex="-1" autocomplete="off">
-        </div>
-        <div class="field consent">
-          <input id="f-lgpd" name="consentimento_lgpd" type="checkbox" value="sim" required aria-describedby="f-lgpd-erro">
-          <label for="f-lgpd">Autorizo a iSolutis a usar estes dados para entrar em contato comigo, conforme a <a href="#contato" data-politica target="_blank" rel="noopener">política de privacidade</a>.</label>
-          <p class="field-error" id="f-lgpd-erro"></p>
-        </div>
-        <button type="submit" class="btn gold big">Enviar</button>
-      </fieldset>
-      <p class="form-status" role="status" aria-live="polite"></p>
-    </form>
   </div>
 </section>
 
@@ -777,7 +623,7 @@
   </div>
 </div>
 
-<script src="js/config.js?v=53"></script>
-<script src="js/main.js?v=53"></script>
+<script src="js/config.js?v=80"></script>
+<script src="js/main.js?v=80"></script>
 </body>
 </html>
