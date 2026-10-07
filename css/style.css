@@ -1428,3 +1428,19 @@
   #rapido-seguro .twin { border-radius: 14px; overflow: hidden; }
   #rapido-seguro .seguranca { margin-top: 56px; }
   @media (max-width: 640px) { #rapido-seguro .seguranca { margin-top: 36px; } }
+
+  /* ---------- Revisão final de cores e resumo no celular ---------- */
+
+  /* Equipe em branco: a divisão com Como funciona (turquesa suave) fica nítida,
+     e a sequência segue clara > turquesa > branca > azul */
+  #equipe { background: var(--paper); }
+  #equipe .team-fase::before { background: var(--paper); }
+  #equipe .team-card { box-shadow: 0 1px 2px rgba(1,55,109,0.05), 0 12px 28px -22px rgba(1,55,109,0.35); }
+
+  /* Celular: Prazo e segurança só com o essencial. O terceiro item de cada coluna repete
+     Como funciona (preço fechado e manutenção) e a explicação do OWASP sai. */
+  @media (max-width: 640px) {
+    #rapido-seguro .twin li:nth-child(3), #rapido-seguro .twin .gloss { display: none; }
+    #rapido-seguro .twin .word { font-size: 2rem; margin-bottom: 4px; }
+    #rapido-seguro .twin > div { padding: 20px 18px 14px; }
+  }
