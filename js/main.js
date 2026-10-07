@@ -585,3 +585,20 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
   celular.addEventListener('change', aplicar);
   aplicar();
 })();
+
+// Marcas: no celular viram uma faixa que desliza em loop. Os logos são duplicados (ocultos
+// para leitores de tela) para o movimento não ter emenda. Sem animação para quem pediu menos movimento.
+(() => {
+  const lista = document.querySelector('.marcas-lista');
+  if (!lista || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  [...lista.children].forEach((item) => {
+    const copia = item.cloneNode(true);
+    copia.setAttribute('aria-hidden', 'true');
+    copia.classList.remove('revela', 'visivel');
+    copia.style.removeProperty('--atraso');
+    const img = copia.querySelector('img');
+    if (img) img.alt = '';
+    lista.appendChild(copia);
+  });
+  lista.classList.add('marquee');
+})();
