@@ -500,7 +500,7 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
 
 // Celular: faixas que deslizam ganham uma dica curta logo abaixo (some na primeira rolagem lateral).
 (() => {
-  const faixas = document.querySelectorAll('.team-grid, #exemplos .cases');
+  const faixas = document.querySelectorAll('.team-grid');
   faixas.forEach((faixa) => {
     const dica = document.createElement('p');
     dica.className = 'dica-deslize';
@@ -532,7 +532,7 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
 // Celular: cartões empilhados. O cartão que está sendo coberto pelo próximo encolhe e escurece
 // conforme a rolagem. Sem efeito em telas maiores ou para quem pediu menos movimento.
 (() => {
-  const pilhas = document.querySelectorAll('.problem-grid, .paths, .o-tiers, .o-consult');
+  const pilhas = document.querySelectorAll('.problem-grid, .paths, .o-tiers, .o-consult, #como-funciona .steps.flow');
   if (!pilhas.length) return;
   const celular = window.matchMedia('(max-width: 640px)');
   const calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -549,13 +549,14 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
       const cartoes = [...p.children];
       cartoes.forEach((c, i) => {
         const prox = cartoes[i + 1];
-        if (!celular.matches || !prox) { c.style.transform = ''; c.style.filter = ''; return; }
+        if (!celular.matches || !prox) { c.style.transform = ''; c.style.filter = ''; c.style.removeProperty('--cob'); return; }
         const a = c.getBoundingClientRect();
         const b = prox.getBoundingClientRect();
         // 0 quando o próximo ainda está abaixo; 1 quando ele cobriu este cartão.
         const cobertura = Math.min(1, Math.max(0, (a.bottom - b.top) / a.height));
         c.style.transform = `scale(${1 - cobertura * 0.06})`;
         c.style.filter = `brightness(${1 - cobertura * 0.18})`;
+        c.style.setProperty('--cob', cobertura.toFixed(3));
       });
     });
   };
