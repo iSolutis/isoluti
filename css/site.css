@@ -25,7 +25,7 @@
   --radius-button: 8px;
   --container-max: 1200px;
   --margem: 32px;
-  --secao: 112px;
+  --secao: 96px;
   --rapido: 200ms;
   --topo: 76px;
 }
@@ -547,3 +547,51 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
   .tem-revelar .revela { opacity: 1; transform: none; }
   .hero-luzes { display: none; }
 }
+
+/* ---------- Revisão de UX (14/10/2026): menos texto, leitura por varredura ---------- */
+/* Dores: o gestor se reconhece no problema */
+.dores { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.dores li { position: relative; padding: 26px 24px; border: 1px solid var(--linha); border-radius: var(--radius-card); background: var(--branco); transition: transform var(--rapido) ease, border-color var(--rapido) ease, box-shadow var(--rapido) ease; }
+.dores li::before { content: ""; position: absolute; left: 0; top: 0; right: 0; height: 3px; border-radius: var(--radius-card) var(--radius-card) 0 0; background: linear-gradient(90deg, var(--indigo), var(--champagne)); transform: scaleX(0); transform-origin: left; transition: transform 0.35s ease; }
+.dores li:hover { transform: translateY(-4px); border-color: rgba(79, 107, 143, 0.35); box-shadow: 0 18px 36px -24px rgba(11, 45, 59, 0.45); }
+.dores li:hover::before { transform: scaleX(1); }
+.dor-icone { display: grid; place-items: center; width: 44px; height: 44px; margin-bottom: 20px; border-radius: 10px; background: rgba(79, 107, 143, 0.1); color: var(--indigo); }
+.dor-icone svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+.dores h3 { margin-bottom: 6px; font-size: 20px; line-height: 27px; }
+.dores p { font-size: 15px; line-height: 23px; color: var(--texto-suave); }
+@media (max-width: 1000px) { .dores { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) {
+  .dores { grid-template-columns: 1fr; gap: 10px; }
+  .dores li { display: grid; grid-template-columns: 44px 1fr; column-gap: 14px; align-items: center; padding: 16px 18px; }
+  .dor-icone { grid-row: span 2; margin: 0; }
+  .dores h3 { margin: 0; font-size: 17px; line-height: 23px; }
+  .dores p { font-size: 14px; line-height: 21px; }
+}
+
+/* Exemplos compactos em todas as telas: antes riscado, depois em destaque */
+.caso { background: var(--branco); padding: 22px; }
+.caso h3 { margin-bottom: 12px; font-size: 19px; line-height: 26px; }
+.caso .ba-label { display: none; }
+.caso .ba-before p { margin: 0; font-size: 14px; line-height: 21px; text-decoration: line-through; text-decoration-color: rgba(87, 94, 102, 0.45); }
+.caso .ba-after { margin-top: 8px; padding-top: 0; border-top: 0; }
+.caso .ba-after p { margin: 0; font-size: 16px; line-height: 23px; }
+.caso .ba-after p::before { content: "→ "; color: var(--indigo); }
+.caso .link-seta { margin-top: 10px; }
+@media (max-width: 640px) { .caso .ba-after p::before { content: "→ "; } }
+
+/* Rápido e seguro: uma frase por cartão */
+.rs-texto { font-size: 16px; line-height: 24px; color: var(--texto-claro); }
+
+/* Convite no meio da página, depois do método */
+.cta-faixa { display: flex; align-items: center; justify-content: space-between; gap: 24px 40px; margin-top: 64px; padding: 32px 36px; border-radius: var(--radius-card); background: radial-gradient(80% 140% at 100% 0%, rgba(79, 107, 143, 0.45), transparent 60%), var(--petroleo); color: var(--off); }
+.cta-faixa-titulo { font-size: 26px; line-height: 32px; font-weight: 600; letter-spacing: -0.01em; }
+.cta-faixa-texto { margin-top: 6px; font-size: 16px; line-height: 24px; color: var(--texto-claro); }
+@media (max-width: 767px) {
+  .cta-faixa { flex-direction: column; align-items: stretch; margin-top: 40px; padding: 24px 20px; }
+  .cta-faixa-titulo { font-size: 22px; line-height: 28px; }
+  .cta-faixa .btn { width: 100%; }
+}
+/* No celular, as etapas que se recolhem precisam de espaço antes da faixa */
+@media (max-width: 640px) { .metodo-passos + .cta-faixa { margin-top: 32px; } }
+.caso.caso-convite { background: var(--petroleo); }
+@media (max-width: 560px) { .dores p { display: none; } .dores li { grid-template-columns: 44px 1fr; } .dor-icone { grid-row: auto; } .dores h3 { font-size: 17px; } }

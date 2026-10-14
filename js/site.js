@@ -354,7 +354,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
 (() => {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
   const grupos = [
-    '.eyebrow', '.titulo', '.intro', '.frentes > *', '.solucoes-lista > *', '.rs-cartao', '.metodo-passos > li',
+    '.eyebrow', '.titulo', '.intro', '.dores > *', '.solucoes-lista > *', '.rs-cartao', '.metodo-passos > li', '.cta-faixa',
     '.casos > .caso', '.historia-foto', '.historia-texto', '.atributos > li', '.team-grid > *', '.faq details', '.contato-grid > *',
   ];
   const alvos = new Set();
