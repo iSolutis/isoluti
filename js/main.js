@@ -603,3 +603,22 @@ document.querySelectorAll('[data-carousel-nav]').forEach((nav) => {
   });
   lista.classList.add('marquee');
 })();
+
+// Celular: Soluções mostra 4 cartões; o botão revela os outros 3 e leva o foco ao primeiro deles.
+(() => {
+  const botao = document.querySelector('.cases-mais');
+  if (!botao) return;
+  const lista = botao.closest('.cases');
+  botao.addEventListener('click', () => {
+    lista.classList.add('aberta');
+    botao.setAttribute('aria-expanded', 'true');
+    const extras = lista.querySelectorAll('.case-extra');
+    extras.forEach((c) => c.classList.add('visivel'));
+    const primeiro = extras[0];
+    if (primeiro) {
+      primeiro.setAttribute('tabindex', '-1');
+      primeiro.focus({ preventScroll: true });
+      primeiro.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+  });
+})();
