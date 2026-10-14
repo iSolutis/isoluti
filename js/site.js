@@ -119,7 +119,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
 
     // Os dados saem antes de travar o formulário: campo desabilitado não entra no FormData.
     // Vão em JSON, formato aceito pelo FormSubmit e pelo Formspree; _subject e _template
-    // definem o assunto e o layout do e-mail que chega para a CeleraOne.
+    // definem o assunto e o layout do e-mail que chega para a AIME Tech.
     const dados = Object.fromEntries(new FormData(form));
     delete dados._honey;
     dados._subject = `Contato pelo site: ${dados.empresa}`;
