@@ -595,3 +595,19 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
 @media (max-width: 640px) { .metodo-passos + .cta-faixa { margin-top: 32px; } }
 .caso.caso-convite { background: var(--petroleo); }
 @media (max-width: 560px) { .dores p { display: none; } .dores li { grid-template-columns: 44px 1fr; } .dor-icone { grid-row: auto; } .dores h3 { font-size: 17px; } }
+
+/* ---------- Abertura comercial: microtexto e provas em números ---------- */
+.hero-micro { margin-top: 16px; font-size: 14px; line-height: 20px; color: var(--texto-claro); }
+.hero-micro::before { content: "✓ "; color: var(--champagne); font-weight: 700; }
+.hero-provas { display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 0; margin-top: 36px; padding-top: 24px; border-top: 1px solid var(--linha-escura); }
+.hero-provas li { display: flex; flex-direction: column; gap: 2px; padding: 0 28px; border-left: 1px solid var(--linha-escura); }
+.hero-provas li:first-child { padding-left: 0; border-left: 0; }
+.hero-provas strong { font-size: 22px; line-height: 28px; font-weight: 600; letter-spacing: -0.01em; color: var(--off); }
+.hero-provas span { font-size: 14px; line-height: 20px; color: var(--texto-claro); }
+@media (max-width: 767px) {
+  .hero-micro { font-size: 13px; }
+  .hero-provas { grid-template-columns: 1fr; gap: 12px; margin-top: 28px; padding-top: 20px; }
+  .hero-provas li { flex-direction: row; align-items: baseline; gap: 8px; padding: 0; border-left: 0; }
+  .hero-provas strong { font-size: 18px; line-height: 24px; white-space: nowrap; }
+  .hero-provas span { font-size: 14px; }
+}
