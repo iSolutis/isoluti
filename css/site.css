@@ -1,10 +1,10 @@
-/* AIME Tech — estilos da home (paleta e tipografia do painel de identidade, 14/10/2026) */
+/* AIME Tech — estilos da home (cores e regras do kit de identidade, outubro de 2026) */
 :root {
   --petroleo: #0B2D3B;         /* azul petróleo: títulos e superfícies fortes */
   --profundo: #07131D;         /* fundo profundo: abertura, equipe e contato */
   --indigo: #4F6B8F;           /* índigo suave: links e rótulos no claro */
   --lilas: #A7AFC7;            /* lilás cinza: acentos no escuro */
-  --champagne: #D9C9B1;        /* champagne: CTA e pontos de luz */
+  --champagne: #D9C8B1;        /* champagne: CTA e pontos de luz (kit oficial) */
   --champagne-2: #CBB797;      /* hover do CTA */
   --grafite: #2E3338;          /* texto sobre claro */
   --off: #F7F6F2;              /* off-white: leitura */
@@ -84,7 +84,7 @@ header.top { position: sticky; top: 0; z-index: 50; height: var(--topo); backgro
 header.top.rolou { background: rgba(247, 246, 242, 0.95); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom-color: var(--linha); }
 header.top .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 100%; }
 .brand { position: relative; display: inline-flex; align-items: center; min-height: 44px; flex: none; }
-.logo { display: block; width: 172px; height: auto; transition: opacity 0.3s ease; }
+.logo { display: block; width: 190px; height: auto; transition: opacity 0.3s ease; }  /* mínimo do guia: 180 px sem slogan */
 .logo-claro { position: absolute; left: 0; top: 50%; transform: translateY(-50%); opacity: 0; }
 header.top.rolou .logo-escuro { opacity: 0; }
 header.top.rolou .logo-claro { opacity: 1; }
@@ -110,14 +110,14 @@ header.top.rolou .menu-toggle span { background: var(--petroleo); }
   .tem-menu .nav-links a, header.top.rolou .tem-menu .nav-links a { padding: 14px 0; font-size: 18px; color: var(--grafite); border-bottom: 1px solid var(--linha); }
   .tem-menu .nav-links a::after { display: none; }
 }
-@media (max-width: 767px) { .logo { width: 140px; } header.top nav > .btn { display: none; } }
+@media (max-width: 767px) { .logo { width: 180px; } header.top nav > .btn { display: none; } }
 
 /* ---------- 01 Abertura ---------- */
 .hero { position: relative; overflow: hidden; color: var(--off); background: radial-gradient(60% 70% at 85% 10%, rgba(11, 45, 59, 0.95), transparent 70%), var(--profundo); }
 .hero-luzes { position: absolute; inset: 0; pointer-events: none; }
 .hero-luzes span { position: absolute; border-radius: 50%; filter: blur(70px); opacity: 0.55; animation: deriva 22s ease-in-out infinite alternate; }
 .hero-luzes span:nth-child(1) { width: 420px; height: 420px; right: 4%; top: -80px; background: rgba(79, 107, 143, 0.55); }
-.hero-luzes span:nth-child(2) { width: 300px; height: 300px; right: 30%; bottom: 60px; background: rgba(217, 201, 177, 0.22); animation-duration: 28s; animation-delay: -6s; }
+.hero-luzes span:nth-child(2) { width: 300px; height: 300px; right: 30%; bottom: 60px; background: rgba(217, 200, 177, 0.22); animation-duration: 28s; animation-delay: -6s; }
 .hero-luzes span:nth-child(3) { width: 260px; height: 260px; left: -60px; top: 30%; background: rgba(167, 175, 199, 0.18); animation-duration: 32s; animation-delay: -12s; }
 @keyframes deriva { 0% { transform: translate(0, 0) scale(1); } 50% { transform: translate(-40px, 30px) scale(1.08); } 100% { transform: translate(30px, -20px) scale(0.95); } }
 .hero .wrap { position: relative; z-index: 1; padding-top: 88px; }
@@ -144,7 +144,7 @@ header.top.rolou .menu-toggle span { background: var(--petroleo); }
 [data-rotativo].tem-rotacao .rotativo-lista li { display: none; }
 [data-rotativo].tem-rotacao .rotativo-lista li.ativo { display: flex; animation: troca 0.5s cubic-bezier(.2, .7, .2, 1) both; }
 @keyframes troca { from { opacity: 0; transform: translateY(12px); } }
-.rot-area { align-self: flex-start; padding: 3px 10px; border-radius: 6px; background: rgba(217, 201, 177, 0.14); font-size: 13px; line-height: 18px; font-weight: 600; color: var(--champagne); }
+.rot-area { align-self: flex-start; padding: 3px 10px; border-radius: 6px; background: rgba(217, 200, 177, 0.14); font-size: 13px; line-height: 18px; font-weight: 600; color: var(--champagne); }
 .rotativo-lista .antes { font-size: 16px; line-height: 24px; color: var(--texto-claro); text-decoration: line-through; text-decoration-color: rgba(198, 203, 214, 0.55); }
 .rotativo-lista .depois { font-size: 22px; line-height: 30px; font-weight: 600; color: var(--off); }
 .rotativo-lista .depois::before { content: "→ "; color: var(--champagne); }
@@ -235,11 +235,11 @@ header.top.rolou .menu-toggle span { background: var(--petroleo); }
 
 /* ---------- 04 Rápido e seguro ---------- */
 .rapido-seguro { position: relative; overflow: hidden; }
-.rapido-seguro::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(217, 201, 177, 0.14), transparent 65%); pointer-events: none; }
+.rapido-seguro::before { content: ""; position: absolute; width: 520px; height: 520px; right: -160px; top: -200px; border-radius: 50%; background: radial-gradient(circle, rgba(217, 200, 177, 0.14), transparent 65%); pointer-events: none; }
 .rs-grid { position: relative; display: grid; grid-template-columns: 1fr 1fr 1.05fr; gap: 20px; }
 .rs-cartao { display: flex; flex-direction: column; padding: 32px; border: 1px solid var(--linha-escura); border-radius: var(--radius-card); background: rgba(247, 246, 242, 0.04); transition: border-color var(--rapido) ease, transform var(--rapido) ease; }
-.rs-cartao:hover { border-color: rgba(217, 201, 177, 0.4); transform: translateY(-3px); }
-.rs-icone { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 20px; border-radius: 12px; background: rgba(217, 201, 177, 0.12); color: var(--champagne); }
+.rs-cartao:hover { border-color: rgba(217, 200, 177, 0.4); transform: translateY(-3px); }
+.rs-icone { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 20px; border-radius: 12px; background: rgba(217, 200, 177, 0.12); color: var(--champagne); }
 .rs-cartao h3 { font-size: 15px; line-height: 20px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lilas); }
 .rs-numero { margin-top: 10px; font-size: 18px; line-height: 26px; color: var(--texto-claro); }
 .rs-numero strong { display: block; font-size: 48px; line-height: 54px; font-weight: 600; letter-spacing: -0.02em; color: var(--off); }
@@ -378,7 +378,7 @@ header.top.rolou .menu-toggle span { background: var(--petroleo); }
   transition: border-color var(--rapido) ease, transform var(--rapido) ease;
 }
 .tem-janela .team-card { cursor: pointer; }
-.team-card:hover { border-color: rgba(217, 201, 177, 0.45); }
+.team-card:hover { border-color: rgba(217, 200, 177, 0.45); }
 .team-photo { grid-area: foto; position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--color-brand); }
 .team-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center bottom; transition: transform 0.4s ease; }
 .team-card:hover .team-photo img { transform: scale(1.03); }
@@ -458,7 +458,7 @@ html.modal-aberto { overflow: hidden; }
 .contact-form h3 { margin-bottom: 20px; font-size: 22px; line-height: 30px; font-weight: 600; color: var(--color-bg); }
 .contact-form fieldset { margin: 0; padding: 0; border: 0; min-width: 0; }
 .contact-form fieldset:disabled { opacity: 0.55; }
-.form-off { margin-bottom: 16px; padding: 12px 14px; border-radius: var(--radius-button); background: rgba(217, 201, 177, 0.12); color: var(--color-action); font-size: 15px; line-height: 22px; }
+.form-off { margin-bottom: 16px; padding: 12px 14px; border-radius: var(--radius-button); background: rgba(217, 200, 177, 0.12); color: var(--color-action); font-size: 15px; line-height: 22px; }
 .form-off[hidden] { display: none; }
 .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
 .field { display: flex; flex-direction: column; gap: 6px; }
@@ -485,7 +485,7 @@ html.modal-aberto { overflow: hidden; }
 .form-status { margin-top: 14px; font-size: 15px; line-height: 22px; color: var(--color-bg); }
 .form-status:empty { display: none; }
 .form-status.carregando::before { content: ""; display: inline-block; width: 12px; height: 12px; margin-right: 8px; vertical-align: -1px; border: 2px solid var(--color-action); border-right-color: transparent; border-radius: 50%; animation: gira 0.8s linear infinite; }
-.form-status.sucesso { padding: 14px 16px; border-left: 3px solid var(--color-action); background: rgba(217, 201, 177, 0.1); }
+.form-status.sucesso { padding: 14px 16px; border-left: 3px solid var(--color-action); background: rgba(217, 200, 177, 0.1); }
 .form-status.sucesso:focus { outline: none; }
 .form-status.erro { color: #F1B8A8; }
 .form-status.erro a { color: var(--color-action); }
@@ -515,7 +515,7 @@ html.modal-aberto { overflow: hidden; }
 /* ---------- Rodapé ---------- */
 footer { padding: 48px 0 40px; background: var(--off); border-top: 1px solid var(--linha); }
 footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px 48px; }
-.logo-rodape { display: block; width: 168px; height: auto; }
+.logo-rodape { display: block; width: 320px; max-width: 100%; height: auto; }  /* mínimo do guia: 320 px com slogan */
 .slogan { margin-top: 10px; font-size: 12px; line-height: 16px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--texto-suave); }
 .footer-links { display: flex; flex-wrap: wrap; gap: 8px 20px; }
 .footer-links a, .link-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0; border: 0; background: none; font: inherit; font-size: 15px; color: var(--petroleo); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }

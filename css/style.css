@@ -1680,21 +1680,21 @@
    Botões de ação em champagne, logo provisória e fundo off-white, conforme o guia de redesign. */
 body { font-family: 'Inter', system-ui, sans-serif; background: #F7F6F2; color: #2E3338; }
 h1, h2, h3, h4, .section-title { letter-spacing: -0.02em; }
-.btn.gold, .btn.gold:visited { background: #D9C9B1; color: #0B2D3B; border-color: #D9C9B1; }
+.btn.gold, .btn.gold:visited { background: #D9C8B1; color: #0B2D3B; border-color: #D9C8B1; }
 .btn.gold:hover { background: #CBB797; border-color: #CBB797; }
-.btn.outline-gold { border-color: rgba(217,201,177,0.7); color: #D9C9B1; background: transparent; }
-.btn.outline-gold:hover { border-color: #D9C9B1; background: rgba(217,201,177,0.08); }
+.btn.outline-gold { border-color: rgba(217,200,177,0.7); color: #D9C8B1; background: transparent; }
+.btn.outline-gold:hover { border-color: #D9C8B1; background: rgba(217,200,177,0.08); }
 header.top nav > .btn { background: #0B2D3B; color: #F7F6F2; border-color: #0B2D3B; border-radius: 8px; }
-header.top .logo-wordmark { width: 172px; height: auto !important; }
-footer .logo-footer { width: 168px; height: auto !important; }
-@media (max-width: 767px) { header.top .logo-wordmark { width: 140px; } }
+header.top .logo-wordmark { width: 190px; height: auto !important; }
+footer .logo-footer { width: 320px; max-width: 100%; height: auto !important; }
+@media (max-width: 767px) { header.top .logo-wordmark { width: 180px; } }
 .hero { background: #F7F6F2; }
 .hero .tag { background: #fff; border-color: rgba(79,107,143,0.35); color: #0B2D3B; }
-.hero .tag .dot { background: #D9C9B1; }
+.hero .tag .dot { background: #D9C8B1; }
 .final { background: radial-gradient(60% 80% at 15% 10%, rgba(11,45,59,0.9), transparent 70%), #07131D; }
 .btn { border-radius: 8px; }
 header.top nav > .btn { white-space: nowrap; min-height: 44px; }
 @media (max-width: 440px) { header.top nav > .btn { padding: 0 12px; font-size: 14px; } }
-@media (max-width: 374px) { header.top nav > .btn { display: none !important; } }
+@media (max-width: 479px) { header.top nav > .btn { display: none !important; } }
 
 h1, h2, h3, h4, .section-title { font-family: 'Inter', system-ui, sans-serif; font-weight: 600; }
