@@ -437,7 +437,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   desenhar();
 })();
 
-// Celular: "Na prática" mostra 4 exemplos; o botão revela os outros 3 e leva o foco ao primeiro deles.
+// Exemplos: mostra 4; o botão revela os outros 3 e leva o foco ao primeiro deles.
 (() => {
   const botao = document.querySelector('.cases-mais');
   if (!botao) return;

@@ -311,7 +311,6 @@ header.top.rolou .menu-toggle span { background: var(--petroleo); }
 .caso-convite h3 { color: var(--off); }
 .caso-convite p { flex: 1; font-size: 16px; line-height: 25px; color: var(--texto-claro); }
 .caso-convite .link-seta, .caso-convite .link-seta::after { color: var(--champagne); }
-.cases-mais { display: none; }
 @media (max-width: 1100px) { .casos { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 640px) {
   .casos { grid-template-columns: 1fr; gap: 10px; }
@@ -328,11 +327,6 @@ header.top.rolou .menu-toggle span { background: var(--petroleo); }
   .caso .ba-after p { margin: 0; font-size: 15px; line-height: 22px; }
   .caso .ba-after p::before { content: "→ "; color: var(--indigo); }
   .caso .link-seta { margin-top: 2px; font-size: 14px; }
-  .casos:not(.aberta) .caso-extra { display: none; }
-  .cases-mais { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; border: 1px solid rgba(11, 45, 59, 0.2); border-radius: var(--radius-button); background: transparent; color: var(--petroleo); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
-  .cases-mais::after { content: "↓"; color: var(--indigo); }
-  .casos.aberta .cases-mais { display: none; }
-  .casos.aberta .caso-extra { animation: troca 0.4s ease-out both; }
   .caso-extra:focus { outline: none; }
 }
 
@@ -611,3 +605,22 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
   .hero-provas strong { font-size: 18px; line-height: 24px; white-space: nowrap; }
   .hero-provas span { font-size: 14px; }
 }
+
+/* ---------- Página mais direta (15/10/2026) ---------- */
+/* Exemplos: 4 em destaque em todas as telas; os outros 3 abrem pelo botão */
+.casos:not(.aberta) .caso-extra { display: none; }
+.cases-mais { grid-column: 1 / -1; display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; border: 1px solid rgba(11, 45, 59, 0.2); border-radius: var(--radius-button); background: transparent; color: var(--petroleo); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: border-color var(--rapido) ease, background-color var(--rapido) ease; }
+.cases-mais:hover { border-color: var(--indigo); background: rgba(79, 107, 143, 0.06); }
+.cases-mais::after { content: "↓"; color: var(--indigo); }
+.casos.aberta .casos.aberta .caso-extra { animation: troca 0.4s ease-out both; }
+.caso.caso-convite { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: space-between; gap: 16px; padding: 20px 24px; }
+.caso.caso-convite h3 { margin: 0; }
+.caso.caso-convite .link-seta { margin: 0; }
+@media (max-width: 640px) { .caso.caso-convite { flex-direction: column; align-items: flex-start; gap: 4px; } }
+/* Equipe: o cartão mostra nome e área; a frase fica no perfil completo */
+.team-card .team-quote { display: none; }
+.team-body { padding-bottom: 10px; }
+/* Dores só com título */
+.dores h3 { margin: 0; }
+.dor-icone { margin-bottom: 16px; }
+@media (min-width: 561px) { .dores li { padding: 24px; } }
