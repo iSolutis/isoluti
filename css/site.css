@@ -685,3 +685,43 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
   footer { padding-top: 32px; }
   .logo-rodape { width: 320px; }
 }
+
+/* ---------- Celular: cartões que se empilham e entradas com movimento ---------- */
+@media (max-width: 640px) {
+  .dores.empilha, .casos.empilha { display: block; }
+  .dores.empilha > li, .casos.empilha > .caso:not(.caso-convite) {
+    position: sticky; top: calc(var(--topo) + 14px + var(--i, 0) * 12px); margin-bottom: 12px;
+    transform-origin: center top; will-change: transform; box-shadow: 0 -12px 28px -18px rgba(11, 45, 59, 0.35);
+  }
+  .dores.empilha > li:last-child { margin-bottom: 0; }
+  .tem-revelar .dores.empilha > .revela, .tem-revelar .casos.empilha > .revela { opacity: 1; transform: none; transition: none; }
+  .casos.empilha .cases-mais { margin: 4px 0 12px; }
+  .casos.empilha .caso-convite { position: relative; }
+
+  /* Soluções: itens entram deslizando da esquerda, um após o outro */
+  .tem-revelar .solucoes-lista > .revela { transform: translateX(-28px); }
+  .tem-revelar .solucoes-lista > .revela.visivel { transform: none; }
+  .tem-revelar .solucoes-lista > .revela.visivel .sol-num { color: var(--champagne-2); transition: color 0.6s ease 0.4s; }
+
+  /* Equipe: fotos entram com leve zoom */
+  .tem-revelar .team-grid > .revela { transform: translateY(18px) scale(0.94); }
+  .tem-revelar .team-grid > .revela.visivel { transform: none; }
+
+  /* Rápido e seguro: cartões sobem em sequência */
+  .tem-revelar .rs-grid > .revela { transform: translateY(24px); }
+}
+@media (max-width: 767px) { .caso.caso-convite .link-seta { display: inline-flex; } }
+
+/* ---------- Ajustes de responsividade: tablet e notebook pequeno ---------- */
+@media (max-width: 1100px) and (min-width: 901px) {
+  .casos { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .caso { padding: 18px; }
+  .team-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .team-caption h3 { font-size: 19px; }
+}
+@media (max-width: 900px) and (min-width: 641px) {
+  .hero-cartao { display: none; }
+  .team-photo { aspect-ratio: 1 / 1; }
+}
+.team-more summary { min-height: 44px; }
+@media (max-width: 640px) { .tem-revelar .solucoes-lista > .revela { transform: translateX(-16px); } }

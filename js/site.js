@@ -399,25 +399,26 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   new IntersectionObserver(([e]) => { noContato = e.isIntersecting; atualizar(); }, { threshold: 0.15 }).observe(contato);
 })();
 
-// Celular: cartões empilhados. O cartão que está sendo coberto pelo próximo encolhe e escurece
-// conforme a rolagem. Sem efeito em telas maiores ou para quem pediu menos movimento.
+// Celular: cartões empilhados (dores, exemplos e etapas). Cada cartão gruda no topo e o próximo
+// sobe por cima; o de baixo encolhe e escurece conforme a rolagem.
+// Sem efeito em telas maiores ou para quem pediu menos movimento.
 (() => {
-  const pilhas = document.querySelectorAll('.metodo-passos');
+  const pilhas = [...document.querySelectorAll('.metodo-passos, .dores, .casos')];
   if (!pilhas.length) return;
   const celular = window.matchMedia('(max-width: 640px)');
   const calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  pilhas.forEach((p) => {
-    p.classList.add('empilha');
-    [...p.children].forEach((c, i) => c.style.setProperty('--i', i));
-  });
+  // Só os cartões visíveis entram na pilha (o botão e o convite ficam de fora).
+  const cartoesDe = (p) => [...p.children].filter((c) => c.matches('li, article.caso:not(.caso-convite)') && c.offsetParent !== null);
+  pilhas.forEach((p) => p.classList.add('empilha'));
   if (calmo) return;
 
   let pedido = false;
   const desenhar = () => {
     pedido = false;
     pilhas.forEach((p) => {
-      const cartoes = [...p.children];
+      const cartoes = cartoesDe(p);
       cartoes.forEach((c, i) => {
+        c.style.setProperty('--i', i);
         const prox = cartoes[i + 1];
         if (!celular.matches || !prox) { c.style.transform = ''; c.style.filter = ''; c.style.removeProperty('--cob'); return; }
         const a = c.getBoundingClientRect();
@@ -425,7 +426,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
         // 0 quando o próximo ainda está abaixo; 1 quando ele cobriu este cartão.
         const cobertura = Math.min(1, Math.max(0, (a.bottom - b.top) / a.height));
         c.style.transform = `scale(${1 - cobertura * 0.06})`;
-        c.style.filter = `brightness(${1 - cobertura * 0.18})`;
+        c.style.filter = `brightness(${1 - cobertura * 0.12})`;
         c.style.setProperty('--cob', cobertura.toFixed(3));
       });
     });
@@ -434,6 +435,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   window.addEventListener('scroll', pedir, { passive: true });
   window.addEventListener('resize', pedir);
   celular.addEventListener('change', pedir);
+  document.querySelector('.cases-mais')?.addEventListener('click', () => setTimeout(pedir, 50));
   desenhar();
 })();
 
