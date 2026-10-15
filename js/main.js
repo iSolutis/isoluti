@@ -195,18 +195,20 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   });
 })();
 
-// Medição (GA4 e Meta Pixel). Nenhum script de terceiros carrega antes do "Aceitar";
-// eventos disparados antes disso são descartados.
+// Aviso de cookies e política de privacidade: aparece na primeira visita, em todas as páginas.
+// Sem medição configurada, a escolha só é registrada. Com GA4 ou Meta Pixel em js/config.js,
+// nenhum script de terceiros carrega antes do "Aceitar"; eventos disparados antes disso são descartados.
 (() => {
   const ga4 = configurado(CONFIG.ga4Id) ? CONFIG.ga4Id : null;
   const pixel = configurado(CONFIG.metaPixelId) ? CONFIG.metaPixelId : null;
-  if (!ga4 && !pixel) return;
+  const banner = document.getElementById('cookie-banner');
+  if (!banner) return;
 
-  const CHAVE = 'solutec-cookies';
+  const CHAVE = 'aime-consentimento';
   const lerEscolha = () => { try { return localStorage.getItem(CHAVE); } catch (e) { return null; } };
   const salvarEscolha = (v) => { try { localStorage.setItem(CHAVE, v); } catch (e) { /* segue só nesta visita */ } };
-  const banner = document.getElementById('cookie-banner');
   const abrir = document.querySelector('[data-cookies-abrir]');
+  const raiz = document.documentElement;
   let carregado = false;
 
   const carregarScript = (src) => {
@@ -217,7 +219,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   };
 
   const carregar = () => {
-    if (carregado) return;
+    if (carregado || (!ga4 && !pixel)) return;
     carregado = true;
     if (ga4) {
       window.dataLayer = window.dataLayer || [];
@@ -245,10 +247,12 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
     };
   };
 
+  const mostrar = (sim) => { banner.hidden = !sim; raiz.classList.toggle('tem-aviso', sim); };
+
   const escolher = (valor) => {
-    const tinhaAceitado = lerEscolha() === 'aceito' || carregado;
+    const tinhaAceitado = carregado;
     salvarEscolha(valor);
-    banner.hidden = true;
+    mostrar(false);
     if (valor === 'aceito') carregar();
     // Quem recusa depois de aceitar precisa recarregar para descarregar os scripts.
     else if (tinhaAceitado) window.location.reload();
@@ -257,12 +261,14 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   banner.querySelectorAll('[data-consentimento]').forEach((botao) => {
     botao.addEventListener('click', () => escolher(botao.dataset.consentimento));
   });
-  abrir.hidden = false;
-  abrir.addEventListener('click', () => { banner.hidden = false; banner.querySelector('button').focus(); });
+  if (abrir) {
+    abrir.hidden = false;
+    abrir.addEventListener('click', () => { mostrar(true); banner.querySelector('button').focus(); });
+  }
 
   const escolha = lerEscolha();
   if (escolha === 'aceito') carregar();
-  else if (escolha !== 'recusado') banner.hidden = false;
+  else if (escolha !== 'recusado') mostrar(true);
 })();
 
 // Eventos: cliques no WhatsApp e no agendamento (com o local do clique) e rolagem até 75%.

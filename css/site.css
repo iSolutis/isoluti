@@ -725,3 +725,12 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
 }
 .team-more summary { min-height: 44px; }
 @media (max-width: 640px) { .tem-revelar .solucoes-lista > .revela { transform: translateX(-16px); } }
+
+/* Aviso de cookies: enquanto está aberto, a barra fixa do WhatsApp fica escondida */
+.tem-aviso .sticky-cta { transform: translateY(110%) !important; }
+.cookie-banner { z-index: 70; }
+@media (max-width: 640px) {
+  .cookie-banner { left: 12px; right: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); padding: 18px; gap: 14px; font-size: 14px; line-height: 21px; }
+  .cookie-actions { width: 100%; }
+  .cookie-actions .btn { flex: 1; min-height: 46px; padding: 0 12px; }
+}
