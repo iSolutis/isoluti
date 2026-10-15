@@ -624,3 +624,64 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
 .dores h3 { margin: 0; }
 .dor-icone { margin-bottom: 16px; }
 @media (min-width: 561px) { .dores li { padding: 24px; } }
+
+/* ---------- Otimização para celular (15/10/2026) ---------- */
+.form-abrir { display: none; }
+@media (max-width: 767px) {
+  :root { --secao: 56px; }
+  .cabeca { margin-bottom: 24px; }
+  .eyebrow { margin-bottom: 10px; font-size: 12px; }
+
+  /* Abertura: só a promessa, os números e o botão; os exemplos aparecem logo abaixo na página */
+  .hero .wrap { padding-top: 32px; padding-bottom: 44px; }
+  .hero-cartao { display: none; }
+  .hero h1 { font-size: 34px; line-height: 39px; }
+  .hero-actions { margin-top: 22px; }
+  .hero-provas { grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 26px; padding-top: 18px; }
+  .hero-provas li { flex-direction: column; align-items: flex-start; gap: 2px; padding: 0 10px; border-left: 1px solid var(--linha-escura); }
+  .hero-provas li:first-child { padding-left: 0; border-left: 0; }
+  .hero-provas strong { font-size: 15px; line-height: 20px; white-space: normal; }
+  .hero-provas span { font-size: 12px; line-height: 16px; }
+  .marcas { padding: 18px 0 20px; }
+  .marcas-titulo { margin-bottom: 12px; font-size: 12px; letter-spacing: 0.06em; }
+  .marcas-lista img { height: 26px; }
+
+  /* Exemplos: 3 visíveis, o resto pelo botão */
+  .casos:not(.aberta) .caso-mobile-extra { display: none; }
+  .caso .link-seta { display: none; }
+  .caso { padding: 16px; }
+
+  /* Rápido e seguro: dois números lado a lado e o dado em linha */
+  .rs-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .rs-cartao { padding: 16px; }
+  .rs-cartao:not(.rs-dado) .rs-icone { width: 36px; height: 36px; margin-bottom: 12px; }
+  .rs-cartao h3 { font-size: 12px; }
+  .rs-numero { margin-top: 4px; font-size: 13px; line-height: 18px; }
+  .rs-numero strong { font-size: 30px; line-height: 36px; }
+  .rs-escala { margin: 12px 0 0; }
+  .rs-dado { grid-column: 1 / -1; flex-direction: row; align-items: center; gap: 16px; }
+  .rs-donut { width: 92px; height: 92px; flex: none; margin: 0; }
+  .rs-donut-num { font-size: 24px; }
+  .rs-dado-texto { font-size: 15px; line-height: 22px; }
+  .rs-fonte { margin-top: 6px; font-size: 12px; }
+
+  /* Como atuamos: cartões mais baixos */
+  .metodo-passos > li { top: calc(var(--topo) + 12px + var(--i, 0) * 58px); padding: 16px 16px 16px 76px; margin-bottom: 10px; }
+  .metodo-passos li .passo-icone { left: 16px; top: 14px; width: 44px; height: 44px; }
+  .metodo-passos h3 { font-size: 19px; line-height: 26px; }
+  .metodo-passos + .cta-faixa { margin-top: 24px; }
+
+  /* Equipe: nome e área com menos respiro */
+  .team-grid { gap: 10px; }
+  .team-body { padding: 8px 12px 4px; }
+
+  /* Contato: WhatsApp primeiro; o formulário abre por um botão */
+  .contato-grid { gap: 20px; }
+  .tem-form-recolhido .form-abrir { display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 48px; border: 1px solid rgba(247, 246, 242, 0.3); border-radius: var(--radius-button); background: transparent; color: var(--off); font: inherit; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .tem-form-recolhido .form-abrir::after { content: "↓"; color: var(--champagne); }
+  .tem-form-recolhido .form-abrir[aria-expanded="true"] { display: none; }
+  .tem-form-recolhido .contato-form:not(.aberto) { display: none; }
+  .contato-garantia { margin-top: 14px; }
+  footer { padding-top: 32px; }
+  .logo-rodape { width: 320px; }
+}

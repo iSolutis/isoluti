@@ -445,7 +445,7 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   botao.addEventListener('click', () => {
     lista.classList.add('aberta');
     botao.setAttribute('aria-expanded', 'true');
-    const extras = lista.querySelectorAll('.caso-extra');
+    const extras = lista.querySelectorAll('.caso-extra, .caso-mobile-extra');
     extras.forEach((c) => c.classList.add('visivel'));
     const primeiro = extras[0];
     if (primeiro) {
@@ -557,4 +557,20 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
     requestAnimationFrame(passo);
   }, { threshold: 0.5 });
   obs.observe(num);
+})();
+
+
+// Celular: o formulário fica recolhido atrás de um botão (o WhatsApp é o caminho principal).
+(() => {
+  const botao = document.querySelector('.form-abrir');
+  const bloco = document.querySelector('.contato-form');
+  if (!botao || !bloco) return;
+  document.documentElement.classList.add('tem-form-recolhido');
+  botao.addEventListener('click', () => {
+    bloco.classList.add('aberto');
+    botao.setAttribute('aria-expanded', 'true');
+    const campo = bloco.querySelector('input:not([type="hidden"]):not([tabindex="-1"])');
+    if (campo) campo.focus({ preventScroll: true });
+    bloco.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
 })();
