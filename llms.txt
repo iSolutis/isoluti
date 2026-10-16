@@ -1,0 +1,36 @@
+# AIME Tech
+
+> A AIME Tech transforma empresas que não são de tecnologia em empresas tecnológicas. Entrega sistemas sob medida, automações, integrações, IA aplicada e consultoria, com preço fechado, prazo de 2 a 14 semanas e revisão de segurança em 100% das entregas.
+
+- Site: https://www.aimetech.com.br/
+- Contato comercial: WhatsApp +55 71 99239-0992
+- Atendimento: todo o Brasil, em português
+
+## Como trabalhamos
+
+1. Diagnóstico: identificamos o ponto crítico da operação e definimos escopo, prazo e valor fechados.
+2. Estratégia: escopo, prazo e preço aprovados antes de construir.
+3. Construção: o sistema é construído com IA e revisado por um especialista em segurança antes de ir ao ar.
+4. Manutenção: hospedagem, monitoramento, correções e melhorias com a mesma equipe.
+
+- Valor fechado por projeto, sem cobrança por hora.
+- Manutenção mensal obrigatória, cobrindo hospedagem, monitoramento, correções e segurança.
+
+## Soluções
+
+- [CRM sob medida](https://www.aimetech.com.br/solucoes/crm-sob-medida.html): funil de vendas com histórico de cada cliente e lembrete de retorno, para quem vende pela planilha e pelo WhatsApp.
+- [Sistema de ordens de serviço](https://www.aimetech.com.br/solucoes/sistema-ordens-de-servico.html): a OS no celular do técnico, com fotos, assinatura e status à vista.
+- [Automação de rotinas fiscais](https://www.aimetech.com.br/solucoes/automacao-rotinas-fiscais.html): validação automática das notas; só as exceções chegam para revisão.
+
+Também entregamos sistemas de pedidos e vendas, estoque e compras, fluxos de aprovação interna, painéis de gestão, integrações entre sistemas e IA aplicada a tarefas reais com revisão humana.
+
+## Sócios
+
+- Gileard Teixeira: negócio, produto e transformação. Investiga onde a operação trava antes de qualquer linha de código.
+- Jefferson Pereira: engenharia, arquitetura e segurança. Revisa a arquitetura e a segurança de cada entrega.
+- Soraya Sá: estratégia comercial, relacionamento e expansão. Conduz o relacionamento com clientes e parceiros.
+- Alexandre Marques: estratégia, governança e segurança empresarial. Advogado tributarista e contador, fundador da Open Soluções Tributárias.
+
+## Outras páginas
+
+- [Política de privacidade](https://www.aimetech.com.br/privacidade.html)
