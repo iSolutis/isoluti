@@ -28,13 +28,72 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "CRM sob medida",
-  "serviceType": "CRM sob medida",
-  "url": "https://www.aimetech.com.br/solucoes/crm-sob-medida.html",
-  "description": "CRM sob medida para quem vende pela planilha e pelo WhatsApp: funil, histórico de cada cliente e lembrete de retorno, com preço fechado.",
-  "areaServed": { "@type": "Country", "name": "Brasil" },
-  "provider": { "@type": "Organization", "@id": "https://www.aimetech.com.br/#organizacao", "name": "AIME Tech", "url": "https://www.aimetech.com.br/" }
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "CRM sob medida",
+      "serviceType": "CRM sob medida",
+      "url": "https://www.aimetech.com.br/solucoes/crm-sob-medida.html",
+      "description": "CRM sob medida para quem vende pela planilha e pelo WhatsApp: funil, histórico de cada cliente e lembrete de retorno, com preço fechado.",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Brasil"
+      },
+      "provider": {
+        "@id": "https://www.aimetech.com.br/#organizacao",
+        "@type": "Organization",
+        "name": "AIME Tech",
+        "url": "https://www.aimetech.com.br/"
+      },
+      "@id": "https://www.aimetech.com.br/solucoes/crm-sob-medida.html#servico"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.aimetech.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "CRM sob medida",
+          "item": "https://www.aimetech.com.br/solucoes/crm-sob-medida.html"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto tempo leva?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "De 2 a 14 semanas, conforme a complexidade. O prazo exato sai depois da conversa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Como é definido o valor?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depois da conversa. Com o processo entendido, apresentamos um valor fechado para o projeto e para a manutenção mensal, sem cobrança por hora."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Se é tão rápido, onde fica a segurança?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No processo. A IA encurta a construção, não a revisão. Toda entrega passa por revisão técnica e de segurança feita por um especialista dedicado a isso."
+          }
+        }
+      ]
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -123,7 +182,7 @@
         <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
         <div class="num">Etapa 01</div>
         <h3>Diagnóstico</h3>
-        <p>Encontramos o gargalo real. Você recebe escopo, prazo e valor fechados.</p>
+        <p>Identificamos o ponto crítico. Você recebe escopo, prazo e valor fechados.</p>
       </div>
       <div class="step">
         <span class="flow-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6M8 6l-6 6 6 6"/></svg></span>
