@@ -246,7 +246,11 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   document.addEventListener('click', (e) => {
     const link = e.target.closest('a');
     if (!link) return;
-    if (link.href.includes('wa.me/')) track('click_whatsapp', { local: localDoClique(link) });
+    if (link.href.includes('wa.me/') || link.href.includes('api.whatsapp.com')) {
+      track('click_whatsapp', { local: localDoClique(link) });
+      // Evento padrão da Meta para conversões de anúncio: quem chamou no WhatsApp.
+      if (window.fbq) window.fbq('track', 'Lead', { content_name: 'WhatsApp' });
+    }
     else if (link.dataset.evento) track(link.dataset.evento, { local: localDoClique(link) });
   });
 

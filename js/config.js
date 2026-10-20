@@ -12,5 +12,5 @@ window.SOLUTEC_CONFIG = {
   agendaUrl: '[[PREENCHER: URL Calendly/Cal.com]]',
   // Medição: só carregam depois que o visitante aceita os cookies.
   ga4Id: '[[PREENCHER: ID G-XXXXXXX]]',
-  metaPixelId: '[[PREENCHER: ID do pixel]]'
+  metaPixelId: '1610050873911341'
 };
