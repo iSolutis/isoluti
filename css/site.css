@@ -736,3 +736,26 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
   .cookie-actions { width: 100%; }
   .cookie-actions .btn { flex: 1; min-height: 46px; padding: 0 12px; }
 }
+
+/* ---------- Clínicas e consultórios: público em foco nas campanhas ---------- */
+.hero-atalho { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; margin-bottom: 22px; padding: 7px 16px; border: 1px solid rgba(217, 200, 177, 0.35); border-radius: 999px; background: rgba(217, 200, 177, 0.08); font-size: 14px; line-height: 20px; color: var(--off); text-decoration: none; transition: border-color var(--rapido) ease, background var(--rapido) ease; }
+.hero-atalho strong { font-weight: 600; color: var(--champagne); }
+.hero-atalho::after { content: "→"; color: var(--champagne); transition: transform var(--rapido) ease; }
+.hero-atalho:hover { border-color: var(--champagne); background: rgba(217, 200, 177, 0.14); }
+.hero-atalho:hover::after { transform: translateX(3px); }
+.clinicas { scroll-margin-top: 72px; }
+.clinicas-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: center; }
+.clinicas-texto .titulo { margin-bottom: 16px; }
+.clinicas-acoes { margin-top: 28px; }
+.clinicas-nota { margin-top: 18px; font-size: 15px; line-height: 22px; color: var(--texto-suave); }
+.clinicas-nota a { font-weight: 600; color: var(--indigo); }
+.dores.clinicas-dores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.clinicas-dores li { background: var(--off); }
+@media (max-width: 900px) { .clinicas-grid { grid-template-columns: 1fr; gap: 32px; } }
+@media (max-width: 560px) {
+  .hero-atalho { font-size: 13px; padding: 6px 12px; margin-bottom: 16px; }
+  .dores.clinicas-dores { grid-template-columns: 1fr; }
+  .clinicas-dores li { grid-template-columns: 44px 1fr; align-items: start; }
+  .clinicas-dores .dor-icone { grid-row: span 2; margin: 0; }
+  .clinicas-dores p { display: block; grid-column: 2; margin-top: 2px; }
+}

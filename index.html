@@ -54,7 +54,8 @@
         "Integração de sistemas",
         "Inteligência artificial aplicada",
         "Transformação digital",
-        "Segurança da informação"
+        "Segurança da informação",
+        "Gestão de clínicas e consultórios"
       ],
       "areaServed": {
         "@type": "Country",
@@ -242,6 +243,22 @@
             "@type": "Answer",
             "text": "Sim. Cobre hospedagem, monitoramento, correções e segurança."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "E os dados dos meus clientes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Seguem a LGPD, inclusive dados sensíveis, como os de saúde, com revisão de segurança em toda entrega."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês atendem clínicas e consultórios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sim. Clínicas particulares são um dos nossos focos, e atendemos empresas de outros setores também."
+          }
         }
       ]
     }
@@ -251,7 +268,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/site.css?v=25">
+<link rel="stylesheet" href="css/site.css?v=26">
 </head>
 <body>
 
@@ -285,6 +302,7 @@
     <div class="hero-colunas">
       <div class="hero-texto">
         <p class="eyebrow claro">Tecnologia, produto e estratégia</p>
+        <a class="hero-atalho" href="#clinicas"><span>Tem clínica ou consultório?</span> <strong>Veja o que muda na sua</strong></a>
         <h1>Sem planilha, sem retrabalho. <span class="destaque">Sua operação sob controle.</span></h1>
         <p class="lede">Sistemas sob medida, automações e IA para a operação da sua empresa.</p>
         <div class="hero-actions">
@@ -305,6 +323,7 @@
         <ul class="rotativo-lista">
           <li class="ativo"><span class="rot-area">Vendas</span><span class="antes">Pedido no WhatsApp, redigitado em planilha</span><span class="depois">Portal com o status de cada pedido</span></li>
           <li><span class="rot-area">Gestão</span><span class="antes">Relatório montado à mão no fim do mês</span><span class="depois">Indicadores atualizados sozinhos, por setor</span></li>
+          <li><span class="rot-area">Clínica</span><span class="antes">Consulta confirmada uma a uma no WhatsApp</span><span class="depois">Confirmação e lembrete automáticos</span></li>
           <li><span class="rot-area">Fiscal</span><span class="antes">Notas conferidas linha a linha</span><span class="depois">Só as exceções chegam para revisão</span></li>
         </ul>
         <div class="rotativo-barra" aria-hidden="true"><span></span></div>
@@ -442,6 +461,15 @@
         </div>
         <a class="link-seta" href="solucoes/sistema-ordens-de-servico.html">Ver sistema de OS</a>
       </article>
+      <article class="caso caso-mobile-extra">
+        <div class="caso-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9 15l2 2 4-4"/></svg></div>
+        <h3>Agenda da clínica</h3>
+        <div class="ba">
+          <div class="ba-before"><span class="ba-label">Antes</span><p>Recepção confirmando consulta uma a uma no WhatsApp</p></div>
+          <div class="ba-after"><span class="ba-label">Depois</span><p>Confirmação e lembrete automáticos, com as faltas à vista</p></div>
+        </div>
+        <a class="link-seta" href="#clinicas">Ver para clínicas</a>
+      </article>
       <article class="caso caso-extra">
         <div class="caso-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><path d="M3.27 6.96 12 12.01l8.73-5.05M12 22.08V12"/></svg></div>
         <h3>Estoque e compras</h3>
@@ -466,7 +494,7 @@
           <div class="ba-after"><span class="ba-label">Depois</span><p>Indicadores atualizados sozinhos, por setor</p></div>
         </div>
       </article>
-      <article class="caso caso-mobile-extra">
+      <article class="caso caso-extra">
         <div class="caso-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg></div>
         <h3>Rotinas fiscais</h3>
         <div class="ba">
@@ -482,6 +510,43 @@
         <a href="#contato" class="link-seta" data-evento="click_agendar">Falar com um especialista</a>
       </article>
     </div>
+  </div>
+</section>
+
+<!-- Clínicas e consultórios: público em foco nas campanhas (Instagram e LinkedIn). A página continua geral. -->
+<section id="clinicas" class="secao secao-clara clinicas">
+  <div class="wrap clinicas-grid">
+    <div class="clinicas-texto">
+      <p class="eyebrow">Clínicas e consultórios</p>
+      <h2 class="titulo">Atenda mais pacientes sem aumentar o custo.</h2>
+      <p class="intro">Organizamos a operação de clínicas particulares de especialidades, odontologia e estética: da agenda ao financeiro.</p>
+      <div class="clinicas-acoes">
+        <a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Tenho%20uma%20cl%C3%ADnica%20e%20quero%20falar%20com%20um%20especialista%20da%20AIME%20Tech." target="_blank" rel="noopener" class="btn btn-acao" data-local="clinicas">Falar sobre a minha clínica</a>
+      </div>
+      <p class="clinicas-nota">Clínicas são uma das áreas em que atuamos. O mesmo método vale para empresas de qualquer setor.</p>
+    </div>
+    <ul class="dores clinicas-dores">
+      <li>
+        <span class="dor-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4M9.5 14.5l5 5M14.5 14.5l-5 5"/></svg></span>
+        <h3>Faltas e horários vazios</h3>
+        <p>Confirmação e lembrete automáticos para o paciente.</p>
+      </li>
+      <li>
+        <span class="dor-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></span>
+        <h3>Recepção sobrecarregada</h3>
+        <p>Menos tempo confirmando consulta no WhatsApp.</p>
+      </li>
+      <li>
+        <span class="dor-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 3"/></svg></span>
+        <h3>Paciente que não volta</h3>
+        <p>Retorno lembrado na hora certa, sem depender de ninguém.</p>
+      </li>
+      <li>
+        <span class="dor-icone" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg></span>
+        <h3>Financeiro em planilha</h3>
+        <p>Quanto cada especialidade dá de resultado, à vista.</p>
+      </li>
+    </ul>
   </div>
 </section>
 
@@ -586,7 +651,7 @@
     <div class="team-grid">
       <article class="team-card">
         <div class="team-photo">
-          <img src="img/equipe/gileard.jpg?v=9" width="800" height="800" alt="Gileard Teixeira" loading="lazy">
+          <img src="img/equipe/gileard.jpg?v=10" width="800" height="800" alt="Gileard Teixeira" loading="lazy">
         </div>
         <div class="team-caption">
           <p class="team-fase">Antes do código</p>
@@ -727,6 +792,14 @@
       <details>
         <summary>A manutenção mensal é obrigatória?</summary>
         <p>Sim. Cobre hospedagem, monitoramento, correções e segurança.</p>
+      </details>
+      <details>
+        <summary>E os dados dos meus clientes?</summary>
+        <p>Seguem a LGPD, inclusive dados sensíveis, como os de saúde, com revisão de segurança em toda entrega.</p>
+      </details>
+      <details>
+        <summary>Vocês atendem clínicas e consultórios?</summary>
+        <p>Sim. Clínicas particulares são um dos nossos focos, e atendemos empresas de outros setores também.</p>
       </details>
     </div>
   </div>
