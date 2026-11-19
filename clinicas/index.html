@@ -132,7 +132,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css?v=29">
-<link rel="stylesheet" href="/css/clinicas.css?v=11">
+<link rel="stylesheet" href="/css/clinicas.css?v=12">
 </head>
 <body class="lp-clinicas">
 
@@ -183,13 +183,21 @@
       <p class="eyebrow">Na rotina da clínica</p>
       <h2 class="titulo">Você se reconhece?</h2>
     </div>
-    <ul class="lp-sinais">
-      <li>O paciente manda mensagem e a resposta chega horas depois.</li>
-      <li>Você pergunta se a agenda está confirmada e ouve um “acho que sim”.</li>
-      <li>Tudo na clínica depende de você responder.</li>
-      <li>A clínica cresceu, o custo cresceu junto e o trabalho continua travando nos mesmos pontos.</li>
-      <li>Você já testou sistemas que não conversavam com a rotina da equipe.</li>
+    <p class="lp-sinais-dica">Marque o que acontece na sua clínica.</p>
+    <!-- Lista marcável: os itens marcados vão na mensagem do WhatsApp (js/clinicas.js). Sem JS, só marca. -->
+    <ul class="lp-sinais" data-sinais>
+      <li><label><input type="checkbox" data-curto="paciente esperando horas por resposta"><span class="lp-sinal-caixa" aria-hidden="true"></span><span>O paciente manda mensagem e a resposta chega horas depois.</span></label></li>
+      <li><label><input type="checkbox" data-curto="agenda sem confirmação"><span class="lp-sinal-caixa" aria-hidden="true"></span><span>Você pergunta se a agenda está confirmada e ouve um “acho que sim”.</span></label></li>
+      <li><label><input type="checkbox" data-curto="tudo depende de mim"><span class="lp-sinal-caixa" aria-hidden="true"></span><span>Tudo na clínica depende de você responder.</span></label></li>
+      <li><label><input type="checkbox" data-curto="a clínica cresceu e o trabalho trava nos mesmos pontos"><span class="lp-sinal-caixa" aria-hidden="true"></span><span>A clínica cresceu, o custo cresceu junto e o trabalho continua travando nos mesmos pontos.</span></label></li>
+      <li><label><input type="checkbox" data-curto="sistemas que não se encaixaram na rotina"><span class="lp-sinal-caixa" aria-hidden="true"></span><span>Você já testou sistemas que não conversavam com a rotina da equipe.</span></label></li>
     </ul>
+    <div class="lp-sinais-resultado" aria-live="polite">
+      <div data-sinais-resultado hidden>
+        <p><strong data-sinais-total>Você marcou 1 de 5.</strong> Esses pontos têm solução, e o diagnóstico mostra por onde começar.</p>
+        <a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20para%20cl%C3%ADnicas%20e%20quero%20entender%20como%20funciona%20o%20diagn%C3%B3stico." target="_blank" rel="noopener" class="btn btn-acao" data-wa data-local="reconhece" data-esconde-barra>Conversar no WhatsApp</a>
+      </div>
+    </div>
     <p class="lp-fecho">Raramente o problema é a equipe. Quase sempre é a forma como os processos foram montados.</p>
   </div>
 </section>
@@ -440,6 +448,6 @@
 
 <script src="/js/config.js?v=90"></script>
 <script src="/js/site.js?v=21"></script>
-<script src="/js/clinicas.js?v=9"></script>
+<script src="/js/clinicas.js?v=12"></script>
 </body>
 </html>

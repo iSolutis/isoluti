@@ -22,6 +22,7 @@
     if (ref) sessionStorage.setItem(CHAVE, ref);
     else ref = sessionStorage.getItem(CHAVE) || '';
   } catch (e) { /* sem armazenamento: vale só para esta página */ }
+  window.aimeRefClinicas = ref; // usado pela lista "Você se reconhece?"
   if (!ref) return;
 
   // encodeURIComponent, e não URLSearchParams: o WhatsApp mostraria "+" no lugar dos espaços.
@@ -135,5 +136,29 @@
     lista.addEventListener('scroll', marcar, { passive: true });
     window.addEventListener('resize', marcar);
     marcar();
+  });
+})();
+
+// "Você se reconhece?": a pessoa marca o que vive na clínica. Aparece um convite com a contagem,
+// e os itens marcados vão na mensagem do WhatsApp, para o comercial já saber a dor do cliente.
+(() => {
+  const lista = document.querySelector('[data-sinais]');
+  const bloco = document.querySelector('[data-sinais-resultado]');
+  if (!lista || !bloco) return;
+  const caixas = [...lista.querySelectorAll('input[type="checkbox"]')];
+  const total = bloco.querySelector('[data-sinais-total]');
+  const link = bloco.querySelector('a[data-wa]');
+  const base = link.href.split('?text=')[0];
+  let medido = false;
+
+  lista.addEventListener('change', () => {
+    const marcados = caixas.filter((c) => c.checked).map((c) => c.dataset.curto);
+    bloco.hidden = !marcados.length;
+    if (!marcados.length) return;
+    total.textContent = `Você marcou ${marcados.length} de ${caixas.length}.`;
+    const ref = window.aimeRefClinicas ? ` [ref: ${window.aimeRefClinicas}]` : '';
+    const texto = `Olá! Vim pela página para clínicas. Na minha clínica acontece: ${marcados.join('; ')}. Quero entender como funciona o diagnóstico.${ref}`;
+    link.href = `${base}?text=${encodeURIComponent(texto)}`;
+    if (!medido) { medido = true; track('reconhece_marcou'); }
   });
 })();
