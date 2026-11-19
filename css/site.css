@@ -762,3 +762,11 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
   .clinicas-dores .dor-icone { grid-row: span 2; margin: 0; }
   .clinicas-dores p { display: block; grid-column: 2; margin-top: 2px; }
 }
+
+/* Rápido e seguro: no tablet e no celular, o 45% fica à esquerda; texto e fonte empilhados à direita */
+@media (max-width: 1000px) {
+  .rs-dado { display: grid; grid-template-columns: auto 1fr; column-gap: 24px; row-gap: 8px; align-items: center; }
+  .rs-dado .rs-donut { grid-row: 1 / span 2; }
+  .rs-dado .rs-fonte { grid-column: 2; margin-top: 0; }
+}
+@media (max-width: 767px) { .rs-dado { column-gap: 16px; } }
