@@ -763,10 +763,8 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
   .clinicas-dores p { display: block; grid-column: 2; margin-top: 2px; }
 }
 
-/* Rápido e seguro: no tablet e no celular, o 45% fica à esquerda; texto e fonte empilhados à direita */
-@media (max-width: 1000px) {
-  .rs-dado { display: grid; grid-template-columns: auto 1fr; column-gap: 24px; row-gap: 8px; align-items: center; }
-  .rs-dado .rs-donut { grid-row: 1 / span 2; }
-  .rs-dado .rs-fonte { grid-column: 2; margin-top: 0; }
-}
-@media (max-width: 767px) { .rs-dado { column-gap: 16px; } }
+/* Rápido, seguro e acompanhado: o terceiro cartão ocupa a linha inteira quando a grade tem duas colunas */
+.rs-acompanha .rs-texto { margin-top: 10px; }
+.rs-acompanha .rs-numero strong { font-size: 30px; line-height: 36px; margin: 9px 0 6px; }  /* frase longa: quebra em duas linhas e ocupa a altura dos números ao lado */
+@media (max-width: 767px) { .rs-acompanha .rs-numero strong { font-size: 28px; line-height: 36px; } .rs-acompanha .rs-texto { margin-top: 8px; font-size: 14px; line-height: 20px; } }
+@media (max-width: 1000px) { .rs-acompanha { grid-column: 1 / -1; } }

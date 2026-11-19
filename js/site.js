@@ -561,25 +561,6 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   desenhar();
 })();
 
-// Rápido e seguro: o 45% conta de 0 até o valor quando o cartão aparece (uma vez só).
-(() => {
-  const num = document.querySelector('[data-contar]');
-  if (!num || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const alvo = Number(num.dataset.contar);
-  const obs = new IntersectionObserver(([e]) => {
-    if (!e.isIntersecting) return;
-    obs.disconnect();
-    const t0 = performance.now(), dur = 1400;
-    const passo = (t) => {
-      const k = Math.min(1, (t - t0) / dur);
-      num.textContent = `${Math.round(alvo * (1 - Math.pow(1 - k, 3)))}%`;
-      if (k < 1) requestAnimationFrame(passo);
-    };
-    num.textContent = '0%';
-    requestAnimationFrame(passo);
-  }, { threshold: 0.5 });
-  obs.observe(num);
-})();
 
 
 // Celular: o formulário fica recolhido atrás de um botão (o WhatsApp é o caminho principal).
