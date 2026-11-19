@@ -79,6 +79,22 @@
 .tem-demo .lp-chat.rodando .msg:nth-child(4) { transition-delay: 2.7s; }
 @media (prefers-reduced-motion: reduce) { .tem-demo .lp-chat .msg { opacity: 1; transform: none; transition: none; } }
 
+/* ---------- Celular: listas de cards viram carrosséis de deslizar ---------- */
+/* O próximo card aparece pela metade para indicar que dá para deslizar; os pontos mostram a posição. */
+.lp-pontos { display: none; }
+@media (max-width: 599px) {
+  .lp-clinicas [data-carrossel] { display: flex; gap: 12px; margin: 0 calc(-1 * var(--margem)); padding: 2px var(--margem) 6px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--margem); overscroll-behavior-x: contain; scrollbar-width: none; }
+  .lp-clinicas [data-carrossel]::-webkit-scrollbar { display: none; }
+  .lp-clinicas [data-carrossel] > li { flex: 0 0 82%; scroll-snap-align: start; }
+  .lp-clinicas .lp-socios[data-carrossel] > li { flex-basis: 66%; }
+  .lp-passos[data-carrossel] > li { padding: 20px; border: 1px solid var(--linha); border-radius: var(--radius-card); background: var(--branco); }
+  .lp-passos[data-carrossel] .passo-num { position: static; margin-bottom: 14px; }
+  .lp-pontos { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
+  .lp-pontos button { width: 24px; height: 24px; padding: 0; border: 0; background: none; cursor: pointer; display: grid; place-items: center; }
+  .lp-pontos button::before { content: ""; width: 6px; height: 6px; border-radius: 3px; background: var(--linha); transition: width 0.25s ease, background 0.25s ease; }
+  .lp-pontos button[aria-current="true"]::before { width: 18px; background: var(--indigo); }
+}
+
 /* ---------- 4.7 Dados protegidos ---------- */
 .lp-dados { display: grid; gap: 24px; }
 .lp-dados-lista { display: grid; gap: 14px; }

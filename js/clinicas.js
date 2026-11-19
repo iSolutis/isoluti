@@ -107,3 +107,33 @@
     mostrar((atual + 1) % fotos.length);
   }, 4000);
 })();
+
+// Celular: listas de cards viram carrosséis (o CSS faz o deslizar). Aqui entram os pontos de posição,
+// que também servem de botões. Só aparecem quando a lista de fato passa da largura da tela.
+(() => {
+  document.querySelectorAll('[data-carrossel]').forEach((lista) => {
+    const itens = [...lista.children];
+    const pontos = document.createElement('div');
+    pontos.className = 'lp-pontos';
+    pontos.setAttribute('aria-hidden', 'true'); // atalho visual; quem usa leitor de tela percorre a lista normalmente
+    itens.forEach((item, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.tabIndex = -1;
+      b.addEventListener('click', () => lista.scrollTo({ left: item.offsetLeft - lista.offsetLeft - parseFloat(getComputedStyle(lista).scrollPaddingLeft || 0), behavior: 'smooth' }));
+      pontos.append(b);
+    });
+    lista.after(pontos);
+
+    const marcar = () => {
+      const passo = itens[1] ? itens[1].offsetLeft - itens[0].offsetLeft : 1;
+      const fim = lista.scrollLeft + lista.clientWidth >= lista.scrollWidth - 4;
+      const atual = fim ? itens.length - 1 : Math.round(lista.scrollLeft / passo);
+      [...pontos.children].forEach((b, i) => b.setAttribute('aria-current', String(i === atual)));
+      pontos.style.visibility = lista.scrollWidth > lista.clientWidth + 4 ? 'visible' : 'hidden';
+    };
+    lista.addEventListener('scroll', marcar, { passive: true });
+    window.addEventListener('resize', marcar);
+    marcar();
+  });
+})();
