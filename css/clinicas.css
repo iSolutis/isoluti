@@ -81,7 +81,7 @@
 
 /* ---------- Celular: carrossel e pilha se alternam ----------
    Custos e "o que pode ser organizado" viram pilha (como as etapas da home: cada card gruda no topo
-   e o próximo sobe por cima; --i e --cob vêm do js/site.js). Etapas e sócios viram carrossel. */
+   e o próximo sobe por cima; --i e --cob vêm do js/site.js). Etapas viram carrossel; a equipe fica em grade. */
 @media (max-width: 640px) {
   .lp-clinicas [data-empilha] { display: block; }
   .lp-clinicas [data-empilha] > li { position: sticky; top: calc(var(--topo) + 12px + var(--i, 0) * 54px); margin-bottom: 10px; transform-origin: center top; will-change: transform; box-shadow: 0 -12px 28px -18px rgba(11, 45, 59, 0.35); }
@@ -97,7 +97,6 @@
   .lp-clinicas [data-carrossel] { display: flex; gap: 12px; margin: 0 calc(-1 * var(--margem)); padding: 2px var(--margem) 6px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 var(--margem); overscroll-behavior-x: contain; scrollbar-width: none; }
   .lp-clinicas [data-carrossel]::-webkit-scrollbar { display: none; }
   .lp-clinicas [data-carrossel] > li { flex: 0 0 82%; scroll-snap-align: start; }
-  .lp-clinicas .lp-socios[data-carrossel] > li { flex-basis: 66%; }
   .lp-passos[data-carrossel] > li { padding: 20px; border: 1px solid var(--linha); border-radius: var(--radius-card); background: var(--branco); }
   .lp-passos[data-carrossel] .passo-num { position: static; margin-bottom: 14px; }
   .lp-pontos { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
