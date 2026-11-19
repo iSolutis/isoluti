@@ -504,6 +504,7 @@ html.modal-aberto { overflow: hidden; }
 .faq summary::after { transform: rotate(90deg); }
 .faq details[open] summary::after { transform: rotate(0deg); }
 .faq details[open] p { animation: troca 0.3s ease-out both; }
+.faq details p a { font-weight: 600; color: var(--indigo); }
 .faq details p { padding: 0 48px 20px 0; font-size: 16px; line-height: 26px; color: var(--texto-suave); }
 @media (max-width: 900px) { .duvidas-wrap { grid-template-columns: 1fr; gap: 28px; } }
 @media (max-width: 767px) { .faq summary { min-height: 56px; padding-right: 40px; font-size: 16px; line-height: 24px; } .faq details p { padding-right: 0; font-size: 15px; line-height: 24px; } }
@@ -746,7 +747,7 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
 .clinicas { scroll-margin-top: 72px; }
 .clinicas-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 56px; align-items: center; }
 .clinicas-texto .titulo { margin-bottom: 16px; }
-.clinicas-acoes { margin-top: 28px; }
+.clinicas-acoes { margin-top: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 12px 24px; }
 .clinicas-nota { margin-top: 18px; font-size: 15px; line-height: 22px; color: var(--texto-suave); }
 .clinicas-nota a { font-weight: 600; color: var(--indigo); }
 .dores.clinicas-dores { grid-template-columns: repeat(2, minmax(0, 1fr)); }
