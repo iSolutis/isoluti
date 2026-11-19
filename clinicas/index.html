@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<!-- Landing page da campanha para clínicas (spec SDD de 19/11/2026). Copy em rascunho até a revisão com o Lucca e os sócios.
+     Linguagem: "atender mais sem aumentar os custos". Os termos proibidos estão em tools/checar-linguagem.sh. -->
+<title>AIME Tech para clínicas | Atenda mais sem aumentar os custos</title>
+<meta name="description" content="Organizamos atendimento, agendamentos e rotinas administrativas de clínicas médicas, odontológicas e de fisioterapia na Bahia, começando por um diagnóstico da operação.">
+<link rel="canonical" href="https://www.aimetech.com.br/clinicas/">
+<meta name="theme-color" content="#07131D">
+<link rel="icon" href="/img/aime/favicon.svg?v=2" type="image/svg+xml">
+<link rel="icon" href="/img/aime/favicon.ico?v=2" sizes="any">
+<link rel="apple-touch-icon" href="/img/aime/icone-180.png?v=2">
+<link rel="manifest" href="/site.webmanifest">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:site_name" content="AIME Tech">
+<meta property="og:url" content="https://www.aimetech.com.br/clinicas/">
+<meta property="og:title" content="Sua clínica pode atender mais sem aumentar os custos">
+<meta property="og:description" content="Atendimento, agendamentos e rotinas administrativas organizados para a sua clínica, começando por um diagnóstico.">
+<meta property="og:image" content="https://www.aimetech.com.br/img/aime/og-aimetech.jpg?v=2">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AIME Tech — Transformando o futuro">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.aimetech.com.br/img/aime/og-aimetech.jpg?v=2">
+<meta name="twitter:title" content="Sua clínica pode atender mais sem aumentar os custos">
+<meta name="twitter:description" content="Atendimento, agendamentos e rotinas administrativas organizados para a sua clínica, começando por um diagnóstico.">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Service",
+      "@id": "https://www.aimetech.com.br/clinicas/#servico",
+      "name": "Organização da operação de clínicas",
+      "serviceType": "Diagnóstico e organização da operação de clínicas",
+      "url": "https://www.aimetech.com.br/clinicas/",
+      "description": "Atendimento, agendamentos e rotinas administrativas de clínicas médicas, odontológicas e de fisioterapia, organizados com processos e tecnologia, começando por um diagnóstico da operação.",
+      "areaServed": {
+        "@type": "State",
+        "name": "Bahia"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Donos, sócios e gestores de clínicas"
+      },
+      "provider": {
+        "@id": "https://www.aimetech.com.br/#organizacao",
+        "@type": "Organization",
+        "name": "AIME Tech",
+        "url": "https://www.aimetech.com.br/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Início",
+          "item": "https://www.aimetech.com.br/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Para clínicas",
+          "item": "https://www.aimetech.com.br/clinicas/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Quanto custa?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Depende do que o diagnóstico encontrar. Você recebe escopo e valor antes de qualquer implantação, e o valor do diagnóstico é abatido se seguir com a gente."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vai funcionar com a rotina da minha equipe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A solução parte da operação atual e das ferramentas que a clínica já usa."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Posso confiar em IA com dados de pacientes?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A IA apoia tarefas repetitivas, sob supervisão humana e seguindo a LGPD."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Minha equipe vai conseguir usar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A implantação é acompanhada e inclui treinamento."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Não resolvo isso contratando mais alguém?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Às vezes, sim. O diagnóstico mostra se o problema é de capacidade ou de processo, para você não aumentar o custo sem resolver o que trava a operação."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Vocês vendem um sistema pronto?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Não somos fábrica de software. Partimos de soluções que já funcionam e adaptamos à realidade da clínica."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/site.css?v=26">
+<link rel="stylesheet" href="/css/clinicas.css?v=4">
+</head>
+<body class="lp-clinicas">
+
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
+<!-- Sem o menu do site: o logo leva à home e a única ação é o WhatsApp. -->
+<header class="lp-topo">
+  <div class="wrap">
+    <a href="/" aria-label="AIME Tech, ir para a página inicial">
+      <img src="/img/aime/aime-tech-horizontal-reverso.svg?v=1" width="470" height="132" alt="AIME Tech">
+    </a>
+    <a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20para%20cl%C3%ADnicas%20e%20quero%20entender%20como%20funciona%20o%20diagn%C3%B3stico." target="_blank" rel="noopener" class="btn btn-contorno lp-topo-cta" data-wa data-local="topo">Falar no WhatsApp</a>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<!-- 4.1 Abertura -->
+<section class="lp-hero" id="inicio">
+  <div class="wrap lp-hero-grid">
+    <div class="lp-hero-texto">
+      <p class="eyebrow claro">Para clínicas médicas, odontológicas e de fisioterapia</p>
+      <h1>Sua clínica pode atender mais <span class="destaque">sem aumentar os custos.</span></h1>
+      <p class="lede">Organizamos atendimento, agendamentos e rotinas administrativas com processos e tecnologia adaptados à operação da sua clínica, começando por um diagnóstico.</p>
+      <div class="hero-actions">
+        <a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20para%20cl%C3%ADnicas%20e%20quero%20entender%20como%20funciona%20o%20diagn%C3%B3stico." target="_blank" rel="noopener" class="btn btn-acao btn-grande" data-wa data-local="hero">Quero um diagnóstico da minha clínica</a>
+      </div>
+      <p class="lp-garantia">A primeira conversa é sem compromisso.</p>
+    </div>
+    <!-- Sócios se alternando na abertura (js/clinicas.js). Sem JS ou com menos movimento, fica a primeira foto. -->
+    <figure class="lp-hero-socios" data-socios>
+      <img class="ativo" src="/img/clinicas/gileard-400.jpg?v=1" srcset="/img/clinicas/gileard-400.jpg?v=1 400w, /img/equipe/gileard.jpg?v=10 800w" sizes="(min-width: 900px) 440px, 300px" width="400" height="400" alt="Gileard Teixeira, sócio da AIME Tech" data-nome="Gileard Teixeira" data-papel="Conduz o diagnóstico da operação" fetchpriority="high" decoding="async">
+      <img aria-hidden="true" src="/img/clinicas/jefferson-400.jpg?v=1" srcset="/img/clinicas/jefferson-400.jpg?v=1 400w, /img/equipe/jefferson.jpg?v=8 800w" sizes="(min-width: 900px) 440px, 300px" width="400" height="400" alt="Jefferson Pereira, sócio da AIME Tech" data-nome="Jefferson Pereira" data-papel="Engenharia, arquitetura e segurança da informação" loading="lazy" decoding="async">
+      <img aria-hidden="true" src="/img/clinicas/soraya-400.jpg?v=1" srcset="/img/clinicas/soraya-400.jpg?v=1 400w, /img/equipe/soraya.jpg?v=8 800w" sizes="(min-width: 900px) 440px, 300px" width="400" height="400" alt="Soraya Sá, sócio da AIME Tech" data-nome="Soraya Sá" data-papel="Estratégia comercial e relacionamento com clientes" loading="lazy" decoding="async">
+      <img aria-hidden="true" src="/img/clinicas/alexandre-400.jpg?v=1" srcset="/img/clinicas/alexandre-400.jpg?v=1 400w, /img/equipe/alexandre.jpg?v=8 800w" sizes="(min-width: 900px) 440px, 300px" width="400" height="400" alt="Alexandre Marques, sócio da AIME Tech" data-nome="Alexandre Marques" data-papel="Governança, contratos e LGPD" loading="lazy" decoding="async">
+      <figcaption><strong>Gileard Teixeira</strong> <span>Conduz o diagnóstico da operação</span></figcaption>
+      <div class="lp-hero-pontos" aria-hidden="true"><span class="ativo"></span><span></span><span></span><span></span></div>
+    </figure>
+  </div>
+</section>
+
+<!-- 4.2 Você se reconhece? -->
+<section class="secao lp-reconhece" id="reconhece">
+  <div class="wrap">
+    <div class="cabeca">
+      <p class="eyebrow">Na rotina da clínica</p>
+      <h2 class="titulo">Você se reconhece?</h2>
+    </div>
+    <ul class="lp-sinais">
+      <li>O paciente manda mensagem e a resposta chega horas depois.</li>
+      <li>Você pergunta se a agenda está confirmada e ouve um “acho que sim”.</li>
+      <li>Tudo na clínica depende de você responder.</li>
+      <li>A clínica cresceu, o custo cresceu junto e o trabalho continua travando nos mesmos pontos.</li>
+      <li>Você já testou sistemas que não conversavam com a rotina da equipe.</li>
+    </ul>
+    <p class="lp-fecho">Raramente o problema é a equipe. Quase sempre é a forma como os processos foram montados.</p>
+  </div>
+</section>
+
+<!-- 4.3 O custo que não aparece no relatório -->
+<section class="secao secao-clara" id="custo">
+  <div class="wrap">
+    <div class="cabeca">
+      <p class="eyebrow">Custos invisíveis</p>
+      <h2 class="titulo">O custo que não aparece no relatório.</h2>
+    </div>
+    <ul class="lp-custos">
+      <li>
+        <h3>Pacientes que desistem antes de agendar</h3>
+        <p>Quantas mensagens ficaram sem resposta esta semana?</p>
+      </li>
+      <li>
+        <h3>Retrabalho</h3>
+        <p>Quantas vezes a mesma informação foi digitada duas vezes hoje?</p>
+      </li>
+      <li>
+        <h3>Informações espalhadas</h3>
+        <p>Quanto tempo a equipe gasta procurando o que precisa?</p>
+      </li>
+      <li>
+        <h3>O dono como único ponto de decisão</h3>
+        <p>Quantas decisões da rotina esperaram por você hoje?</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4.4 Como trabalhamos -->
+<section class="secao" id="como-trabalhamos">
+  <div class="wrap">
+    <div class="cabeca">
+      <p class="eyebrow">Como trabalhamos</p>
+      <h2 class="titulo">Primeiro entendemos o processo. Depois escolhemos a tecnologia.</h2>
+    </div>
+    <ol class="lp-passos">
+      <li>
+        <span class="passo-num">01</span>
+        <h3>Diagnóstico da operação</h3>
+        <p>Entendemos como atendimento, agenda e rotinas funcionam hoje e onde a clínica mais perde tempo.</p>
+      </li>
+      <li>
+        <span class="passo-num">02</span>
+        <h3>Proposta</h3>
+        <p>Solução ou soluções possíveis, escopo e cronograma. O valor do diagnóstico é abatido na implantação.</p>
+      </li>
+      <li>
+        <span class="passo-num">03</span>
+        <h3>Implantação acompanhada</h3>
+        <p>Adaptamos a solução à rotina e treinamos a equipe.</p>
+      </li>
+      <li>
+        <span class="passo-num">04</span>
+        <h3>Acompanhamento por 12 meses</h3>
+        <p>A solução é ajustada com o uso até resolver de fato.</p>
+      </li>
+    </ol>
+    <div class="cta-faixa">
+      <div>
+        <p class="cta-faixa-titulo">Comece pelo diagnóstico.</p>
+        <p class="cta-faixa-texto">A primeira conversa é sem compromisso.</p>
+      </div>
+      <a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20para%20cl%C3%ADnicas%20e%20quero%20entender%20como%20funciona%20o%20diagn%C3%B3stico." target="_blank" rel="noopener" class="btn btn-acao btn-grande" data-wa data-local="como-trabalhamos">Quero um diagnóstico</a>
+    </div>
+  </div>
+</section>
+
+<!-- 4.5 O que pode ser organizado -->
+<section class="secao secao-clara" id="organizar">
+  <div class="wrap">
+    <div class="cabeca">
+      <p class="eyebrow">O que pode ser organizado</p>
+      <h2 class="titulo">Do primeiro contato à gestão.</h2>
+    </div>
+    <ul class="lp-cards">
+      <li>
+        <h3>Atendimento inicial no WhatsApp</h3>
+        <p>Respostas iniciais e encaminhamento, com a equipe no controle.</p>
+      </li>
+      <li>
+        <h3>Agendamentos e confirmações</h3>
+        <p>Menos confirmação manual e menos horário perdido.</p>
+      </li>
+      <li>
+        <h3>Informações em um só lugar</h3>
+        <p>A equipe encontra o que precisa sem depender de uma pessoa.</p>
+      </li>
+      <li>
+        <h3>Integração com o que a clínica já usa</h3>
+        <p>Nada de mais um sistema isolado.</p>
+      </li>
+      <li>
+        <h3>Indicadores</h3>
+        <p>Tempo de resposta, confirmações e pendências visíveis para a gestão.</p>
+      </li>
+    </ul>
+    <p class="lp-nota">Cada aplicação é avaliada no diagnóstico. Nem tudo precisa ser automatizado.</p>
+  </div>
+</section>
+
+<!-- 4.6 Demonstração: sempre com o rótulo de dados fictícios -->
+<section class="secao" id="demonstracao">
+  <div class="wrap lp-demo-grid">
+    <div>
+      <p class="eyebrow">Na prática</p>
+      <h2 class="titulo">O paciente recebe resposta na hora. A recepção decide o resto.</h2>
+      <p class="intro">Uma mensagem que chega às 10h é respondida em seguida e encaminhada para a recepção, que continua no comando do atendimento.</p>
+    </div>
+    <figure class="lp-demo" aria-label="Simulação de atendimento inicial no WhatsApp, com dados fictícios">
+      <p class="lp-demo-rotulo">Simulação com dados fictícios</p>
+      <ol class="lp-chat">
+        <li class="msg recebida"><span>Bom dia! Queria marcar uma avaliação para a próxima semana.</span><time>10:00</time></li>
+        <li class="msg enviada"><span>Bom dia, Ana! Recebemos sua mensagem. Já estamos vendo os horários e a recepção confirma com você em instantes.</span><time>10:00</time></li>
+        <li class="msg aviso"><span>Conversa encaminhada para a recepção</span></li>
+        <li class="msg enviada humana"><span>Ana, temos terça às 14h ou quinta às 9h. Qual fica melhor?</span><time>10:03</time></li>
+      </ol>
+    </figure>
+  </div>
+</section>
+
+<!-- 4.7 Dados dos pacientes protegidos -->
+<section class="secao secao-profunda" id="dados">
+  <div class="wrap lp-dados">
+    <div>
+      <p class="eyebrow claro">Dados protegidos</p>
+      <h2 class="titulo">Dados de pacientes tratados com o cuidado que exigem.</h2>
+    </div>
+    <ul class="lp-dados-lista">
+      <li><strong>LGPD desde o início.</strong> Dados de saúde são dados sensíveis e são tratados como tal em cada etapa.</li>
+      <li><strong>Supervisão humana.</strong> A tecnologia apoia tarefas repetitivas; as decisões continuam com a sua equipe.</li>
+      <li><strong>Segurança revisada.</strong> Sócios com experiência em proteção de dados e segurança da informação revisam cada entrega.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4.8 Quem está por trás -->
+<section class="secao" id="socios">
+  <div class="wrap">
+    <div class="cabeca">
+      <p class="eyebrow">Quem está por trás</p>
+      <h2 class="titulo">Os sócios que respondem pelo seu projeto.</h2>
+    </div>
+    <ul class="lp-socios">
+      <li>
+        <img src="/img/clinicas/gileard-400.jpg?v=1" width="400" height="400" alt="Gileard Teixeira" loading="lazy" decoding="async">
+        <h3>Gileard Teixeira</h3>
+        <p>Consultor especialista em modelagem de negócios · Sócio da AIME Tech</p>
+      </li>
+      <li>
+        <img src="/img/clinicas/jefferson-400.jpg?v=1" width="400" height="400" alt="Jefferson Pereira" loading="lazy" decoding="async">
+        <h3>Jefferson Pereira</h3>
+        <p>Engenharia, arquitetura e segurança da informação · Sócio da AIME Tech</p>
+      </li>
+      <li>
+        <img src="/img/clinicas/soraya-400.jpg?v=1" width="400" height="400" alt="Soraya Sá" loading="lazy" decoding="async">
+        <h3>Soraya Sá</h3>
+        <p>Estratégia comercial e relacionamento com clientes · Sócia da AIME Tech</p>
+      </li>
+      <li>
+        <img src="/img/clinicas/alexandre-400.jpg?v=1" width="400" height="400" alt="Alexandre Marques" loading="lazy" decoding="async">
+        <h3>Alexandre Marques</h3>
+        <p>Governança, contratos e LGPD · Sócio da AIME Tech</p>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- 4.9 Perguntas frequentes -->
+<section class="secao secao-clara" id="duvidas">
+  <div class="wrap duvidas-wrap">
+    <div>
+      <p class="eyebrow">Dúvidas</p>
+      <h2 class="titulo">Perguntas frequentes.</h2>
+    </div>
+    <div>
+      <div class="faq">
+        <details>
+          <summary>Quanto custa?</summary>
+          <p>Depende do que o diagnóstico encontrar. Você recebe escopo e valor antes de qualquer implantação, e o valor do diagnóstico é abatido se seguir com a gente.</p>
+        </details>
+        <details>
+          <summary>Vai funcionar com a rotina da minha equipe?</summary>
+          <p>A solução parte da operação atual e das ferramentas que a clínica já usa.</p>
+        </details>
+        <details>
+          <summary>Posso confiar em IA com dados de pacientes?</summary>
+          <p>A IA apoia tarefas repetitivas, sob supervisão humana e seguindo a LGPD.</p>
+        </details>
+        <details>
+          <summary>Minha equipe vai conseguir usar?</summary>
+          <p>A implantação é acompanhada e inclui treinamento.</p>
+        </details>
+        <details>
+          <summary>Não resolvo isso contratando mais alguém?</summary>
+          <p>Às vezes, sim. O diagnóstico mostra se o problema é de capacidade ou de processo, para você não aumentar o custo sem resolver o que trava a operação.</p>
+        </details>
+        <details>
+          <summary>Vocês vendem um sistema pronto?</summary>
+          <p>Não somos fábrica de software. Partimos de soluções que já funcionam e adaptamos à realidade da clínica.</p>
+        </details>
+      </div>
+      <a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20para%20cl%C3%ADnicas%20e%20quero%20entender%20como%20funciona%20o%20diagn%C3%B3stico." target="_blank" rel="noopener" class="btn btn-escuro lp-faq-cta" data-wa data-local="duvidas">Tirar outra dúvida no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- 4.10 Chamada final -->
+<section class="secao secao-profunda lp-final" id="contato">
+  <div class="wrap">
+    <h2 class="titulo">Descubra onde sua clínica mais perde tempo.</h2>
+    <a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20para%20cl%C3%ADnicas%20e%20quero%20entender%20como%20funciona%20o%20diagn%C3%B3stico." target="_blank" rel="noopener" class="btn btn-acao btn-grande" data-wa data-local="final">Quero um diagnóstico da minha clínica</a>
+    <p class="lp-garantia">A primeira conversa é sem compromisso.</p>
+    <p class="lp-slogan">Transformando o futuro</p>
+  </div>
+</section>
+
+</main>
+
+<!-- 4.11 Rodapé -->
+<footer>
+  <div class="wrap">
+    <div class="rodape-marca">
+      <a href="/" aria-label="AIME Tech, ir para a página inicial"><img class="logo-rodape" src="/img/aime/aime-tech-horizontal-cor-slogan.svg?v=1" width="470" height="132" alt="AIME Tech — Transformando o futuro" loading="lazy"></a>
+      <p class="lp-razao">AIME Tech · Key Marketing Digital Ltda · CNPJ 41.042.316/0001-23</p>
+    </div>
+    <div class="footer-links">
+      <a href="https://www.instagram.com/aimetecnologia/" target="_blank" rel="noopener">Instagram</a>
+      <a href="/privacidade.html">Política de privacidade</a>
+      <button type="button" class="link-btn" data-cookies-abrir hidden>Preferências de cookies</button>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta"><a href="https://wa.me/5571982182078?text=Ol%C3%A1!%20Vim%20pela%20p%C3%A1gina%20para%20cl%C3%ADnicas%20e%20quero%20entender%20como%20funciona%20o%20diagn%C3%B3stico." target="_blank" rel="noopener" class="btn btn-acao" data-wa data-local="barra-fixa">Quero um diagnóstico</a></div>
+
+<!-- Aviso de cookies: pixel e analytics só depois do "Aceitar". -->
+<div class="cookie-banner" id="cookie-banner" role="region" aria-label="Aviso de cookies e privacidade" hidden>
+  <p>Usamos cookies essenciais para o site funcionar e, só com a sua autorização, cookies de medição. Ao continuar, você concorda com a nossa <a href="/privacidade.html">Política de privacidade</a>.</p>
+  <div class="cookie-actions">
+    <button type="button" class="btn btn-acao gold" data-consentimento="aceito">Aceitar</button>
+    <button type="button" class="btn btn-contorno outline-light" data-consentimento="recusado">Só essenciais</button>
+  </div>
+</div>
+
+<script src="/js/config.js?v=90"></script>
+<script src="/js/site.js?v=18"></script>
+<script src="/js/clinicas.js?v=3"></script>
+</body>
+</html>

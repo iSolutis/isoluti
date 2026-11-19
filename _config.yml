@@ -1,3 +1,4 @@
 # Arquivos internos que ficam no repositório mas não são publicados no GitHub Pages.
 exclude:
   - CHANGELOG-MARKETING.md
+  - tools
