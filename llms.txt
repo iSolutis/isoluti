@@ -33,7 +33,7 @@ Também entregamos sistemas de pedidos e vendas, estoque e compras, fluxos de ap
 
 ## Para clínicas
 
-- [AIME Tech para clínicas](https://www.aimetech.com.br/clinicas/): para clínicas médicas, odontológicas e de fisioterapia na Bahia. Organiza atendimento, agendamentos e rotinas administrativas para a clínica atender mais sem aumentar os custos, começando por um diagnóstico da operação. O valor do diagnóstico é abatido na implantação, que é acompanhada e inclui 12 meses de ajustes.
+- [AIME Tech para clínicas](https://www.aimetech.com.br/clinicas/): para clínicas e consultórios de saúde e estética na Bahia (medicina, odontologia, fisioterapia, psicologia, estética e outras especialidades). Organiza atendimento, agendamentos e rotinas administrativas para a clínica atender mais sem aumentar os custos, começando por um diagnóstico da operação. O valor do diagnóstico é abatido na implantação, que é acompanhada e inclui 12 meses de ajustes.
 
 ## Outras páginas
 
