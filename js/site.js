@@ -392,7 +392,9 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
 })();
 
 // Barra fixa do WhatsApp (celular): aparece depois que os botões do topo saem da tela
-// e some quando o contato está visível, para não repetir o mesmo convite.
+// e some quando o contato (ou outro botão marcado com data-esconde-barra) está visível,
+// para não repetir o mesmo convite nem cobrir o botão. A classe passou-topo fica na raiz
+// para a página esconder outros atalhos repetidos (na página de clínicas, o botão do topo).
 (() => {
   const barra = document.querySelector('.sticky-cta');
   const topo = document.querySelector('.hero-actions');
@@ -400,13 +402,21 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   if (!barra || !topo || !contato || !('IntersectionObserver' in window)) return;
   const raiz = document.documentElement;
   raiz.classList.add('tem-barra');
-  let passouTopo = false, noContato = false;
-  const atualizar = () => raiz.classList.toggle('mostra-barra', passouTopo && !noContato);
+  let passouTopo = false;
+  const visiveis = new Set();
+  const atualizar = () => {
+    raiz.classList.toggle('passou-topo', passouTopo);
+    raiz.classList.toggle('mostra-barra', passouTopo && !visiveis.size);
+  };
   new IntersectionObserver(([e]) => {
     passouTopo = !e.isIntersecting && e.boundingClientRect.top < 0;
     atualizar();
   }).observe(topo);
-  new IntersectionObserver(([e]) => { noContato = e.isIntersecting; atualizar(); }, { threshold: 0.15 }).observe(contato);
+  const obs = new IntersectionObserver((entradas) => {
+    entradas.forEach((e) => (e.isIntersecting ? visiveis.add(e.target) : visiveis.delete(e.target)));
+    atualizar();
+  }, { threshold: 0.15 });
+  [contato, ...document.querySelectorAll('[data-esconde-barra]')].forEach((el) => obs.observe(el));
 })();
 
 // Celular: cartões empilhados (dores, exemplos e etapas; na página de clínicas, as listas com data-empilha). Cada cartão gruda no topo e o próximo

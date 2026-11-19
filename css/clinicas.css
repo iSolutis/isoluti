@@ -130,6 +130,25 @@
 .lp-razao { margin-top: 10px; font-size: 13px; line-height: 19px; color: var(--texto-suave); }
 .lp-clinicas footer { padding-bottom: calc(40px + 72px); }
 
+/* ---------- Celular: um convite por vez e abertura compacta ---------- */
+/* O botão do topo sai quando a barra fixa de baixo assume (classe passou-topo vem do js/site.js). */
+@media (max-width: 767px) {
+  .lp-topo-cta { transition: opacity 0.2s ease, visibility 0.2s ease; }
+  .passou-topo .lp-topo-cta { opacity: 0; visibility: hidden; }
+}
+/* Botão em uma linha: "da minha clínica" só aparece com espaço */
+@media (max-width: 599px) { .lp-so-largo { display: none; } }
+/* Sócios: no celular e no tablet, faixa compacta em vez do quadrado grande */
+.lp-hero-socios-chamada { display: none; }
+@media (max-width: 899px) {
+  .lp-hero-socios { display: flex; flex-direction: column; justify-content: center; max-width: none; min-height: 76px; aspect-ratio: auto; margin-top: 28px; padding-left: 90px; border-radius: 0; overflow: visible; background: none; }
+  .lp-hero-socios img { inset: auto; left: 0; top: 50%; width: 72px; height: 72px; margin-top: -36px; border-radius: 50%; box-shadow: 0 0 0 2px var(--champagne); }
+  .lp-hero-socios-chamada { display: block; margin-bottom: 2px; font-size: 12px; line-height: 16px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--champagne); }
+  .lp-hero-socios figcaption { position: static; padding: 0; background: none; font-size: 13px; line-height: 18px; }
+  .lp-hero-socios figcaption strong { font-size: 15px; line-height: 20px; }
+  .lp-hero-pontos { position: static; margin-top: 8px; }
+}
+
 /* ---------- Telas maiores ---------- */
 @media (min-width: 600px) {
   .lp-hero h1 { font-size: 40px; line-height: 46px; }
