@@ -409,11 +409,11 @@ document.querySelectorAll('[data-agenda]').forEach((link) => {
   new IntersectionObserver(([e]) => { noContato = e.isIntersecting; atualizar(); }, { threshold: 0.15 }).observe(contato);
 })();
 
-// Celular: cartões empilhados (dores, exemplos e etapas). Cada cartão gruda no topo e o próximo
+// Celular: cartões empilhados (dores, exemplos e etapas; na página de clínicas, as listas com data-empilha). Cada cartão gruda no topo e o próximo
 // sobe por cima; o de baixo encolhe e escurece conforme a rolagem.
 // Sem efeito em telas maiores ou para quem pediu menos movimento.
 (() => {
-  const pilhas = [...document.querySelectorAll('.metodo-passos, .dores, .casos')];
+  const pilhas = [...document.querySelectorAll('.metodo-passos, .dores, .casos, [data-empilha]')];
   if (!pilhas.length) return;
   const celular = window.matchMedia('(max-width: 640px)');
   const calmo = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
