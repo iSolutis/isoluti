@@ -11,6 +11,6 @@ window.SOLUTEC_CONFIG = {
   // Link de agendamento (Calendly, Cal.com). Sem ele, o botão "Agendar horário" não aparece.
   agendaUrl: '[[PREENCHER: URL Calendly/Cal.com]]',
   // Medição: só carregam depois que o visitante aceita os cookies.
-  ga4Id: '[[PREENCHER: ID G-XXXXXXX]]',
+  ga4Id: 'G-D0LDDJRE8G',
   metaPixelId: '1610050873911341'
 };
