@@ -768,3 +768,13 @@ footer .wrap { display: grid; grid-template-columns: 1fr auto; align-items: cent
 .rs-acompanha .rs-numero strong { font-size: 30px; line-height: 36px; margin: 9px 0 6px; }  /* frase longa: quebra em duas linhas e ocupa a altura dos números ao lado */
 @media (max-width: 767px) { .rs-acompanha .rs-numero strong { font-size: 28px; line-height: 36px; } .rs-acompanha .rs-texto { margin-top: 8px; font-size: 14px; line-height: 20px; } }
 @media (max-width: 1000px) { .rs-acompanha { grid-column: 1 / -1; } }
+
+/* Abertura no celular mais limpa (26/11/2026): texto curto e sem o atalho de clínicas,
+   que continua no computador e na seção de clínicas mais abaixo. */
+.lede-curta { display: none; }
+@media (max-width: 767px) {
+  .hero .lede-longa { display: none; }
+  .hero .lede-curta { display: inline; }
+  .hero .hero-atalho { display: none; }
+}
+
